@@ -6,6 +6,7 @@ import { configureLanguage } from "../utils/language";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ButtonToTop from '@/components/ButtonToTop';
+import ContactUs from '@/components/ContactUs';
 // import useScreenSize from '@/utils/useScreenSize';
 // import NavbarMobile from '@/components/NavbarMobile';
 
@@ -20,6 +21,7 @@ const App = props => {
         {/* {screenSize?.width < 1024 ? <NavbarMobile /> : <Navbar />} */}
         <Navbar />
         <Component {...pageProps} />
+        <ContactUs />
         <ButtonToTop />
         <Footer />
       </div>
