@@ -1,10 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { gql, useQuery } from "@apollo/client";
 import Image from 'next/image';
 // import gsap from "gsap";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import bannerAbout from '/public/assets/coad-images/banner-about.png'
 import isCurrentLang from '@/utils/isCurrentLang';
+
+// Init ScrollTrigger
+if (typeof window !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+}
 
 
 // Import Swiper styles
@@ -28,17 +34,51 @@ const aboutUs = () => {
                       sourceUrl
                     }
                   }
+                  aboutUs {
+                    historyDetail
+                    historyDetailEn
+                    misi
+                    misiEn
+                    visi
+                    visiEn
+                  }
                 }
               }
         }
         `);
 
-    const { certification } = data?.post?.aboutus ?? {}
-    console.log(certification)
+    const { certification, aboutUs } = data?.post?.aboutus ?? {}
 
+    //Clear ScrollTrigger other route
     useEffect(() => {
         ScrollTrigger.killAll();
     }, [])
+
+    //Homebanner Slide First Reload
+    const AboutAnimation = (completeAnimation) => {
+        //timeline
+        const tl = gsap
+            .timeline({ defaults: { duration: 0.6 } })
+            .fromTo('.banner h2', {
+                x: 40,
+                autoAlpha: 0
+            }, {
+                ease: 'power1.easeIn',
+                x: 0,
+                autoAlpha: 1
+            }, "<0.5")
+    }
+
+    const [animationComplete, setAnimationComplete] = useState(false)
+
+    // Enter Page Animate
+    const completeAnimation = () => {
+        setAnimationComplete(true)
+    }
+    useEffect(() => {
+        AboutAnimation(completeAnimation)
+    }, [])
+
 
     return (
         <div className='about-us'>
@@ -48,17 +88,14 @@ const aboutUs = () => {
                     fill
                     alt="About Coad Indonesia" />
                 <div className='container relative z-2'>
-                    <h2>ABOUT US</h2>
+                    <h2>{isCurrentLang('ABOUT US', 'TENTANG KAMI')}</h2>
                 </div>
             </div>
             <div className='container about-banner-content py-24'>
-                <span className='about-sub-title'>OUR HISTORY</span>
+                <span className='about-sub-title'>{isCurrentLang('OUR HISTORY', 'SEJARAH KAMI')}</span>
                 <h2 className='about-title'>COAD INDONESIA</h2>
                 <div className='short-desc'>
-                    <p>COAD Indonesia sudah dipercaya bertahun-tahun untuk menghasilkan pintu industri terbaik, high speed door. Bergerak di bidang manufaktur dan pemasangan high speed door, overhead door, dan garage door, COAD Indonesia menggunakan material berkualitas untuk menghadirkan keamanan dan kecepatan bagi area Anda. COAD memberikan garansi dan after-sales service untuk setiap pintu yang terjual, dan selalu jadikan kepuasan pelanggan sebagai hal yang utama.</p>
-                    <p>Dengan teknisi berpengalaman dan cekatan yang siap berikan service terbaik untuk kebutuhan pintu Anda, COAD berhasil dipercaya oleh banyak merk ternama di Indonesia. Kini, COAD Indonesia telah menjangkau seluruh area Pulau Jawa dan Bali. COAD Indonesia pastikan akan terus memberikan produk dan service terbaik sebagai merk pintu industri unggulan di Indonesia.</p>
-                    <p>COAD Indonesia has been trusted for many years to produce the finest industrial doors, especially high-speed doors. Specializing in the manufacturing and installation of high-speed doors, overhead doors, and garage doors, COAD Indonesia utilizes high-quality materials to provide security and speed for your business. COAD offers warranties and after-sales service for every door sold, always prioritizing customer satisfaction.</p>
-                    <p>With experienced and efficient technicians ready to provide the best service for your door needs, COAD has earned the trust of many renowned brands in Indonesia. Today, COAD Indonesia has expanded its reach to cover all areas of Java and Bali. COAD Indonesia is committed to continuously delivering top-notch products and services as the leading brand in the industrial door industry in Indonesia.</p>
+                    <div dangerouslySetInnerHTML={{ __html: isCurrentLang(aboutUs?.historyDetailEn, aboutUs?.historyDetail) }} />
                 </div>
             </div>
             <div className='our-vision-mission bg-[#f4f4f4] py-28'>
@@ -70,22 +107,18 @@ const aboutUs = () => {
                         <div className='flex-1 bg-white text-neutral-50 px-10 py-16 rounded-xl'>
                             <div className='flex flex-col gap-4 items-center'>
                                 <Image src={'/assets/coad-images/ic-our-vision.svg'} width={52} height={52} />
-                                <h3>Our Vision</h3>
+                                <h3>{isCurrentLang('Our Vision', 'Visi Kami')}</h3>
                                 <div className='desc'>
-                                    <p>Menjadi supplier high speed door nomor 1 di Indonesia.</p>
+                                    <div dangerouslySetInnerHTML={{ __html: isCurrentLang(aboutUs?.visiEn, aboutUs?.visi) }} />
                                 </div>
                             </div>
                         </div>
                         <div className='flex-1 bg-white text-neutral-50 px-10 py-16 rounded-xl'>
                             <div className='flex flex-col gap-4 items-center'>
                                 <Image src={'/assets/coad-images/ic-our-mission.svg'} width={52} height={52} />
-                                <h3>Our Mission</h3>
+                                <h3>{isCurrentLang('Our Mission', 'Misi Kami')}</h3>
                                 <div className='desc'>
-                                    <ol>
-                                        <li>Selalu memberikan high speed door berkualitas terbaik untuk konsumen di Indonesia,</li>
-                                        <li>Memperhatikan kesejahteraan karyawan yang kemudian mendukung kepuasan pelanggan,</li>
-                                        <li>Menjadi merk yang kuat dan mampu bersaing secara regional dan global.</li>
-                                    </ol>
+                                    <div dangerouslySetInnerHTML={{ __html: isCurrentLang(aboutUs?.misiEn, aboutUs?.misi) }} />
                                 </div>
                             </div>
                         </div>

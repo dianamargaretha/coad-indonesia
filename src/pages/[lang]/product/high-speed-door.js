@@ -44,7 +44,6 @@ const highSpeedDoor = () => {
     `);
 
     const { gallery, title, spec, specdetail } = data?.post?.detailProduct?.product ?? {}
-    console.log({ gallery, title, spec, specdetail })
     return (
         <div className='section-product'>
             <div className='container mt-12 pb-28'>

@@ -113,15 +113,9 @@ export default function Home() {
   `);
 
   const { slideBanner } = data?.post?.homeSlideBanner ?? {};
-  const { product: productCategory } = dataProduct?.post?.productCategory ?? {};
   const { productlistinfo, productunggulan, aboutus, ourclient } = dataHomePage?.post?.homepage ?? {}
-  console.log({ slideBanner, productCategory, productlistinfo, productunggulan, ourclient })
 
 
-  // Init ScrollTrigger
-  if (typeof window !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger);
-  }
   //Clear ScrollTrigger other route
   useEffect(() => {
     ScrollTrigger.killAll();
@@ -219,7 +213,7 @@ export default function Home() {
         y: 100,
         delay: 0.1,
         stagger: 0.2,
-      });
+      }, 0);
   }, [loading, loadingProduct, loadingHomePage])
 
   //About Us
@@ -238,11 +232,39 @@ export default function Home() {
         x: 100,
         duration: 0.5
       })
-      .from('.section-about-us .homebanner-about-us', {
+      .from('.section-about-us .homebanner-about-us-desc', {
         autoAlpha: 0,
         y: 100,
         duration: 0.5
+      }, 0)
+      .from('.section-about-us .homebanner-about-us', {
+        autoAlpha: 0,
+        y: 100,
+        duration: 1
+      }, 0)
+  }, [loading, loadingProduct, loadingHomePage])
+
+  //Our Client
+  useEffect(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.section-our-client',
+        start: "10% center",
+        end: "bottom center",
+        toggleActions: "restart pause resume pause",
+        markers: false
+      }
+    })
+      .from('.section-our-client h2.title', {
+        autoAlpha: 0,
+        x: 100,
+        duration: 0.5
       })
+      .from('.section-our-client .list-client', {
+        autoAlpha: 0,
+        y: 100,
+        duration: 0.5
+      }, 0)
   }, [loading, loadingProduct, loadingHomePage])
 
   if (loading || loadingProduct || loadingHomePage) return <IntroOverlay />
@@ -254,14 +276,15 @@ export default function Home() {
       <div className='min-h-screen'>
         <section>
           <Swiper
-            navigation={true}
-            modules={[Navigation]}
+            navigation
+            modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
             className="mySwiper"
+            loop={true}
+            pagination={{ clickable: true }}
             autoplay={{
-              delay: 5000,
+              delay: 10000,
               disableOnInteraction: false,
             }}
-            loop={true}
             onSlideChangeTransitionStart={function() {
               // bullet
               gsap
@@ -458,7 +481,7 @@ export default function Home() {
               <h2 className='title'>{isCurrentLang('About Us', 'Tentang Kami')}</h2>
             </div>
             <div className='flex  flex-wrap justify-center md:justify-start gap-4'>
-              <div className='flex items-center flex-1'>
+              <div className='flex items-center flex-1 homebanner-about-us-desc'>
                 <div className='flex flex-col justify-center w-[80%]'>
                   <h3 className='text-4xl font-bold text-[#37a76b] mb-3'>COAD Indonesia:</h3>
                   <p className='text-2xl font-bold text-[#333333] mb-6'>{isCurrentLang(aboutus?.titleEn, aboutus?.title)}</p>
@@ -481,7 +504,7 @@ export default function Home() {
                 <h3 className='text-xl text-[#666666] leading-normal'>{isCurrentLang(ourclient?.descriptionEn, ourclient?.description)}</h3>
               </div>
             </div>
-            <div className='flex flex-wrap gap-8 mt-16 max-w-[1024px] mx-auto justify-center items-center'>
+            <div className='list-client flex flex-wrap gap-8 mt-16 max-w-[1024px] mx-auto justify-center items-center'>
               {ourclient?.listclient?.map((item, index) => (
                 <div className='each' key={index}>
                   <Image

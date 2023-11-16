@@ -19,7 +19,6 @@ const Benefit = ({ imgUrl, title, fileUrl, type }) => {
 
 const catalog = () => {
     const router = useRouter()
-    console.log({ router })
     const { data, loading, error } = useQuery(gql`
     query {
         post(id: "gallery-catalog", idType: SLUG) {
@@ -39,7 +38,6 @@ const catalog = () => {
     }
     `);
     const { catalog } = data?.post?.gallerycatalog ?? {}
-    console.log({ catalog })
     return (
         <div className='gallery-wrapper'>
             <div className='container py-16'>

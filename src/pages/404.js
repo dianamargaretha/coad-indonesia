@@ -5,7 +5,6 @@ import { useEffect } from "react";
 export default function Custom404() {
     const router = useRouter()
     const lang = router?.asPath.split('/')[1]
-    console.log({ router, lang })
     useEffect(() => {
         router.push({
             pathname: '/[lang]',
