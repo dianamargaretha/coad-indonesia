@@ -494,7 +494,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className='mt-28 section-our-client'>
+        <section className='mt-28 pb-40 section-our-client'>
           <div className='container'>
             <div className='section-title'>
               <h2 className='title'>{isCurrentLang('Our Client', 'Klien Kami')}</h2>
@@ -518,80 +518,8 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            {/* <Swiper
-              modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
-              initialSlide={3}
-              loop={true}
-              slidesPerView={"auto"}
-              spaceBetween={32}
-              navigation
-              pagination={{ clickable: true }}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              breakpoints={{
-                640: {
-                  spaceBetween: 20
-                },
-                768: {
-                  spaceBetween: 32
-                }
-              }}
-            >
-              {ourclient?.listclient?.map((item, index) => (
-                <SwiperSlide key={index}>
-                  <Image
-                    src={item?.logo?.sourceUrl}
-                    alt={item?.logo?.sourceUrl}
-                    width={270}
-                    height={337}
-                    priority
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper> */}
           </div>
         </section>
-        {/* <section>
-          <div className='section project pt-16' id="home-project">
-            <Swiper
-              modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={0}
-              slidesPerView={1}
-              autoplay={{
-                delay: 5000,
-                disableOnInteraction: false,
-              }}
-              loop={true}
-            >
-              {
-                productunggulan?.map((list, index) => (
-                  <SwiperSlide key={index} data-title={'/ Projects'} data-subtitle={list.productcategory} data-button={list.productname}>
-                    <div className='shadow'></div>
-                    <Image
-                      className='slide-img'
-                      alt={list?.productname}
-                      layout='fill'
-                      objectFit='cover'
-                      src={list?.imageproduct?.sourceUrl}
-                      quality={70}
-                      priority
-                    />
-                    <div className='slide-content'>
-                      <div className='slide-wrap'>
-                        <h3 className='text-p2 lg:text-p1 mb-6'>/ {list?.productcategory}</h3>
-                        <h2 className='text-h5 lg:text-h2'>{list.productname}</h2>
-                        <button onClick={list.productname} className='see-more mt-10'>See more</button>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                ))
-              }
-              <div className='container swiper-pagination'></div>
-            </Swiper>
-          </div>
-        </section> */}
       </div>
     </main>
   )
