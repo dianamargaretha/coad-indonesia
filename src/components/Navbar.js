@@ -187,7 +187,7 @@ const Navbar = () => {
                                                         <ul className="drop-menu">
                                                             <li>
                                                                 <Link href={{
-                                                                    pathname: '/[lang]/product/high-speed-door',
+                                                                    pathname: '/[lang]/product/standard-model-c-1',
                                                                     query: { lang: router?.query?.lang }
                                                                 }}>{isCurrentLang('High Speed Door', 'High Speed Door')}</Link>
                                                             </li>

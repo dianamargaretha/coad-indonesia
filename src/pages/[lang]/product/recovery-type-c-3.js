@@ -11,13 +11,42 @@ import 'swiper/css/thumbs';
 // import required modules
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import isCurrentLang from '@/utils/isCurrentLang';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+const Benefit = ({ thumb, title, link, lang }) => {
+    return (
+        <Link href={{
+            pathname: `/[lang]/product/${link}`,
+            query: { lang: lang }
+        }}>
+            <div className='relative flex justify-center items-center'>
+
+                <Image
+                    src={thumb}
+                    alt={title}
+                    width={270}
+                    height={337}
+                    priority
+                />
+                <div className='absolute bg-white mx-10 p-2 text-center text-xs'>{title}</div>
+
+            </div>
+        </Link>
+    )
+}
 
 const highSpeedDoor = () => {
+    const router = useRouter()
+    const lang = router?.query?.lang
+
+    console.log({ router, lang })
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     const { data, loading, error } = useQuery(gql`
     query {
-        post(id: "high-speed-door", idType: SLUG) {
+        post(id: "c-3-recovery-type", idType: SLUG) {
             detailProduct {
                 product {
                   gallery {
@@ -87,8 +116,13 @@ const highSpeedDoor = () => {
 
                     <div className='w-7/12'>
                         <div>
-                            <h2 className='title mb-2'>{title}</h2>
+                            <h2 className='title mb-1'>{title}</h2>
+                            <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
+                                <h4 className='font-bold'>Category :</h4>
+                                <p>High Speed Door</p>
+                            </div>
                             <h3 className='subtitle mb-4'>{isCurrentLang('Specification', 'Spesifikasi')}</h3>
+
                             <div>
                                 {spec?.map((list, index) => {
                                     return (
@@ -129,6 +163,18 @@ const highSpeedDoor = () => {
                             </div>
                         )
                     })}
+                </div>
+            </div>
+
+            <div className='py-28 bg-[#f9f9f9]'>
+                <div className='container'>
+                    <div className='section-title'>
+                        <h2 className='title'>{isCurrentLang('Other Product', 'Product Lainnya')}</h2>
+                    </div>
+                    <div className='flex flex-wrap gap-4'>
+                        <Benefit link='standard-model-c-1' lang={lang} thumb={'/assets/coad-images/product/C-1-Standard-Type/1.png'} title='COAD C-1 Standard Type' />
+                        <Benefit link='slim-type-c-2' lang={lang} thumb={'/assets/coad-images/product/C-2-Slim-Type/1.png'} title='COAD C-2 Slim Type' />
+                    </div>
                 </div>
             </div>
 

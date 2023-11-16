@@ -2,11 +2,12 @@ import React from 'react'
 import isCurrentLang from '@/utils/isCurrentLang'
 import { gql, useQuery } from "@apollo/client";
 import { useRouter } from 'next/router'
+import Loader from '@/components/Loader';
 
 const Benefit = ({ imgUrl, title, fileUrl, type }) => {
     return (
         <div className='card-benefit'>
-            <a href={fileUrl} download>
+            <a href={fileUrl} download target='_blank'>
                 <div className='flex gap-2 justify-start items-center mb-4'>
                     <div className={`icon ${type === 'docs' ? 'docs' : ''}`}></div>
                     <h2 className='text-h5-m lg:text-h5'>{title}</h2>
@@ -44,7 +45,9 @@ const catalog = () => {
                 <div className='section-title'>
                     <h2 className='title uppercase'>{isCurrentLang('Catalog', 'Katalog')}</h2>
                 </div>
-                {loading && 'loading...'}
+                {loading && <div className='flex justify-center'>
+                    <Loader />
+                </div>}
                 <div className='flex flex-wrap justify-center gap-4'>
                     {catalog?.map((list, index) => {
                         return (
