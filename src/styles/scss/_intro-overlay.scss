@@ -1,0 +1,18 @@
+.intro-overlay {
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        // background-color: black;
+        z-index: 10;
+        background: rgb(57, 177, 108);
+        background: linear-gradient(
+            145deg,
+            rgba(57, 177, 108, 1) 0%,
+            rgba(32, 96, 86, 1) 78%,
+            rgba(25, 21, 76, 1) 100%
+        );
+    }
+}

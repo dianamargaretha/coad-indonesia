@@ -1,0 +1,55 @@
+.section-worldwide {
+    @apply bg-[#f9f9f9] py-20;
+    .info-title {
+        max-width: 50.5rem;
+    }
+    .info-box {
+        display: block;
+        padding-top: calc((1 / 1) * 100%);
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(90deg, #5ced9a 3.67%, #68abbf 71.67%, #6a86d2 102.67%);
+        border-radius: 50%;
+        .info-box-inner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            padding: 3.4rem;
+            .content {
+                @apply flex flex-col justify-center w-full h-full p-[3.2rem] text-white text-center rounded-full;
+                background: linear-gradient(90deg, #5ff59f 3.67%, #518494 71.67%, #5a72b3 102.67%);
+                .info-title {
+                    @apply text-2xl;
+                }
+            }
+        }
+    }
+    .info-detail-list {
+        @apply flex-1 flex flex-col justify-center gap-8;
+    }
+    .list {
+        @apply gap-6;
+        h5 {
+            @apply text-4xl font-bold;
+        }
+        .list-text {
+            @apply text-base pb-4 border-b;
+        }
+    }
+}
+.section-our-client {
+    .swiper-wrapper {
+        @apply flex items-center;
+    }
+    .swiper-slide {
+        width: 100% !important;
+    }
+}
+.section-product-category {
+    .swiper-slide {
+        width: 100% !important;
+        max-width: 280px;
+    }
+}

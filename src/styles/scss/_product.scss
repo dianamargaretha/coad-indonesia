@@ -1,0 +1,99 @@
+.section-product {
+    .title {
+        color: #444;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+    .subtitle {
+        font-size: 24px;
+        color: #dc3545;
+    }
+    //Swiper
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    body {
+        background: #000;
+        color: #000;
+    }
+
+    .swiper {
+        width: 100%;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .swiper-slide {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .mySwiper2 {
+        height: 80%;
+        width: 100%;
+    }
+
+    .mySwiper {
+        height: 20%;
+        box-sizing: border-box;
+        padding: 10px 0;
+    }
+
+    .mySwiper .swiper-slide {
+        width: 25%;
+        height: 100%;
+        opacity: 0.4;
+    }
+
+    .mySwiper .swiper-slide-thumb-active {
+        opacity: 1;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .section-title {
+        .title {
+            @apply font-bold;
+        }
+    }
+    .each-spec-wrapper {
+        .title {
+            @apply text-[#dc3545];
+        }
+        .detail {
+            @apply text-[#444444];
+            ul {
+                @apply list-disc ml-4;
+                li {
+                    @apply mb-1 text-[#444444];
+                }
+            }
+        }
+    }
+}

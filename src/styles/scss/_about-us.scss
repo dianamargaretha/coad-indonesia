@@ -1,0 +1,56 @@
+.about-us {
+    .banner {
+        @apply relative min-h-[300px] flex items-center;
+        h2 {
+            text-transform: uppercase;
+            font-size: 36px;
+            color: #2c2c2c;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+    }
+    .about-banner-content {
+        text-align: center;
+
+        .about-title {
+            @apply mb-6;
+            text-transform: capitalize;
+            color: #4b4b4b;
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+        .about-sub-title {
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            display: block;
+            font-size: 18px;
+            color: #ee3231;
+        }
+        .short-desc {
+            color: #6c788c;
+            line-height: 30px;
+            p {
+                @apply mb-4;
+            }
+        }
+    }
+    .our-vision-mission {
+        h3 {
+            color: #060d20;
+            font-size: 2.625rem;
+            font-weight: 500;
+            line-height: 120%;
+        }
+        .desc {
+            color: #6d6e70;
+            ol {
+                list-style: auto;
+            }
+        }
+    }
+    .swiper-slide {
+        width: 100% !important;
+        max-width: 180px;
+    }
+}

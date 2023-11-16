@@ -1,0 +1,15 @@
+.gallery-wrapper {
+    .card-benefit {
+        @apply bg-[#dad7d7] rounded-xl p-4 w-[375px];
+        box-sizing: border-box;
+        .icon {
+            width: 24px;
+            height: 24px;
+            background-size: cover;
+            background-image: url("/assets/images/socmed/pdf.png");
+            &.docs {
+                background-image: url("/assets/images/socmed/google-docs.png");
+            }
+        }
+    }
+}

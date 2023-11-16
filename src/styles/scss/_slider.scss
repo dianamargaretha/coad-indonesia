@@ -1,0 +1,112 @@
+/*----------------------------------------*/
+/*  03. Slider
+/*----------------------------------------*/
+/* ---Main Slider--- */
+.swiper-wrapper {
+    max-height: 640px !important;
+}
+.slide {
+    &-inner {
+        @apply flex items-center justify-center;
+        &.bg-height {
+            min-height: 640px;
+        }
+    }
+    &-content {
+        // @include media-breakpoint-down(lg) {
+        //     text-align: center;
+        // }
+        .sub-title {
+            font-weight: 400;
+            font-size: 36px;
+            line-height: 30px;
+            display: block;
+            text-transform: uppercase;
+            // @include media-breakpoint-down(md) {
+            //     font-size: 25px;
+            // }
+        }
+        .title {
+            font-size: 78px;
+            text-transform: uppercase;
+            // @include media-breakpoint-down(md) {
+            //     font-size: 40px;
+            // }
+            &.font-weight-bold {
+                font-weight: 700;
+            }
+        }
+        .short-desc {
+            text-transform: uppercase;
+            font-size: 20px;
+            line-height: 1.1;
+            // @include media-breakpoint-down(md) {
+            //     font-size: 16px;
+            //     text-transform: capitalize;
+            // }
+        }
+    }
+    &-style {
+        &-2 {
+            .slide {
+                &-content {
+                    @apply text-white;
+                    .title {
+                        text-transform: capitalize;
+                        font-weight: 700;
+                        font-size: 60px;
+                        line-height: 1.1;
+                        // @include media-breakpoint-down(xxl) {
+                        //     font-size: 50px;
+                        //     line-height: 71px;
+                        // }
+                        @media (max-width: 479px) {
+                            font-size: 30px;
+                            line-height: 1.4;
+                        }
+                    }
+                    .subtitle {
+                        text-transform: capitalize;
+                        font-weight: 500;
+                        font-size: 48px;
+                        line-height: 1.1;
+                    }
+                    .short-desc {
+                        text-transform: capitalize;
+                        font-size: 24px;
+                        line-height: 1.2;
+                        font-weight: 300;
+                        @media (max-width: 479px) {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.videowrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 640px;
+    overflow: hidden;
+    .banner-image {
+        position: absolute;
+        width: 100% !important;
+        height: 100% !important;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        opacity: 1;
+        .video {
+            width: 100%;
+            height: 100% !important;
+            video {
+                object-fit: cover !important;
+            }
+        }
+    }
+}

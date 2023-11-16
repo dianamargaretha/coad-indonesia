@@ -1,0 +1,61 @@
+/*----------------------------------------*/
+/*  06. Animation
+/*----------------------------------------*/
+.swiper-slide {
+    .slide-inner {
+        .slide-content {
+            opacity: 0;
+        }
+    }
+    &.swiper-slide-active {
+        .slide-inner {
+            .slide-content {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+/* ---Slider Animation--- */
+.swiper-slide-active {
+    .animation-style-02 {
+        .slide-content {
+            .title {
+                animation-name: fadeInUp;
+                animation-delay: 1s;
+                animation-duration: 1s;
+                animation-fill-mode: both;
+                // @include media-breakpoint-down(lg) {
+                //     animation-delay: 2s;
+                // }
+            }
+            .short-desc {
+                animation-name: fadeInUp;
+                animation-delay: 1.5s;
+                animation-duration: 1s;
+                animation-fill-mode: both;
+                // @include media-breakpoint-down(lg) {
+                //     animation-delay: 2.5s;
+                // }
+            }
+            .button-wrap {
+                animation-name: fadeInUp;
+                animation-delay: 2s;
+                animation-duration: 1s;
+                animation-fill-mode: both;
+                // @include media-breakpoint-down(lg) {
+                //     animation-delay: 3s;
+                // }
+            }
+        }
+        .inner-img {
+            animation-name: fadeInUp;
+            animation-delay: 2.5s;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            // @include media-breakpoint-down(lg) {
+            //     animation-delay: 1.5s;
+            // }
+        }
+    }
+}

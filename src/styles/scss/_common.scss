@@ -1,0 +1,25 @@
+.btn {
+    @apply text-white bg-[#ee3231] uppercase px-8 py-4;
+}
+.section-title {
+    @apply mb-14;
+    .title {
+        position: relative;
+        padding-left: 50px;
+        font-size: 36px;
+        text-transform: uppercase;
+        font-weight: 700;
+        &:before {
+            background-color: #ee3231;
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            height: 2px;
+            width: 30px;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@import "common";
+@import "intro-overlay";
+@import "navbar";
+@import "footer";
+@import "slider";
+@import "animation";
+@import "home";
+@import "about-us";
+@import "product";
+@import "input";
+@import "off-canvas";
+@import "gallery";
+
+body {
+    @apply relative text-[#383838];
+}
