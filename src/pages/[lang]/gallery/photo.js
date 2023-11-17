@@ -1,6 +1,8 @@
 import React from 'react'
+import { gql, useQuery } from "@apollo/client";
+import Loader from '@/components/Loader';
 import isCurrentLang from '@/utils/isCurrentLang'
-
+// gallery - photo
 const Benefit = ({ imgUrl, title }) => {
     return (
         <div className='card-benefit'>
@@ -14,6 +16,22 @@ const Benefit = ({ imgUrl, title }) => {
 
 
 const video = () => {
+    const { data, loading, error } = useQuery(gql`
+    query {
+        post(id: "gallery-photo", idType: SLUG) {
+            galleryphoto {
+              catalog {
+                thumb {
+                  sourceUrl
+                }
+                title
+              }
+            }
+          }
+    }
+    `);
+    const { catalog } = data?.post?.galleryphoto ?? {}
+    console.log(catalog)
     return (
         <div>
             <div className='gallery-wrapper'>
@@ -21,10 +39,13 @@ const video = () => {
                     <div className='section-title'>
                         <h2 className='title uppercase'>{isCurrentLang('Photos', 'Foto')}</h2>
                     </div>
+                    {loading && <div className='flex justify-center'>
+                        <Loader />
+                    </div>}
                     <div className='flex flex-wrap justify-center gap-4'>
-                        <Benefit title={'COAD C-1 Standard Type'} imgUrl={'/assets/coad-images/product/C-1-Standard-Type/1.png'} />
-                        <Benefit title={'COAD C-2 Slim Type'} imgUrl={'/assets/coad-images/product/C-2-Slim-Type/1.png'} />
-                        <Benefit title={'COAD C-3 Recovery Type'} imgUrl={'/assets/coad-images/product/C-3-Recovery-Type/1.png'} />
+                        {catalog?.map((list, index) => {
+                            return <Benefit key={index} title={list?.title} imgUrl={list?.thumb?.sourceUrl} />
+                        })}
                     </div>
                 </div>
             </div>

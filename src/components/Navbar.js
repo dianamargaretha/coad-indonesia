@@ -157,10 +157,7 @@ const Navbar = () => {
                                             query: { lang: router?.query?.lang }
                                         }}>
                                             <div className="header-logo">
-                                                <img
-                                                    src="/assets/coad-images/logo-coad.png"
-                                                    alt="Header Logo"
-                                                />
+                                                <img width={300} src='/assets/coad-images/coad-indonesia.png' alt='Coad Indonesia' />
                                             </div>
                                         </Link>
 
