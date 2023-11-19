@@ -278,7 +278,7 @@ export default function Home() {
           <Swiper
             navigation
             modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
-            className="mySwiper"
+            className="banner-swiper"
             loop={true}
             pagination={{ clickable: true }}
             autoplay={{
@@ -412,14 +412,6 @@ export default function Home() {
                   }
                 }}
               >
-                {/* productunggulan {
-          productname
-          productcategory
-          linkproduct
-          imageproduct {
-            sourceUrl
-          }
-        } */}
                 {productunggulan?.map((item, index) => (
                   <SwiperSlide key={index}>
                     <div className='relative flex justify-center items-center'>
@@ -430,22 +422,19 @@ export default function Home() {
                         height={337}
                         priority
                       />
-                      <div className='absolute bg-white mx-10 p-2 text-center text-xs'>{item?.productname}</div>
+                      <div className='absolute bg-white mx-10 p-2 text-center text-xs'>
+                        <Link href={{
+                          pathname: `/[lang]/product/${item?.linkproduct}`,
+                          query: { lang: router?.query?.lang }
+                        }}>
+                          {item?.productname}
+                        </Link>
+                      </div>
                     </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
             </div>
-            {/* <div className='flex flex-wrap justify-center md:justify-start gap-8'>
-              {loading && loadingProduct ? 'loading' : (
-                productCategory?.map((product, idx) => (
-                  <div key={idx}>
-                    <img src={product?.thumb?.sourceUrl} alt='High Speed Door' />
-                    <h2 className='mt-4'>{product?.title}</h2>
-                  </div>
-                ))
-              )}
-            </div> */}
           </div>
         </section>
         <section className='mt-28 section-worldwide'>
@@ -456,7 +445,7 @@ export default function Home() {
                   <div className='info-box'>
                     <div className='info-box-inner'>
                       <div className='content'>
-                        <h3 className='info-title'>{isCurrentLang(productlistinfo?.titleEn, productlistinfo?.title)}</h3>
+                        <h3 className='info-title font-bold'>{isCurrentLang(productlistinfo?.titleEn, productlistinfo?.title)}</h3>
                       </div>
                     </div>
                   </div>

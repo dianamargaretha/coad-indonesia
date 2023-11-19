@@ -190,22 +190,22 @@ const Navbar = () => {
                                                             </li>
                                                             <li>
                                                                 <Link href={{
-                                                                    pathname: '/[lang]',
+                                                                    pathname: '/[lang]/product/industrial-overhead-door-30',
                                                                     query: { lang: router?.query?.lang }
                                                                 }}>{isCurrentLang('Overhead Door', 'Overhead Door')}</Link>
                                                             </li>
                                                             <li>
                                                                 <Link href={{
-                                                                    pathname: '/[lang]',
+                                                                    pathname: '/[lang]/product/garage-door-40',
                                                                     query: { lang: router?.query?.lang }
-                                                                }}>{isCurrentLang('Sliding Door', 'Sliding Door')}</Link>
+                                                                }}>{isCurrentLang('Garage Door', 'Garage Door')}</Link>
                                                             </li>
-                                                            <li>
+                                                            {/* <li>
                                                                 <Link href={{
                                                                     pathname: '/[lang]',
                                                                     query: { lang: router?.query?.lang }
                                                                 }}>{isCurrentLang('Sensor', 'Sensor')}</Link>
-                                                            </li>
+                                                            </li> */}
                                                         </ul>
                                                     </li>
 

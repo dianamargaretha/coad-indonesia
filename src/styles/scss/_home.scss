@@ -53,3 +53,8 @@
         max-width: 280px;
     }
 }
+.banner-swiper {
+    .swiper-wrapper .swiper-slide {
+        @apply bg-gray-700;
+    }
+}

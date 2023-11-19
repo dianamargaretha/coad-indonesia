@@ -42,7 +42,7 @@ const video = () => {
                     {loading && <div className='flex justify-center'>
                         <Loader />
                     </div>}
-                    <div className='flex flex-wrap justify-center gap-4'>
+                    <div className='flex flex-wrap justify-start gap-4'>
                         {catalog?.map((list, index) => {
                             return <Benefit key={index} title={list?.title} imgUrl={list?.thumb?.sourceUrl} />
                         })}
