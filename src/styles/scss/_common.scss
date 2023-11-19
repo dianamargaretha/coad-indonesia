@@ -23,3 +23,9 @@
         }
     }
 }
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after,
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+    color: #ee3231;
+}
