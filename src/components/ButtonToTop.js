@@ -5,10 +5,8 @@ const ButtonToTop = ({ className }) => {
     const [isShow, setIsShow] = useState(false);
 
     useEffect(() => {
-        console.log('butttonnnn')
         const updateIsShow = () =>
-            console.log(window.innerHeight + window.scrollY)
-        setIsShow(window.innerHeight + window.scrollY >= document.body.offsetHeight - 50)
+            setIsShow(window.innerHeight + window.scrollY >= document.body.offsetHeight - 50)
 
         document.addEventListener('scroll', updateIsShow)
         return () => document.removeEventListener('scroll', updateIsShow)

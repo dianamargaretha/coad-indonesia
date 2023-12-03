@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['localhost', 'navajowhite-hedgehog-691446.hostingersite.com'],
+        domains: ['localhost', '195.35.14.168'],
     },
 }
 

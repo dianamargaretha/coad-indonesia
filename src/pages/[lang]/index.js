@@ -250,7 +250,6 @@ export default function Home() {
       scrollTrigger: {
         trigger: '.section-our-client',
         start: "10% center",
-        end: "bottom center",
         toggleActions: "restart pause resume pause",
         markers: false
       }

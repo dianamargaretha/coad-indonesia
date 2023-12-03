@@ -1,7 +1,25 @@
 import React from 'react'
 import isCurrentLang from '@/utils/isCurrentLang'
-
+import { gql, useQuery } from "@apollo/client";
 const Footer = () => {
+    const { data: dataHomePage, loading: loadingHomePage, error: errorHomePage } = useQuery(gql`
+  query {
+    post(id: "homepage", idType: SLUG) {
+      homepage {
+        footer {
+          branch {
+            country
+            flag
+            link
+          }
+        }
+      }
+    }
+  }
+  `);
+
+    const { footer } = dataHomePage?.post?.homepage ?? {}
+    console.log({ footer })
     return (
         <footer>
             <div className='container'>
@@ -9,22 +27,14 @@ const Footer = () => {
                     <div className='w-4/12'>
                         <h3 className='uppercase font-bold tracking-wider mb-6'>{isCurrentLang('COAD BRANCH', 'CABANG COAD')}</h3>
                         <div className='flex flex-col gap-2'>
-                            <div className='flex items-center gap-2'>
-                                <img className='mt-[6px]' src='/assets/coad-images/vietnam.svg' alt='Coad Vietnam' />
-                                <p>Vietnam</p>
-                            </div>
-                            <div className='flex items-center gap-2'>
-                                <img className='mt-[6px]' src='/assets/coad-images/south-korea.svg' alt='Coad Vietnam' />
-                                <p>Korea</p>
-                            </div>
-                            <div className='flex items-center gap-2'>
-                                <img className='mt-[6px]' src='/assets/coad-images/japan.svg' alt='Coad Japan' />
-                                <p>Japan</p>
-                            </div>
-                            <div className='flex items-center gap-2'>
-                                <img className='mt-[6px]' src='/assets/coad-images/indonesia.svg' alt='Coad Indonesia' />
-                                <p>Indonesia</p>
-                            </div>
+                            {footer?.branch?.map((item, index) => (
+                                <a href={item?.link} target='_blank'>
+                                    <div className='flex items-center gap-2' key={index}>
+                                        <img className='mt-[6px]' src={`/assets/coad-images/${item.flag}`} alt={`Coad ${item?.country}`} />
+                                        <p>{item?.country}</p>
+                                    </div>
+                                </a>
+                            ))}
                         </div>
                     </div>
                     <div className='w-4/12'>

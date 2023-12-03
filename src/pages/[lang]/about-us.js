@@ -42,12 +42,18 @@ const aboutUs = () => {
                     visi
                     visiEn
                   }
+                  ourBranch {
+                    address
+                    country
+                    email
+                    phone
+                  }
                 }
               }
         }
         `);
 
-    const { certification, aboutUs } = data?.post?.aboutus ?? {}
+    const { certification, aboutUs, ourBranch } = data?.post?.aboutus ?? {}
 
     //Clear ScrollTrigger other route
     useEffect(() => {
@@ -131,57 +137,25 @@ const aboutUs = () => {
                         <h2 className='title'>{isCurrentLang('Our Branch', 'Cabang Kami')}</h2>
                     </div>
                     <div className='flex flex-wrap gap-8'>
-                        <div className='flex-1'>
-                            <h3 className='uppercase font-bold tracking-wider mb-6'>KOREA</h3>
-                            <div className='flex flex-col gap-4'>
-                                <div className='flex items-start gap-2'>
-                                    <img className='mt-[6px]' src='/assets/coad-images/location-pin-dark.svg' alt='Address Coad Indonesia' />
-                                    <p> 202-37, Hyundai Kia-ro, Namyang-eup, Hwangseong-si, Gyeonggi-do</p>
-                                </div>
-                                <div className='flex items-start gap-2'>
-                                    <img className='mt-[6px]' src='/assets/coad-images/telephone-icon-dark.svg' alt='Contact Us Coad Indonesia' />
-                                    <p>+82-02-1899-7081</p>
-                                </div>
-                                <div className='flex items-start gap-2'>
-                                    <img className='mt-[6px]' src='/assets/coad-images/email-icon-dark.svg' alt='Email Coad Indonesia' />
-                                    <p>sales@coaddoor.com</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='flex-1'>
-                            <h3 className='uppercase font-bold tracking-wider mb-6'>JEPANG</h3>
-                            <div className='flex flex-col gap-4'>
-                                <div className='flex items-start gap-2'>
-                                    <img className='mt-[6px]' src='/assets/coad-images/location-pin-dark.svg' alt='Address Coad Indonesia' />
-                                    <p>9F, 1-8-17 Edobori, Nishi-ku, Osaka City, Japan</p>
-                                </div>
-                                <div className='flex items-start gap-2'>
-                                    <img className='mt-[6px]' src='/assets/coad-images/telephone-icon-dark.svg' alt='Contact Us Coad Indonesia' />
-                                    <p> +81-0120-920-684</p>
-                                </div>
-                                <div className='flex items-start gap-2'>
-                                    <img className='mt-[6px]' src='/assets/coad-images/email-icon-dark.svg' alt='Email Coad Indonesia' />
-                                    <p>sheetshutter@coadjapan.com</p>
+                        {ourBranch?.map((item, index) => (
+                            <div className='flex-1' key={index}>
+                                <h3 className='uppercase font-bold tracking-wider mb-6'>{item?.country}</h3>
+                                <div className='flex flex-col gap-4'>
+                                    <div className='flex items-start gap-2'>
+                                        <img className='mt-[6px]' src='/assets/coad-images/location-pin-dark.svg' alt={`Address Coad ${item?.country}`} />
+                                        <p> {item?.address}</p>
+                                    </div>
+                                    <div className='flex items-start gap-2'>
+                                        <img className='mt-[6px]' src='/assets/coad-images/telephone-icon-dark.svg' alt={`Contact Us Coad ${item?.country}`} />
+                                        <p>{item?.phone}</p>
+                                    </div>
+                                    <div className='flex items-start gap-2'>
+                                        <img className='mt-[6px]' src='/assets/coad-images/email-icon-dark.svg' alt={`Email Coad ${item?.country}`} />
+                                        <p>{item?.email}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className='flex-1'>
-                            <h3 className='uppercase font-bold tracking-wider mb-6'>VIETNAM</h3>
-                            <div className='flex flex-col gap-4'>
-                                <div className='flex items-start gap-2'>
-                                    <img className='mt-[6px]' src='/assets/coad-images/location-pin-dark.svg' alt='Address Coad Indonesia' />
-                                    <p>595 Lê Thị Riêng, Khu phố 3, Phường Thới An, Quận 12, TP.HCM</p>
-                                </div>
-                                <div className='flex items-start gap-2'>
-                                    <img className='mt-[6px]' src='/assets/coad-images/telephone-icon-dark.svg' alt='Contact Us Coad Indonesia' />
-                                    <p>+84-366-999-242</p>
-                                </div>
-                                <div className='flex items-start gap-2'>
-                                    <img className='mt-[6px]' src='/assets/coad-images/email-icon-dark.svg' alt='Email Coad Indonesia' />
-                                    <p>coadhcm@gmail.com</p>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>
