@@ -14,7 +14,6 @@ if (typeof window !== "undefined") {
 
 const Navbar = () => {
     const router = useRouter();
-    console.log({ router })
 
     useEffect(() => {
         // Clean up all scroll trigger

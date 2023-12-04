@@ -5,6 +5,13 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+        <script
+          type="text/javascript"
+          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
+          id="aisensy-wa-widget"
+          widget-id="tZVjPw"
+        >
+        </script>
       </Head>
       <body>
         <Main />

@@ -21,7 +21,7 @@ const App = props => {
         {/* {screenSize?.width < 1024 ? <NavbarMobile /> : <Navbar />} */}
         <Navbar />
         <Component {...pageProps} />
-        <ContactUs />
+        {/* <ContactUs /> */}
         <ButtonToTop />
         <Footer />
       </div>
