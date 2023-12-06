@@ -2,6 +2,7 @@ import React from 'react'
 import { gql, useQuery } from "@apollo/client";
 import Loader from '@/components/Loader';
 import isCurrentLang from '@/utils/isCurrentLang'
+import PublicHead from '@/components/PublicHead';
 // gallery - photo
 const Benefit = ({ imgUrl, title }) => {
     return (
@@ -31,9 +32,9 @@ const video = () => {
     }
     `);
     const { catalog } = data?.post?.galleryphoto ?? {}
-    console.log(catalog)
     return (
         <div>
+            <PublicHead title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | Catalog | Gallery | COAD" />
             <div className='gallery-wrapper'>
                 <div className='container py-16'>
                     <div className='section-title'>

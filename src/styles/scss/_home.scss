@@ -58,3 +58,11 @@
         @apply bg-gray-700;
     }
 }
+.section-product-category {
+    .each-product-unggulan {
+        transition: all 0.3s ease-out;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}

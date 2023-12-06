@@ -130,12 +130,12 @@ const Navbar = () => {
                                         </div>
                                         <div>
                                             <a href='https://pintuhighspeeddoor.com/' target='_blank'>
-                                                <img width={24} height={24} src='/assets/images/socmed/blogger-round-color-icon.svg' alt='Wordpress Coad Indonesia' />
+                                                <img width={24} height={24} src='/assets/images/socmed/wordpress.png' alt='Wordpress Coad Indonesia' />
                                             </a>
                                         </div>
                                         <div>
                                             <a href='https://coadindonesiaoverheaddoorgaragedoor.wordpress.com/' target='_blank'>
-                                                <img width={24} height={24} src='/assets/images/socmed/blogger-round-color-icon.svg' alt='Wordpress Coad Indonesia' />
+                                                <img width={24} height={24} src='/assets/images/socmed/wordpress.png' alt='Wordpress Coad Indonesia' />
                                             </a>
                                         </div>
                                     </div>

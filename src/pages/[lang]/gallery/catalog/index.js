@@ -3,6 +3,7 @@ import isCurrentLang from '@/utils/isCurrentLang'
 import { gql, useQuery } from "@apollo/client";
 import { useRouter } from 'next/router'
 import Loader from '@/components/Loader';
+import PublicHead from '@/components/PublicHead';
 
 const Benefit = ({ imgUrl, title, fileUrl, type }) => {
     return (
@@ -41,6 +42,7 @@ const catalog = () => {
     const { catalog } = data?.post?.gallerycatalog ?? {}
     return (
         <div className='gallery-wrapper'>
+            <PublicHead title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | Catalog | Gallery | COAD" />
             <div className='container py-16'>
                 <div className='section-title'>
                     <h2 className='title uppercase'>{isCurrentLang('Catalog', 'Katalog')}</h2>

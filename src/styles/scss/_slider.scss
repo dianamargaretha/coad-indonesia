@@ -110,3 +110,15 @@
         }
     }
 }
+@media (min-width: 1500px) {
+    .swiper-wrapper {
+        max-height: calc(100vh - 138px) !important;
+    }
+    .slide {
+        &-inner {
+            &.bg-height {
+                min-height: calc(100vh - 138px);
+            }
+        }
+    }
+}

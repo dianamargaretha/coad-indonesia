@@ -23,6 +23,7 @@ import 'swiper/css/autoplay';
 // import required modules
 import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide, useSwiperSlide } from 'swiper/react';
+import PublicHead from '@/components/PublicHead';
 
 const aboutUs = () => {
     const { data, loading, error } = useQuery(gql`
@@ -88,6 +89,7 @@ const aboutUs = () => {
 
     return (
         <div className='about-us'>
+            <PublicHead title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | About us  | Company | COAD" />
             <div className='banner'>
                 <Image src={bannerAbout}
                     objectFit="cover"

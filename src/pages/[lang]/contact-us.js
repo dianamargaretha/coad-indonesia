@@ -1,6 +1,7 @@
 import React, { useReducer, useState } from 'react'
 import isCurrentLang from '@/utils/isCurrentLang'
 import { validateInput, validateForm } from '@/lib/validation'
+import PublicHead from '@/components/PublicHead';
 
 
 const InputText = ({ required, ...props }) => {
@@ -125,6 +126,7 @@ const contactUs = () => {
     }
     return (
         <div>
+            <PublicHead title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | 견적문의 | Cs center | COAD" />
             <div className='container mt-10'>
                 <div className='section-title'>
                     <h2 className='title uppercase'>{isCurrentLang('Contact Us', 'Hubungi Kami')}</h2>

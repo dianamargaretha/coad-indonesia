@@ -27,6 +27,7 @@ import { Swiper, SwiperSlide, useSwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import isCurrentLang from '@/utils/isCurrentLang';
 import IntroOverlay from '@/components/IntroOverlay';
+import PublicHead from '@/components/PublicHead';
 
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 
@@ -259,11 +260,16 @@ export default function Home() {
         x: 100,
         duration: 0.5
       })
+      .from('.section-our-client h3.desc', {
+        autoAlpha: 0,
+        x: 100,
+        duration: 0.5
+      })
       .from('.section-our-client .list-client', {
         autoAlpha: 0,
         y: 100,
         duration: 0.5
-      }, 0)
+      }, 0.5)
   }, [loading, loadingProduct, loadingHomePage])
 
   if (loading || loadingProduct || loadingHomePage) return <IntroOverlay />
@@ -271,6 +277,7 @@ export default function Home() {
     <main
       className={`${inter.className}`}
     >
+      <PublicHead title="high-speed-door, rapid-door, pintu-high-speed-door, pintu-rapid-door, harga-high-speed-door, harga-rapid-door, jual-high-speed-door, jual-rapid-door, pvc-roller-shutter-door- CONVENIENCE auto door | COAD CONVENIENCE AUTO DOOR" />
       {/* <Navbar /> */}
       <div className='min-h-screen'>
         <section>
@@ -345,7 +352,7 @@ export default function Home() {
                 ) : (
                   <div className='slide-style-2 animation-style-02'>
                     <div className="slide-inner bg-height py-6 px-16">
-                      <div className='banner-image absolute top-0 left-0 object-cover bg-cover w-full h-full brightness-75' style={{ backgroundImage: `url(${slide?.slideBanner?.sourceUrl})` }}></div>
+                      <div className='banner-image absolute top-0 left-0 object-cover bg-cover bg-center w-full h-full brightness-75' style={{ backgroundImage: `url(${slide?.slideBanner?.sourceUrl})` }}></div>
                       <div className="relative z-10 w-full flex gap-16">
                         <div className="flex-[7]">
                           <div className="slide-content">
@@ -360,15 +367,11 @@ export default function Home() {
                                 {isCurrentLang(slide.descEn, slide.desc)}
                               </p>
                               <div className="button-wrap pt-8 pb-2">
-                                <Link href={{
-                                  pathname: '/[lang]',
-                                  query: { lang: router?.query?.lang }
-                                }}>
+                                <a href='https://api.whatsapp.com/send?phone=6281211102255&text=Hi' target='_blank'>
                                   <span
                                     className="btn btn-custom-size lg-size btn-primary"
-                                    href="#"
                                   >{isCurrentLang('Contact Us', 'Hubungi Kami')}</span>
-                                </Link>
+                                </a>
                               </div>
                             </div>
                           </div>
@@ -413,23 +416,24 @@ export default function Home() {
               >
                 {productunggulan?.map((item, index) => (
                   <SwiperSlide key={index}>
-                    <div className='relative flex justify-center items-center'>
-                      <Image
-                        src={item?.imageproduct?.sourceUrl}
-                        alt={index}
-                        width={270}
-                        height={337}
-                        priority
-                      />
-                      <div className='absolute bg-white mx-10 p-2 text-center text-xs'>
-                        <Link href={{
-                          pathname: `/[lang]/product/${item?.linkproduct}`,
-                          query: { lang: router?.query?.lang }
-                        }}>
+                    <Link href={{
+                      pathname: `/[lang]/product/${item?.linkproduct}`,
+                      query: { lang: router?.query?.lang }
+                    }}>
+                      <div className='each-product-unggulan relative flex justify-center items-center'>
+                        <Image
+                          src={item?.imageproduct?.sourceUrl}
+                          alt={index}
+                          width={270}
+                          height={337}
+                          priority
+                        />
+                        <div className='label absolute bg-white  p-2 text-center text-xs'>
                           {item?.productname}
-                        </Link>
+                        </div>
                       </div>
-                    </div>
+
+                    </Link>
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -489,26 +493,30 @@ export default function Home() {
             </div>
             <div className='flex flex-wrap justify-center md:justify-start gap-4'>
               <div className='flex-initial w-[70%]'>
-                <h3 className='text-xl text-[#666666] leading-normal'>{isCurrentLang(ourclient?.descriptionEn, ourclient?.description)}</h3>
+                <h3 className='desc text-xl text-[#666666] leading-normal'>{isCurrentLang(ourclient?.descriptionEn, ourclient?.description)}</h3>
               </div>
             </div>
-            <div className='list-client flex flex-wrap gap-8 mt-16 max-w-[1024px] mx-auto justify-center items-center'>
-              {ourclient?.listclient?.map((item, index) => (
-                <div className='each' key={index}>
-                  <Image
-                    src={item?.logo?.sourceUrl}
-                    alt={item?.logo?.sourceUrl}
-                    width={120}
-                    height={120}
-                    className="w-full h-auto"
-                    priority
-                  />
-                </div>
-              ))}
+            <div className='list-client'>
+              <div className='flex flex-wrap gap-8 mt-16 max-w-[1024px] mx-auto justify-center items-center'>
+                {ourclient?.listclient?.map((item, index) => (
+                  <div className='each' key={index}>
+                    <Image
+                      src={item?.logo?.sourceUrl}
+                      alt={item?.logo?.sourceUrl}
+                      width={120}
+                      height={120}
+                      className="w-full h-auto"
+                      priority
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <h3 className='flex justify-center mt-10 text-lg'>{isCurrentLang('+ many more', '+ masih banyak lagi')}</h3>
             </div>
           </div>
         </section>
-      </div>
-    </main>
+      </div >
+    </main >
   )
 }
