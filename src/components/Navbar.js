@@ -107,36 +107,48 @@ const Navbar = () => {
                         <div className='container'>
                             <div className="flex justify-between items-center">
                                 <div className="header-top-left">
-                                    <div className='flex gap-2'>
-                                        <div>
-                                            <a href='https://www.facebook.com/profile.php?id=100063706263984&viewas=&show_switched_toast=false&show_switched_tooltip=false&is_tour_dismissed=false&is_tour_completed=false&show_podcast_settings=false&show_community_review_changes=false&should_open_composer=false&badge_type=NEW_MEMBER&show_community_rollback_toast=false&show_community_rollback=false&show_follower_visibility_disclosure=false&bypass_exit_warning=true' target='_blank'>
-                                                <img width={24} height={24} src='/assets/images/socmed/fb.svg' alt='Facebook Coad Indonesia' />
-                                            </a>
+                                    <div className='flex gap-16'>
+                                        <div className='flex gap-2'>
+                                            <div>
+                                                <a href='https://www.facebook.com/profile.php?id=100063706263984&viewas=&show_switched_toast=false&show_switched_tooltip=false&is_tour_dismissed=false&is_tour_completed=false&show_podcast_settings=false&show_community_review_changes=false&should_open_composer=false&badge_type=NEW_MEMBER&show_community_rollback_toast=false&show_community_rollback=false&show_follower_visibility_disclosure=false&bypass_exit_warning=true' target='_blank'>
+                                                    <img width={24} height={24} src='/assets/images/socmed/fb.svg' alt='Facebook Coad Indonesia' />
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href='https://www.linkedin.com/company/pt-blue-sky-indonusa-pintu-high-speed-door' target='_blank'>
+                                                    <img width={24} height={24} src='/assets/images/socmed/link.svg' alt='LinkedIn Coad Indonesia' />
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href='https://www.youtube.com/channel/UCUQKv9js7oDcl0afO7tPfXw' target='_blank'>
+                                                    <img width={24} height={24} src='/assets/images/socmed/yt.svg' alt='Youtube Coad Indonesia' />
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href='https://www.coadautodoor.com/' target='_blank'>
+                                                    <img width={24} height={24} src='/assets/images/socmed/blogger-round-color-icon.svg' alt='Blog Coad Indonesia' />
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href='https://pintuhighspeeddoor.com/' target='_blank'>
+                                                    <img width={24} height={24} src='/assets/images/socmed/wordpress.png' alt='Wordpress Coad Indonesia' />
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href='https://coadindonesiaoverheaddoorgaragedoor.wordpress.com/' target='_blank'>
+                                                    <img width={24} height={24} src='/assets/images/socmed/wordpress.png' alt='Wordpress Coad Indonesia' />
+                                                </a>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <a href='https://www.linkedin.com/company/pt-blue-sky-indonusa-pintu-high-speed-door' target='_blank'>
-                                                <img width={24} height={24} src='/assets/images/socmed/link.svg' alt='LinkedIn Coad Indonesia' />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href='https://www.youtube.com/channel/UCUQKv9js7oDcl0afO7tPfXw' target='_blank'>
-                                                <img width={24} height={24} src='/assets/images/socmed/yt.svg' alt='Youtube Coad Indonesia' />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href='https://www.coadautodoor.com/' target='_blank'>
-                                                <img width={24} height={24} src='/assets/images/socmed/blogger-round-color-icon.svg' alt='Blog Coad Indonesia' />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href='https://pintuhighspeeddoor.com/' target='_blank'>
-                                                <img width={24} height={24} src='/assets/images/socmed/wordpress.png' alt='Wordpress Coad Indonesia' />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href='https://coadindonesiaoverheaddoorgaragedoor.wordpress.com/' target='_blank'>
-                                                <img width={24} height={24} src='/assets/images/socmed/wordpress.png' alt='Wordpress Coad Indonesia' />
-                                            </a>
+                                        <div className='flex gap-4'>
+                                            <div className='flex items-start gap-2'>
+                                                <img className='mt-[6px]' src='/assets/coad-images/telephone-icon-dark.svg' alt='Contact Us Coad Indonesia' />
+                                                <p>+62-21-299-16111</p>
+                                            </div>
+                                            <div className='flex items-start gap-2'>
+                                                <img className='mt-[6px]' src='/assets/coad-images/email-icon-dark.svg' alt='Email Coad Indonesia' />
+                                                <p>mkt@coad.co.id</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -156,7 +168,7 @@ const Navbar = () => {
                                             query: { lang: router?.query?.lang }
                                         }}>
                                             <div className="header-logo">
-                                                <img width={300} src='/assets/coad-images/coad-indonesia.png' alt='Coad Indonesia' />
+                                                <img width={200} src='/assets/coad-images/coad.png' alt='Coad Indonesia' />
                                             </div>
                                         </Link>
 
@@ -199,12 +211,6 @@ const Navbar = () => {
                                                                     query: { lang: router?.query?.lang }
                                                                 }}>{isCurrentLang('Garage Door', 'Garage Door')}</Link>
                                                             </li>
-                                                            {/* <li>
-                                                                <Link href={{
-                                                                    pathname: '/[lang]',
-                                                                    query: { lang: router?.query?.lang }
-                                                                }}>{isCurrentLang('Sensor', 'Sensor')}</Link>
-                                                            </li> */}
                                                         </ul>
                                                     </li>
 
@@ -225,6 +231,12 @@ const Navbar = () => {
                                                                     pathname: '/[lang]/gallery/catalog',
                                                                     query: { lang: router?.query?.lang }
                                                                 }}>{isCurrentLang('Catalog', 'Katalog')}</Link>
+                                                            </li>
+                                                            <li>
+                                                                <Link href={{
+                                                                    pathname: '/[lang]/gallery/drawings',
+                                                                    query: { lang: router?.query?.lang }
+                                                                }}>{isCurrentLang('Drawings', 'Gambar')}</Link>
                                                             </li>
                                                         </ul>
                                                     </li>

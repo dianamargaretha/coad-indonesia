@@ -20,7 +20,7 @@ const video = () => {
     const { data, loading, error } = useQuery(gql`
     query {
         post(id: "gallery-photo", idType: SLUG) {
-            galleryphoto {
+            galleryPhoto {
               catalog {
                 thumb {
                   sourceUrl
@@ -31,7 +31,7 @@ const video = () => {
           }
     }
     `);
-    const { catalog } = data?.post?.galleryphoto ?? {}
+    const { catalog } = data?.post?.galleryPhoto ?? {}
     return (
         <div>
             <PublicHead title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | Catalog | Gallery | COAD" />

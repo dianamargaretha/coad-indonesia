@@ -53,6 +53,12 @@
         max-width: 280px;
     }
 }
+.section-our-client {
+    .swiper-slide {
+        width: 100% !important;
+        max-width: 220px;
+    }
+}
 .banner-swiper {
     .swiper-wrapper .swiper-slide {
         @apply bg-gray-700;

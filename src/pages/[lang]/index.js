@@ -481,7 +481,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex-1 homebanner-about-us'>
-                <Image src={aboutUsBanner} alt='about us' />
+                <Image src={aboutUsBanner} alt='about us' width={'100%'} />
               </div>
             </div>
           </div>
@@ -497,22 +497,46 @@ export default function Home() {
               </div>
             </div>
             <div className='list-client'>
-              <div className='flex flex-wrap gap-8 mt-16 max-w-[1024px] mx-auto justify-center items-center'>
-                {ourclient?.listclient?.map((item, index) => (
-                  <div className='each' key={index}>
-                    <Image
-                      src={item?.logo?.sourceUrl}
-                      alt={item?.logo?.sourceUrl}
-                      width={120}
-                      height={120}
-                      className="w-full h-auto"
-                      priority
-                    />
-                  </div>
-                ))}
+              <div className='flex flex-wrap gap-8 mt-16 mx-auto justify-center items-center'>
+                <Swiper
+                  modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
+                  initialSlide={3}
+                  loop={false}
+                  slidesPerView={"auto"}
+                  spaceBetween={32}
+                  navigation
+                  pagination={{ clickable: true }}
+                  autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                  }}
+                  breakpoints={{
+                    640: {
+                      spaceBetween: 20
+                    },
+                    768: {
+                      spaceBetween: 32
+                    }
+                  }}
+                >
+                  {ourclient?.listclient?.map((item, index) => (
+                    <SwiperSlide key={index}>
+                      <div className='each' key={index}>
+                        <Image
+                          src={item?.logo?.sourceUrl}
+                          alt={item?.logo?.sourceUrl}
+                          width={120}
+                          height={120}
+                          className="w-full h-auto"
+                          priority
+                        />
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
               </div>
+              {/* <h3 className='flex justify-center mt-10 text-lg'>{isCurrentLang('+ many more', '+ masih banyak lagi')}</h3> */}
 
-              <h3 className='flex justify-center mt-10 text-lg'>{isCurrentLang('+ many more', '+ masih banyak lagi')}</h3>
             </div>
           </div>
         </section>

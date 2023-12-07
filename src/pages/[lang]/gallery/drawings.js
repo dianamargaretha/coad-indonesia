@@ -23,9 +23,9 @@ const catalog = () => {
     const router = useRouter()
     const { data, loading, error } = useQuery(gql`
     query {
-        post(id: "gallery-catalog", idType: SLUG) {
-            galleryCatalog {
-              catalog {
+        post(id: "gallery-drawings", idType: SLUG) {
+            galleryDrawing {
+              drawing {
                 fieldGroupName
                 file {
                   mediaItemUrl
@@ -40,19 +40,19 @@ const catalog = () => {
           }
     }
     `);
-    const { catalog } = data?.post?.galleryCatalog ?? {}
+    const { drawing } = data?.post?.galleryDrawing ?? {}
     return (
         <div className='gallery-wrapper'>
             <PublicHead title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | Catalog | Gallery | COAD" />
             <div className='container py-16'>
                 <div className='section-title'>
-                    <h2 className='title uppercase'>{isCurrentLang('Catalog', 'Katalog')}</h2>
+                    <h2 className='title uppercase'>{isCurrentLang('Drawings', 'Gambar')}</h2>
                 </div>
                 {loading && <div className='flex justify-center'>
                     <Loader />
                 </div>}
                 <div className='flex flex-wrap justify-start gap-4'>
-                    {catalog?.map((list, index) => {
+                    {drawing?.map((list, index) => {
                         return (
                             <div key={index}>
                                 <Benefit type={list?.type} title={list?.title} fileUrl={list?.file?.mediaItemUrl} imgUrl={list?.thumb?.sourceUrl} />

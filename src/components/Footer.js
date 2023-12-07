@@ -28,7 +28,7 @@ const Footer = () => {
                         <h3 className='uppercase font-bold tracking-wider mb-6'>{isCurrentLang('COAD BRANCH', 'CABANG COAD')}</h3>
                         <div className='flex flex-col gap-2'>
                             {footer?.branch?.map((item, index) => (
-                                <a href={item?.link} target='_blank'>
+                                <a href={item?.link} target='_blank' key={index}>
                                     <div className='flex items-center gap-2' key={index}>
                                         <img className='mt-[6px]' src={`/assets/coad-images/${item.flag}`} alt={`Coad ${item?.country}`} />
                                         <p>{item?.country}</p>
@@ -42,7 +42,8 @@ const Footer = () => {
                         <div className='flex flex-col gap-4'>
                             <div className='flex items-start gap-2'>
                                 <img className='mt-[6px]' src='/assets/coad-images/location-pin.svg' alt='Address Coad Indonesia' />
-                                <p>The Belleza Shopping Arcade Lt. 1 Unit 106
+                                <p><span className='block'>PT Bluesky Indonusa,</span>
+                                    The Belleza Shopping Arcade Lt. 1 Unit 106
                                     Jl. Letjen Soepeno, Grogol Utara, Kebayoran Lama, Jakarta Selatan</p>
                             </div>
                             <div className='flex items-start gap-2'>
@@ -58,7 +59,7 @@ const Footer = () => {
                 </div>
                 <div className="w-full border-b opacity-50 border-white"></div>
                 <div className='flex justify-between py-10'>
-                    <img width={300} src='/assets/coad-images/coad-indonesia.png' alt='Coad Indonesia' />
+                    <img width={300} src='/assets/coad-images/coad.png' alt='Coad Indonesia' />
                     <p>2023 Copyright &copy; COAD INDO</p>
 
                 </div>
