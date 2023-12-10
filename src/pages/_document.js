@@ -8,13 +8,22 @@ export default function Document() {
         <link rel="icon" href="/assets/favicon.ico" sizes="any" />
         <title>high-speed-door, rapid-door, pintu-high-speed-door, pintu-rapid-door, harga-high-speed-door, harga-rapid-door, jual-high-speed-door, jual-rapid-door, pvc-roller-shutter-door- CONVENIENCE auto door | COAD CONVENIENCE AUTO DOOR</title>
         {/* Plugin wa chat */}
-        <script
+        {/* <script
           type="text/javascript"
           src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
           id="aisensy-wa-widget"
           widget-id="n3aL3y"
         >
+        </script> */}
+
+        <script
+          type="text/javascript"
+          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
+          id="aisensy-wa-widget"
+          widget-id="IdxWMk"
+        >
         </script>
+
       </Head>
       <body>
         <Main />

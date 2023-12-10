@@ -96,7 +96,9 @@ const aboutUs = () => {
                     fill
                     alt="About Coad Indonesia" />
                 <div className='container relative z-2'>
-                    <h2>{isCurrentLang('ABOUT US', 'TENTANG KAMI')}</h2>
+
+                    <h2><span className='py-4 px-8  bg-white/50 inline-flex'>{isCurrentLang('ABOUT US', 'TENTANG KAMI')} </span></h2>
+
                 </div>
             </div>
             <div className='container about-banner-content py-24'>
