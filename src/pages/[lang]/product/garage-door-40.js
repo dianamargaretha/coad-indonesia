@@ -76,7 +76,7 @@ const index = () => {
     const { gallery, title, spec, specdetail } = data?.post?.detailProduct?.product ?? {}
     return (
         <div className='section-product'>
-            <PublicHead titile="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | garage door | Product | COAD" />
+            <PublicHead title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | garage door | Product | COAD" />
             <div className='container mt-12 pb-28'>
                 <div className='flex gap-16'>
                     <div className='w-5/12'>
