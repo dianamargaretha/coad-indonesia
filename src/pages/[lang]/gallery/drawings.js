@@ -54,9 +54,7 @@ const catalog = () => {
                 <div className='flex flex-wrap justify-start gap-4'>
                     {drawing?.map((list, index) => {
                         return (
-                            <div key={index}>
-                                <Benefit type={list?.type} title={list?.title} fileUrl={list?.file?.mediaItemUrl} imgUrl={list?.thumb?.sourceUrl} />
-                            </div>
+                            <Benefit key={index} type={list?.type} title={list?.title} fileUrl={list?.file?.mediaItemUrl} imgUrl={list?.thumb?.sourceUrl} />
                         )
                     })}
                 </div>

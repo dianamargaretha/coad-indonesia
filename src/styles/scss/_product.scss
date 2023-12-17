@@ -96,4 +96,56 @@
             }
         }
     }
+
+    .spec-table {
+        @apply text-xs md:text-base;
+        .header-title {
+            @apply flex justify-center text-center bg-[#37A76B] text-white rounded-xl p-4;
+        }
+        .list {
+            @apply border-b;
+            color: rgba(68, 68, 68, 0.7);
+            > div {
+                @apply relative px-0 py-4 text-center;
+                &:nth-child(1) {
+                    &::after {
+                        @apply absolute w-4 h-[1px] block bg-white bottom-[-1px] right-0;
+                        content: "";
+                    }
+                }
+            }
+        }
+        @media (max-width: 1024px) {
+            .header-title-wrap,
+            .list {
+                > div {
+                    &:nth-child(1) {
+                        @apply hidden #{!important};
+                    }
+                }
+            }
+            .header-title-wrap {
+                @apply mb-4;
+            }
+            .list {
+                @apply relative;
+                &-first {
+                    @apply border-t rounded-t-lg overflow-hidden;
+                }
+                &::before {
+                    @apply absolute top-0 w-full p-4 font-bold text-center bg-white z-10 border border-t-0;
+                    content: attr(data-title);
+                }
+                > div {
+                    &:nth-child(2) {
+                        @apply border-l;
+                    }
+                    @apply pt-[3rem] pb-0 border-r;
+                    > div {
+                        @apply py-4 px-1;
+                    }
+                }
+            }
+        }
+    }
 }

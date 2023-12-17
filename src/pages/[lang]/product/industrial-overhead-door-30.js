@@ -42,7 +42,6 @@ const index = () => {
     const router = useRouter()
     const lang = router?.query?.lang
 
-    console.log({ router, lang })
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     const { data, loading, error } = useQuery(gql`
@@ -76,10 +75,12 @@ const index = () => {
     const { gallery, title, spec, specdetail } = data?.post?.detailProduct?.product ?? {}
     return (
         <div className='section-product'>
-            <PublicHead title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | overhead door | Product | COAD" />
+            <PublicHead
+                title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | overhead door | Product | COAD"
+                description="this page shows over head door. this industrial door is designed for Logistics Center' doors." />
             <div className='container mt-12 pb-28'>
-                <div className='flex gap-16'>
-                    <div className='w-5/12'>
+                <div className='flex flex-col md:flex-row  gap-16'>
+                    <div className='w-12/12 md:w-5/12'>
                         <div>
                             <Swiper
                                 style={{
@@ -116,7 +117,7 @@ const index = () => {
                         </div>
                     </div>
 
-                    <div className='w-7/12'>
+                    <div className='w-12/12 md:w-7/12'>
                         <div>
                             <h2 className='title mb-1'>{title}</h2>
                             <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
@@ -144,7 +145,164 @@ const index = () => {
                     </div>
                 </div>
             </div>
-
+            {/* Spec table */}
+            <div className='pb-28 spec-table'>
+                <div className='container'>
+                    <div className='section-title'>
+                        <h2 className='title'>{isCurrentLang('Specification', 'Spesifikasi')}</h2>
+                    </div>
+                    <div className='flex gap-4 header-title-wrap'>
+                        <div className='flex-1'></div>
+                        <div className='flex-1'>
+                            <div className='header-title'>
+                                <span>Overhead Door Model <br /> C-20</span>
+                            </div>
+                        </div>
+                        <div className='flex-1'>
+                            <div className='header-title'>
+                                <span>Overhead Door Model <br /> C-30</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex gap-0 md:gap-4 list list-first' data-title='>Maximum Size'>
+                        <div className='flex-1'>Maximum Size</div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>(W) 8000mm * (H) 5000mm</span>
+                            </div>
+                        </div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>(W) 11000mm * (H) 8000mm</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex gap-4 list' data-title='Opening/closing speed'>
+                        <div className='flex-1'>Opening/closing speed</div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>0.3~0.7m/s</span>
+                            </div>
+                        </div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>0.2~0.3m/s</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex gap-4 list' data-title='Maximum wind speed'>
+                        <div className='flex-1'>Maximum wind speed</div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>45m/sec</span>
+                            </div>
+                        </div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>45m/sec</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex gap-4 list' data-title='Thermal conductivity'>
+                        <div className='flex-1'>Thermal conductivity</div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>0.021W/mk</span>
+                            </div>
+                        </div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>0.021W/mk</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex gap-4 list' data-title='Operation principle'>
+                        <div className='flex-1'>Operation principle</div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>Chain</span>
+                                <span>
+                                    <img className='mx-auto' src='/assets/ornamen/chain.png' alt='chain' />
+                                </span>
+                            </div>
+                        </div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>Cable</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex gap-4 list' data-title='Rolling door type'>
+                        <div className='flex-1'>Rolling door type</div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>Stacking</span>
+                                <span>
+                                    <img className='mx-auto' src='/assets/ornamen/stacking.png' alt='stacking' />
+                                </span>
+                            </div>
+                        </div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>Basic series of sliding doors, vertical</span>
+                                <div className='flex flex-wrap'>
+                                    <div className='w-1/2'>
+                                        <img className='mx-auto' src='/assets/ornamen/door-tb-1.png' alt='doors' />
+                                    </div>
+                                    <div className='w-1/2'>
+                                        <img className='mx-auto' src='/assets/ornamen/door-tb-2.png' alt='doors' />
+                                    </div>
+                                    <div className='w-1/2'>
+                                        <img className='mx-auto' src='/assets/ornamen/door-tb-3.png' alt='doors' />
+                                    </div>
+                                    <div className='w-1/2'>
+                                        <img className='mx-auto' src='/assets/ornamen/door-tb-4.png' alt='doors' />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex gap-4 list' data-title='Panel'>
+                        <div className='flex-1'>Panel</div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>Polyurethane (PU) 50mm</span>
+                            </div>
+                        </div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>Polyurethane (PU) 50mm</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex gap-4 list' data-title='Motor'>
+                        <div className='flex-1'>Motor</div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>SUMITOMO HYPONIC-GEARED MOTOR(IP44)</span>
+                            </div>
+                        </div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>OVERHEADDOOR WORM GEAR MOTOR (90Nm-160Nm)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex gap-4 list' data-title='Outstanding Features'>
+                        <div className='flex-1'>Outstanding Features</div>
+                        <div className='flex-1'>
+                            <div>
+                                <span className='text-[#37A76B]'>Specialized for narrow ceilings, 3 times faster than conventional doors</span>
+                            </div>
+                        </div>
+                        <div className='flex-1'>
+                            <div>
+                                <span className='text-[#37A76B]'>Save energy and provide an effective anti-theft solution</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className="pb-28">
                 <div className='container'>
                     <div className='section-title'>
@@ -154,7 +312,7 @@ const index = () => {
                         return (
                             <div className='each-spec-wrapper border-b pt-8 pb-3' key={index}>
                                 <h3 className='title'>{list?.title}</h3>
-                                <div className="flex gap-4 items-center pb-3">
+                                <div className="flex flex-col md:flex-row  gap-4 items-center pb-3">
                                     {list?.thumb && <div className="flex-shrink-0 pt-4">
                                         <img className='w-[180px] object-contain' src={list?.thumb?.sourceUrl} alt="Spec Motor" />
                                     </div>}
@@ -165,6 +323,16 @@ const index = () => {
                             </div>
                         )
                     })}
+                </div>
+            </div>
+            <div className='py-28 bg-[#f9f9f9]'>
+                <div className='container'>
+                    <div className='section-title'>
+                        <h2 className='title'>{isCurrentLang('Other Product', 'Product Lainnya')}</h2>
+                    </div>
+                    <div className='flex flex-wrap gap-4'>
+                        <Benefit link='stacking-overhead-door-20' lang={lang} thumb={'/assets/coad-images/product/COAD-20-Stacking-Overhead-Door/1.png'} title='COAD Stacking Overhead Door 20' />
+                    </div>
                 </div>
             </div>
         </div>

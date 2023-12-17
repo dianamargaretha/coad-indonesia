@@ -38,7 +38,7 @@ const Benefit = ({ thumb, title, link, lang }) => {
     )
 }
 
-const highSpeedDoor = () => {
+const index = () => {
     const router = useRouter()
     const lang = router?.query?.lang
 
@@ -46,7 +46,7 @@ const highSpeedDoor = () => {
 
     const { data, loading, error } = useQuery(gql`
     query {
-        post(id: "high-speed-door", idType: SLUG) {
+        post(id: "coad-20-stacking-overhead-door", idType: SLUG) {
             detailProduct {
                 product {
                   gallery {
@@ -76,10 +76,10 @@ const highSpeedDoor = () => {
     return (
         <div className='section-product'>
             <PublicHead
-                title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | K-1(Standard Model) | Speed door | Product | COAD"
-                description="this page shows Standard Model. high speed door's Best selling products, Sheet has been designed to be easy to replace." />
+                title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | overhead door | Product | COAD"
+                description="this page shows over head door. this industrial door is designed for Logistics Center' doors." />
             <div className='container mt-12 pb-28'>
-                <div className='flex flex-col md:flex-row gap-16'>
+                <div className='flex flex-col md:flex-row  gap-16'>
                     <div className='w-12/12 md:w-5/12'>
                         <div>
                             <Swiper
@@ -122,7 +122,7 @@ const highSpeedDoor = () => {
                             <h2 className='title mb-1'>{title}</h2>
                             <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
                                 <h4 className='font-bold'>Category :</h4>
-                                <p>High Speed Door</p>
+                                <p>Overhead Door</p>
                             </div>
                             <h3 className='subtitle mb-4'>{isCurrentLang('Specification', 'Spesifikasi')}</h3>
 
@@ -155,17 +155,12 @@ const highSpeedDoor = () => {
                         <div className='flex-1'></div>
                         <div className='flex-1'>
                             <div className='header-title'>
-                                <span>Standard Model <br /> C-VE</span>
+                                <span>Overhead Door Model <br /> C-20</span>
                             </div>
                         </div>
                         <div className='flex-1'>
                             <div className='header-title'>
-                                <span>Standard Model <br /> C-2</span>
-                            </div>
-                        </div>
-                        <div className='flex-1'>
-                            <div className='header-title'>
-                                <span>Standard Model <br /> C-3</span>
+                                <span>Overhead Door Model <br /> C-30</span>
                             </div>
                         </div>
                     </div>
@@ -173,17 +168,12 @@ const highSpeedDoor = () => {
                         <div className='flex-1'>Maximum Size</div>
                         <div className='flex-1'>
                             <div>
-                                <span>(W) 6000mm * (H) 5000mm</span>
+                                <span>(W) 8000mm * (H) 5000mm</span>
                             </div>
                         </div>
                         <div className='flex-1'>
                             <div>
-                                <span>(W) 8000mm * (H) 6000mm</span>
-                            </div>
-                        </div>
-                        <div className='flex-1'>
-                            <div>
-                                <span>(W) 8000mm * (H) 6000mm</span>
+                                <span>(W) 11000mm * (H) 8000mm</span>
                             </div>
                         </div>
                     </div>
@@ -191,17 +181,12 @@ const highSpeedDoor = () => {
                         <div className='flex-1'>Opening/closing speed</div>
                         <div className='flex-1'>
                             <div>
-                                <span>0.4 - 1.0 m/s</span>
+                                <span>0.3~0.7m/s</span>
                             </div>
                         </div>
                         <div className='flex-1'>
                             <div>
-                                <span>~1.5 m/s</span>
-                            </div>
-                        </div>
-                        <div className='flex-1'>
-                            <div>
-                                <span>~1.5 m/s</span>
+                                <span>0.2~0.3m/s</span>
                             </div>
                         </div>
                     </div>
@@ -209,89 +194,97 @@ const highSpeedDoor = () => {
                         <div className='flex-1'>Maximum wind speed</div>
                         <div className='flex-1'>
                             <div>
-                                <span>20m/sec</span>
+                                <span>45m/sec</span>
                             </div>
                         </div>
                         <div className='flex-1'>
                             <div>
-                                <span>20m/sec</span>
-                            </div>
-                        </div>
-                        <div className='flex-1'>
-                            <div>
-                                <span>40m/sec</span>
+                                <span>45m/sec</span>
                             </div>
                         </div>
                     </div>
-                    <div className='flex gap-4 list' data-title='Curtains'>
-                        <div className='flex-1'>Curtains</div>
+                    <div className='flex gap-4 list' data-title='Thermal conductivity'>
+                        <div className='flex-1'>Thermal conductivity</div>
                         <div className='flex-1'>
                             <div>
-                                <span>PVC sheet 1mm</span>
+                                <span>0.021W/mk</span>
                             </div>
                         </div>
                         <div className='flex-1'>
                             <div>
-                                <span>PVC sheet 2mm</span>
-                            </div>
-                        </div>
-                        <div className='flex-1'>
-                            <div>
-                                <span>PVC sheet 2mm</span>
+                                <span>0.021W/mk</span>
                             </div>
                         </div>
                     </div>
-                    <div className='flex gap-4 list' data-title='Windshield Safety bar'>
-                        <div className='flex-1'>Windshield Safety bar</div>
+                    <div className='flex gap-4 list' data-title='Operation principle'>
+                        <div className='flex-1'>Operation principle</div>
                         <div className='flex-1'>
                             <div>
-                                <span><img className='mx-auto' src='/assets/ornamen/check-mark.svg' alt='check' /></span>
+                                <span>Chain</span>
+                                <span>
+                                    <img className='mx-auto' src='/assets/ornamen/chain.png' alt='chain' />
+                                </span>
                             </div>
                         </div>
                         <div className='flex-1'>
                             <div>
-                                <span><img className='mx-auto' src='/assets/ornamen/check-mark.svg' alt='check' /></span>
-                            </div>
-                        </div>
-                        <div className='flex-1'>
-                            <div>
-                                <span><img className='mx-auto' src='/assets/ornamen/check-mark.svg' alt='check' /></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='flex gap-4 list' data-title='Internal structure'>
-                        <div className='flex-1'>Internal structure</div>
-                        <div className='flex-1'>
-                            <div>
-                                <span>Built-in self-contained bristles</span>
-                            </div>
-                        </div>
-                        <div className='flex-1'>
-                            <div>
-                                <span>Built-in self-contained bristles</span>
-                            </div>
-                        </div>
-                        <div className='flex-1'>
-                            <div>
-                                <span>The two sides of the curtains are linked by a closed zipper (TOOTH)</span>
+                                <span>Cable</span>
                             </div>
                         </div>
                     </div>
-                    <div className='flex gap-4 list' data-title='Self-healing feature'>
-                        <div className='flex-1'>Self-healing feature</div>
+                    <div className='flex gap-4 list' data-title='Rolling door type'>
+                        <div className='flex-1'>Rolling door type</div>
                         <div className='flex-1'>
                             <div>
-                                <span><img className='mx-auto' src='/assets/ornamen/close-icon.svg' alt='close' /></span>
+                                <span>Stacking</span>
+                                <span>
+                                    <img className='mx-auto' src='/assets/ornamen/stacking.png' alt='stacking' />
+                                </span>
                             </div>
                         </div>
                         <div className='flex-1'>
                             <div>
-                                <span><img className='mx-auto' src='/assets/ornamen/close-icon.svg' alt='close' /></span>
+                                <span>Basic series of sliding doors, vertical</span>
+                                <div className='flex flex-wrap'>
+                                    <div className='w-1/2'>
+                                        <img className='mx-auto' src='/assets/ornamen/door-tb-1.png' alt='doors' />
+                                    </div>
+                                    <div className='w-1/2'>
+                                        <img className='mx-auto' src='/assets/ornamen/door-tb-2.png' alt='doors' />
+                                    </div>
+                                    <div className='w-1/2'>
+                                        <img className='mx-auto' src='/assets/ornamen/door-tb-3.png' alt='doors' />
+                                    </div>
+                                    <div className='w-1/2'>
+                                        <img className='mx-auto' src='/assets/ornamen/door-tb-4.png' alt='doors' />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex gap-4 list' data-title='Panel'>
+                        <div className='flex-1'>Panel</div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>Polyurethane (PU) 50mm</span>
                             </div>
                         </div>
                         <div className='flex-1'>
                             <div>
-                                <span><img className='mx-auto' src='/assets/ornamen/check-mark.svg' alt='check' /></span>
+                                <span>Polyurethane (PU) 50mm</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex gap-4 list' data-title='Motor'>
+                        <div className='flex-1'>Motor</div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>SUMITOMO HYPONIC-GEARED MOTOR(IP44)</span>
+                            </div>
+                        </div>
+                        <div className='flex-1'>
+                            <div>
+                                <span>OVERHEADDOOR WORM GEAR MOTOR (90Nm-160Nm)</span>
                             </div>
                         </div>
                     </div>
@@ -299,18 +292,12 @@ const highSpeedDoor = () => {
                         <div className='flex-1'>Outstanding Features</div>
                         <div className='flex-1'>
                             <div>
-                                <span>Low cost</span>
+                                <span className='text-[#37A76B]'>Specialized for narrow ceilings, 3 times faster than conventional doors</span>
                             </div>
                         </div>
                         <div className='flex-1'>
                             <div>
-                                <span>Suitable for many different production plants</span>
-                            </div>
-                        </div>
-                        <div className='flex-1'>
-                            <div>
-                                <span>Save on maintenance costs with auto-recovery
-                                    Can design doors with large sizes</span>
+                                <span className='text-[#37A76B]'>Save energy and provide an effective anti-theft solution</span>
                             </div>
                         </div>
                     </div>
@@ -325,9 +312,9 @@ const highSpeedDoor = () => {
                         return (
                             <div className='each-spec-wrapper border-b pt-8 pb-3' key={index}>
                                 <h3 className='title'>{list?.title}</h3>
-                                <div className="flex flex-col md:flex-row gap-4 items-center pb-3">
+                                <div className="flex flex-col md:flex-row  gap-4 items-center pb-3">
                                     {list?.thumb && <div className="flex-shrink-0 pt-4">
-                                        <img className=':w-[180px] object-contain' src={list?.thumb?.sourceUrl} alt="Spec Motor" />
+                                        <img className='w-[180px] object-contain' src={list?.thumb?.sourceUrl} alt="Spec Motor" />
                                     </div>}
                                     <div className="detail flex-1 min-w-0 pt-8 ms-4">
                                         <div dangerouslySetInnerHTML={{ __html: list?.specList }} />
@@ -345,8 +332,7 @@ const highSpeedDoor = () => {
                         <h2 className='title'>{isCurrentLang('Other Product', 'Product Lainnya')}</h2>
                     </div>
                     <div className='flex flex-wrap gap-4'>
-                        <Benefit link='slim-type-c-2' lang={lang} thumb={'/assets/coad-images/product/C-2-Slim-Type/1.png'} title='COAD C-2 Slim Type' />
-                        <Benefit link='recovery-type-c-3' lang={lang} thumb={'/assets/coad-images/product/C-3-Recovery-Type/1.png'} title='COAD C-3 Recovery Type' />
+                        <Benefit link='industrial-overhead-door-30' lang={lang} thumb={'/assets/coad-images/product/COAD-30-Industrial-Overhead-Door/1.png'} title='COAD Industrial Overhead Door 30' />
                     </div>
                 </div>
             </div>
@@ -355,4 +341,4 @@ const highSpeedDoor = () => {
     )
 }
 
-export default highSpeedDoor
+export default index

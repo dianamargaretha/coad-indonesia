@@ -1,5 +1,9 @@
 .section-worldwide {
-    @apply bg-[#f9f9f9] py-20;
+    @apply py-20;
+    background-image: url("/assets/ornamen/map-home.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom right;
     .info-title {
         max-width: 50.5rem;
     }
@@ -16,12 +20,12 @@
             height: 100%;
             top: 0;
             left: 0;
-            padding: 3.4rem;
+            @apply p-8 md:p-[3.4rem];
             .content {
-                @apply flex flex-col justify-center w-full h-full p-[3.2rem] text-white text-center rounded-full;
+                @apply flex flex-col justify-center w-full h-full p-4 md:p-[3.2rem] text-white text-center rounded-full;
                 background: linear-gradient(90deg, #5ff59f 3.67%, #518494 71.67%, #5a72b3 102.67%);
                 .info-title {
-                    @apply text-2xl md:text-4xl md:leading-tight font-semibold;
+                    @apply text-lg md:text-xl md:text-4xl md:leading-tight font-semibold;
                 }
             }
         }
@@ -65,12 +69,20 @@
     }
 }
 .section-product-category {
+    @apply bg-[#f4f4f4];
+    background-image: url("/assets/ornamen/representative.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
     .each-product-unggulan {
         transition: all 0.3s ease-out;
         &:hover {
             opacity: 0.7;
         }
     }
+}
+.section-about-us {
+    @apply bg-[#f4f4f4];
 }
 .homebanner-about-us > img {
     @apply w-full;

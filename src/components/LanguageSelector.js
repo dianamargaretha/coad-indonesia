@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 
 export default () => {
     const router = useRouter()
-    console.log('language selector', { router })
     const [languages] = useState([
         {
             code: "en",

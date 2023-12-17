@@ -56,29 +56,22 @@
                         font-weight: 700;
                         font-size: 60px;
                         line-height: 1.1;
-                        // @include media-breakpoint-down(xxl) {
-                        //     font-size: 50px;
-                        //     line-height: 71px;
-                        // }
                         @media (max-width: 479px) {
                             font-size: 30px;
                             line-height: 1.4;
                         }
                     }
                     .subtitle {
+                        @apply text-3xl md:text-4xl;
                         text-transform: capitalize;
                         font-weight: 500;
-                        font-size: 48px;
                         line-height: 1.1;
                     }
                     .short-desc {
+                        @apply text-lg md:text-2xl;
                         text-transform: capitalize;
-                        font-size: 24px;
                         line-height: 1.2;
                         font-weight: 300;
-                        @media (max-width: 479px) {
-                            font-size: 20px;
-                        }
                     }
                 }
             }
@@ -109,6 +102,9 @@
             }
         }
     }
+}
+.swiper-pagination-bullet-active {
+    background-color: #ee3231 !important;
 }
 @media (min-width: 1500px) {
     .swiper-wrapper {

@@ -42,7 +42,6 @@ const index = () => {
     const router = useRouter()
     const lang = router?.query?.lang
 
-    console.log({ router, lang })
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
     const { data, loading, error } = useQuery(gql`
@@ -76,10 +75,12 @@ const index = () => {
     const { gallery, title, spec, specdetail } = data?.post?.detailProduct?.product ?? {}
     return (
         <div className='section-product'>
-            <PublicHead title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | garage door | Product | COAD" />
+            <PublicHead
+                title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | garage door | Product | COAD"
+                description="this page shows Sliding Door Model. Comes with built-in communication ports which enable you to use the remote control and monitoring functions by connecting to available communication methods. " />
             <div className='container mt-12 pb-28'>
-                <div className='flex gap-16'>
-                    <div className='w-5/12'>
+                <div className='flex flex-col md:flex-row  gap-16'>
+                    <div className='w-12/12 md:w-5/12'>
                         <div>
                             <Swiper
                                 style={{
@@ -116,7 +117,7 @@ const index = () => {
                         </div>
                     </div>
 
-                    <div className='w-7/12'>
+                    <div className='w-12/12 md:w-7/12'>
                         <div>
                             <h2 className='title mb-1'>{title}</h2>
                             <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
@@ -154,7 +155,7 @@ const index = () => {
                         return (
                             <div className='each-spec-wrapper border-b pt-8 pb-3' key={index}>
                                 <h3 className='title'>{list?.title}</h3>
-                                <div className="flex gap-4 items-center pb-3">
+                                <div className="flex flex-col md:flex-row  gap-4 items-center pb-3">
                                     {list?.thumb && <div className="flex-shrink-0 pt-4">
                                         <img className='w-[180px] object-contain' src={list?.thumb?.sourceUrl} alt="Spec Motor" />
                                     </div>}

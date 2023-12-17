@@ -13,7 +13,7 @@ const Benefit = ({ imgUrl, title, fileUrl, type }) => {
                     <div className={`icon ${type === 'docs' ? 'docs' : ''}`}></div>
                     <h2 className='text-h5-m lg:text-h5'>{title}</h2>
                 </div>
-                <img width='100%' src={imgUrl} alt={title} />
+                <img src={imgUrl} alt={title} className='w-full' />
             </a>
         </div>
     )
@@ -54,9 +54,7 @@ const catalog = () => {
                 <div className='flex flex-wrap justify-start gap-4'>
                     {catalog?.map((list, index) => {
                         return (
-                            <div key={index}>
-                                <Benefit type={list?.type} title={list?.title} fileUrl={list?.file?.mediaItemUrl} imgUrl={list?.thumb?.sourceUrl} />
-                            </div>
+                            <Benefit key={index} type={list?.type} title={list?.title} fileUrl={list?.file?.mediaItemUrl} imgUrl={list?.thumb?.sourceUrl} />
                         )
                     })}
                 </div>

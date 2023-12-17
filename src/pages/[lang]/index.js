@@ -277,10 +277,12 @@ export default function Home() {
     <main
       className={`${inter.className}`}
     >
-      <PublicHead title="high-speed-door, rapid-door, pintu-high-speed-door, pintu-rapid-door, harga-high-speed-door, harga-rapid-door, jual-high-speed-door, jual-rapid-door, pvc-roller-shutter-door- CONVENIENCE auto door | COAD CONVENIENCE AUTO DOOR" />
+      <PublicHead
+        title="high-speed-door, rapid-door, pintu-high-speed-door, pintu-rapid-door, harga-high-speed-door, harga-rapid-door, jual-high-speed-door, jual-rapid-door, pvc-roller-shutter-door- CONVENIENCE auto door | COAD CONVENIENCE AUTO DOOR"
+        description="COAD CONVENIENCE Auto Doors is the Korea’s largest company specializing in automatic doors. Focused on customers’ requirements to provide the excellent products and services" />
       {/* <Navbar /> */}
       <div className='min-h-screen'>
-        <section>
+        <section className='overflow-hidden'>
           <Swiper
             navigation
             modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
@@ -353,8 +355,8 @@ export default function Home() {
                   <div className='slide-style-2 animation-style-02'>
                     <div className="slide-inner bg-height py-6 px-16">
                       <div className='banner-image absolute top-0 left-0 object-cover bg-cover bg-center w-full h-full brightness-75' style={{ backgroundImage: `url(${slide?.slideBanner?.sourceUrl})` }}></div>
-                      <div className="relative z-10 w-full flex gap-16">
-                        <div className="flex-[7]">
+                      <div className="relative z-10 w-full flex gap-0 md:gap-16">
+                        <div className="flex-auto md:flex-[7]">
                           <div className="slide-content">
                             <div className='max-w-[640px]'>
                               <h2 className="title mb-4">
@@ -376,7 +378,7 @@ export default function Home() {
                             </div>
                           </div>
                         </div>
-                        <div className="flex-[5]">
+                        <div className="flex-0 md:flex-[5]">
                         </div>
                       </div>
                     </div>
@@ -387,7 +389,7 @@ export default function Home() {
             ))}
           </Swiper>
         </section>
-        <section className='mt-28 section-product-category'>
+        <section className='py-28 section-product-category overflow-hidden'>
           <div className='container'>
             <div className='section-title'>
               <h2 className='title'>{isCurrentLang('Featured Product', 'Produk Unggulan')}</h2>
@@ -440,9 +442,9 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className='mt-28 section-worldwide'>
+        <section className='mt-0 md:mt-28 section-worldwide overflow-hidden'>
           <div className='container'>
-            <div className='flex gap-16'>
+            <div className='flex flex-col md:flex-row gap-16'>
               <div className='flex-1'>
                 <div className='info-title'>
                   <div className='info-box'>
@@ -467,12 +469,12 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className='section-about-us mt-28'>
+        <section className='section-about-us pt-28 overflow-hidden'>
           <div className='container'>
             <div className='section-title'>
               <h2 className='title'>{isCurrentLang('About Us', 'Tentang Kami')}</h2>
             </div>
-            <div className='flex  flex-wrap justify-center md:justify-start gap-4'>
+            <div className='flex flex-col md:flex-row flex-wrap justify-center md:justify-start gap-4'>
               <div className='flex items-center flex-1 homebanner-about-us-desc'>
                 <div className='flex flex-col justify-center w-[80%]'>
                   <h3 className='text-4xl font-bold text-[#37a76b] mb-3'>COAD Indonesia:</h3>
@@ -486,7 +488,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className='mt-28 pb-40 section-our-client'>
+        <section className='mt-28 pb-40 section-our-client overflow-hidden'>
           <div className='container'>
             <div className='section-title'>
               <h2 className='title'>{isCurrentLang('Our Client', 'Klien Kami')}</h2>
@@ -535,7 +537,6 @@ export default function Home() {
                   ))}
                 </Swiper>
               </div>
-              {/* <h3 className='flex justify-center mt-10 text-lg'>{isCurrentLang('+ many more', '+ masih banyak lagi')}</h3> */}
 
             </div>
           </div>

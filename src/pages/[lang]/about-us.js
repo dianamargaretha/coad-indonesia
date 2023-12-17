@@ -89,8 +89,10 @@ const aboutUs = () => {
 
     return (
         <div className='about-us'>
-            <PublicHead title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | About us  | Company | COAD" />
-            <div className='banner'>
+            <PublicHead
+                title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | About us  | Company | COAD"
+                description='This page shows Korea Auto Door company overview and talking about high speed door also We introduce our overseas corporation. ' />
+            <div className='banner overflow-hidden'>
                 <Image src={bannerAbout}
                     objectFit="cover"
                     fill
@@ -110,10 +112,7 @@ const aboutUs = () => {
             </div>
             <div className='our-vision-mission bg-[#f4f4f4] py-28'>
                 <div className='container'>
-                    {/* <div className='section-title'>
-                        <h2 className='title'>{isCurrentLang('Our Client', 'Klien Kami')}</h2>
-                    </div> */}
-                    <div className='flex gap-4'>
+                    <div className='flex flex-col md:flex-row gap-4'>
                         <div className='flex-1 bg-white text-neutral-50 px-10 py-16 rounded-xl'>
                             <div className='flex flex-col gap-4 items-center'>
                                 <Image src={'/assets/coad-images/ic-our-vision.svg'} width={52} height={52} />

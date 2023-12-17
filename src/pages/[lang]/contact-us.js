@@ -1,7 +1,9 @@
-import React, { useReducer, useState } from 'react'
+import React, { useReducer, useState, useRef } from 'react'
+import Recaptcha from 'react-google-recaptcha';
 import isCurrentLang from '@/utils/isCurrentLang'
 import { validateInput, validateForm } from '@/lib/validation'
 import PublicHead from '@/components/PublicHead';
+import { gql, useQuery } from "@apollo/client";
 
 
 const InputText = ({ required, ...props }) => {
@@ -66,6 +68,22 @@ const contactUs = () => {
     const [state, dispatch] = useReducer(reducer, initialState())
     const [loading, setLoading] = useState(false)
     const [status, setStatus] = useState({ value: null, message: null })
+    const [captchaStatus, setCaptchaStatus] = useState(false)
+
+
+    const captcha = useRef(null)
+
+    const { data, loading: loadingCms, error } = useQuery(gql`
+    query {
+        post(id: "contact-us", idType: SLUG) {
+            contactUs {
+              desc
+              descEn
+            }
+          }
+        }
+    `);
+    const { contactUs } = data?.post ?? {}
     const handleSubmit = (e = {}) => {
         e?.preventDefault()
         if (validateForm("jobform")) {
@@ -126,43 +144,69 @@ const contactUs = () => {
     }
     return (
         <div>
-            <PublicHead title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | 견적문의 | Cs center | COAD" />
+            <PublicHead
+                title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | 견적문의 | Cs center | COAD"
+                description="COAD Estimate inquiry" />
             <div className='container mt-10'>
                 <div className='section-title'>
                     <h2 className='title uppercase'>{isCurrentLang('Contact Us', 'Hubungi Kami')}</h2>
-                    <div className='flex'>
-                        <div className='w-7/12'>
-                            <form onSubmit={handleSubmit} id="jobform" name="jobform" className='form-apply mt-12'>
-                                <div className='container'>
-                                    <div className='grid grid-cols-1 mb-10 md:mb-20'>
-                                        <div>
-                                            <InputText id="name" name='name' label='Your Full Name' onChange={handleChange} value={state.name} className="validate[required]" required maxLength={100} disabled={loading} />
-                                        </div>
-                                    </div>
-                                    <div className='grid grid-cols-2 gap-10 mb-10 md:mb-20'>
-                                        <div className='col-span-2 md:col-span-1'>
-                                            <InputText type="text" id="email" name='email' label='Your Email' onChange={handleChange} value={state.email} className="validate[required,email]" required maxLength={100} disabled={loading} />
-                                        </div>
-                                        <div className='col-span-2 md:col-span-1'>
-                                            <InputText id="phone" name='phone' label='Your Phone' onChange={handleChange} value={state.phone} className="validate[required]" required maxLength={15} disabled={loading} />
-                                        </div>
-                                    </div>
-                                    <div className='grid grid-cols-1 mb-10 md:mb-20'>
-                                        <div>
-                                            <InputTextArea id="content" name="content" label="Content" onChange={handleChange} value={state.content} className="validate[required]" required maxLength={500} disabled={loading} />
-                                            {/* <InputText id="content" name='content' label='Content' onChange={handleChange} value={state.name} className="validate[required]" required maxLength={500} disabled={loading} /> */}
-                                        </div>
-                                    </div>
-
-
-                                    <div className='mb-20 lg:mb-40 xl:mb-30'>
-                                        <button
-                                            disabled={loading}
-                                            type="submit" className='button-send btn btn-custom-size lg-size btn-primary'>{loading ? <LoadingSend /> : isCurrentLang('Send Information', 'Kirim')}</button>
+                </div>
+                <div className='flex'>
+                    <div className='w-6/12'>
+                        <p>{isCurrentLang(contactUs?.descEn, contactUs?.desc)}</p>
+                    </div>
+                </div>
+                <div className='flex'>
+                    <div className='w-6/12'>
+                        <form onSubmit={handleSubmit} id="jobform" name="jobform" className='form-apply mt-12'>
+                            <div className='container'>
+                                <div className='grid grid-cols-1 mb-10 md:mb-20'>
+                                    <div>
+                                        <InputText id="name" name='name' label='Your Full Name' onChange={handleChange} value={state.name} className="validate[required]" required maxLength={100} disabled={loading} />
                                     </div>
                                 </div>
-                            </form>
-                        </div>
+                                <div className='grid grid-cols-2 gap-10 mb-10 md:mb-20'>
+                                    <div className='col-span-2 md:col-span-1'>
+                                        <InputText type="text" id="email" name='email' label='Your Email' onChange={handleChange} value={state.email} className="validate[required,email]" required maxLength={100} disabled={loading} />
+                                    </div>
+                                    <div className='col-span-2 md:col-span-1'>
+                                        <InputText id="phone" name='phone' label='Your Phone' onChange={handleChange} value={state.phone} className="validate[required]" required maxLength={15} disabled={loading} />
+                                    </div>
+                                </div>
+                                <div className='grid grid-cols-1 mb-10 md:mb-20'>
+                                    <div>
+                                        <InputTextArea id="content" name="content" label="Content" onChange={handleChange} value={state.content} className="validate[required]" required maxLength={500} disabled={loading} />
+                                        {/* <InputText id="content" name='content' label='Content' onChange={handleChange} value={state.name} className="validate[required]" required maxLength={500} disabled={loading} /> */}
+                                    </div>
+                                </div>
+                                <div className='grid grid-cols-1 mb-10 md:mb-20'>
+                                    <Recaptcha
+                                        ref={captcha}
+                                        render="explicit"
+                                        sitekey={process.env.NEXT_PUBLIC_CAPTCHA_KEY}
+                                        onChange={() => {
+                                            setCaptchaStatus(true)
+                                        }}
+                                    />
+                                    <div className='input-container'>
+                                        <input
+                                            className="validate[required]"
+                                            type="hidden"
+                                            id="captcha"
+                                            name="captcha"
+                                            value={captchaStatus ? captchaStatus : ""}
+                                        />
+                                    </div>
+                                </div>
+
+
+                                <div className='mb-20 lg:mb-40 xl:mb-30'>
+                                    <button
+                                        disabled={loading}
+                                        type="submit" className='button-send btn btn-custom-size lg-size btn-primary'>{loading ? <LoadingSend /> : isCurrentLang('Send Information', 'Kirim')}</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
