@@ -461,4 +461,12 @@ nav {
             @apply justify-center;
         }
     }
+    .dropdown-list {
+        li {
+            @apply border-b p-2;
+            &:nth-last-child(1) {
+                @apply border-none;
+            }
+        }
+    }
 }

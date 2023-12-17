@@ -30,3 +30,21 @@
 .swiper-rtl .swiper-button-prev:after {
     color: #ee3231;
 }
+
+@media (max-width: 320px) {
+    // recapcha
+    div[render="explicit"] {
+        > div {
+            > div {
+                background-color: rebeccapurple;
+                width: 260px !important;
+                iframe {
+                    width: 260px !important;
+                }
+                .rc-anchor-normal {
+                    width: 260px !important;
+                }
+            }
+        }
+    }
+}

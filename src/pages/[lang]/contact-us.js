@@ -152,12 +152,12 @@ const contactUs = () => {
                     <h2 className='title uppercase'>{isCurrentLang('Contact Us', 'Hubungi Kami')}</h2>
                 </div>
                 <div className='flex'>
-                    <div className='w-6/12'>
+                    <div className='w-12/12 md:w-6/12'>
                         <p>{isCurrentLang(contactUs?.descEn, contactUs?.desc)}</p>
                     </div>
                 </div>
                 <div className='flex'>
-                    <div className='w-6/12'>
+                    <div className='w-12/12 md:w-6/12'>
                         <form onSubmit={handleSubmit} id="jobform" name="jobform" className='form-apply mt-12'>
                             <div className='container'>
                                 <div className='grid grid-cols-1 mb-10 md:mb-20'>

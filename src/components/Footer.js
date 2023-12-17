@@ -65,7 +65,7 @@ const Footer = () => {
             </div>
             <div className='footer-bottom'>
                 <div className='container'>
-                    <div className="w-full border-b opacity-50 border-white"></div>
+                    <div className="w-full opacity-50 border-white"></div>
                     <div className='flex justify-center items-center py-6'>
                         <p>2023 Copyright &copy; COAD INDO</p>
                     </div>

@@ -13,6 +13,14 @@ footer {
         // );
     }
     .footer-bottom {
-        background: #f2f2f2;
+        @apply text-white;
+        background: #4c7964;
+        background: rgb(57, 177, 108);
+        background: linear-gradient(
+            145deg,
+            rgba(57, 177, 108, 1) 0%,
+            rgba(32, 96, 86, 1) 78%,
+            rgba(25, 21, 76, 1) 100%
+        );
     }
 }

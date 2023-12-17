@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import LanguageSelector from './LanguageSelector'
 import isCurrentLang from '@/utils/isCurrentLang';
 import Image from 'next/image';
+import Accordion from './Accordion';
 if (typeof window !== "undefined") {
     // Init ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
@@ -233,7 +234,7 @@ const Navbar = () => {
             </header>
             {showMobileMenu && (
                 <div className='fixed top-0 left-0 w-screen h-screen bg-white z-[100]'>
-                    <div className='relative mobile-menu'>
+                    <div className='relative mobile-menu overflow-y-scroll'>
                         <div className='w-full'>
                             <div className="container">
                                 <div className='flex justify-between items-center mb-8'>
@@ -269,83 +270,87 @@ const Navbar = () => {
                                             }}>{isCurrentLang('About Us', 'Tentang Kami')}</Link>
                                         </li>
                                         <li>
-                                            <button className="group focus:outline-none w-full">
-                                                <div className="flex items-center justify-between h-12 px-3 font-semibold hover:bg-gray-200">
-                                                    <span className="truncate">Product</span>
-                                                    <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                                    </svg>
-                                                </div>
-                                                <div className="max-h-0 overflow-hidden duration-300 group-focus:max-h-40">
-                                                    <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                                                        <Link href={{
-                                                            pathname: '/[lang]/product/standard-model-c-1',
-                                                            query: { lang: router?.query?.lang }
-                                                        }}>{isCurrentLang('High Speed Door', 'High Speed Door')}</Link>
-                                                    </div>
-                                                    <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                                                        <Link href={{
-                                                            pathname: '/[lang]/product/industrial-overhead-door-30',
-                                                            query: { lang: router?.query?.lang }
-                                                        }}>{isCurrentLang('Overhead Door', 'Overhead Door')}</Link>
-                                                    </div>
-                                                    <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                                                        <Link href={{
-                                                            pathname: '/[lang]/product/garage-door-40',
-                                                            query: { lang: router?.query?.lang }
-                                                        }}>{isCurrentLang('Garage Door', 'Garage Door')}</Link>
-                                                    </div>
-                                                </div>
-                                            </button>
+                                            <Accordion title="Product" content={
+                                                <>
+                                                    <ul className='dropdown-list'>
+                                                        <li>
+                                                            <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                                                                <Link href={{
+                                                                    pathname: '/[lang]/product/standard-model-c-1',
+                                                                    query: { lang: router?.query?.lang }
+                                                                }}>{isCurrentLang('High Speed Door', 'High Speed Door')}</Link>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                                                                <Link href={{
+                                                                    pathname: '/[lang]/product/industrial-overhead-door-30',
+                                                                    query: { lang: router?.query?.lang }
+                                                                }}>{isCurrentLang('Overhead Door', 'Overhead Door')}</Link>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                                                                <Link href={{
+                                                                    pathname: '/[lang]/product/garage-door-40',
+                                                                    query: { lang: router?.query?.lang }
+                                                                }}>{isCurrentLang('Garage Door', 'Garage Door')}</Link>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </>
+                                            } />
                                         </li>
+                                        <li>
+                                            <Accordion title="Gallery" content={
+                                                <>
+                                                    <ul className='dropdown-list'>
+                                                        <li>
+                                                            <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                                                                <Link href={{
+                                                                    pathname: '/[lang]/gallery/photo',
+                                                                    query: { lang: router?.query?.lang }
+                                                                }}>{isCurrentLang('Photo', 'Foto')}</Link>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                                                                <Link href={{
+                                                                    pathname: '/[lang]/gallery/catalog',
+                                                                    query: { lang: router?.query?.lang }
+                                                                }}>{isCurrentLang('Catalog', 'Katalog')}</Link>
+                                                            </div>
 
-                                        <li>
-                                            <button className="w-full group focus:outline-none">
-                                                <div className="flex items-center justify-between h-12 px-3 font-semibold hover:bg-gray-200">
-                                                    <span className="truncate">Gallery</span>
-                                                    <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                                    </svg>
-                                                </div>
-                                                <div className="max-h-0 overflow-hidden duration-300 group-focus:max-h-40">
-                                                    <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                                                        <Link href={{
-                                                            pathname: '/[lang]/gallery/photo',
-                                                            query: { lang: router?.query?.lang }
-                                                        }}>{isCurrentLang('Photo', 'Foto')}</Link>
-                                                    </div>
-                                                    <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                                                        <Link href={{
-                                                            pathname: '/[lang]/gallery/catalog',
-                                                            query: { lang: router?.query?.lang }
-                                                        }}>{isCurrentLang('Catalog', 'Katalog')}</Link>
-                                                    </div>
-                                                    <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                                                        <Link href={{
-                                                            pathname: '/[lang]/gallery/drawings',
-                                                            query: { lang: router?.query?.lang }
-                                                        }}>{isCurrentLang('Drawings', 'Gambar')}</Link>
-                                                    </div>
-                                                </div>
-                                            </button>
+                                                        </li>
+                                                        <li>
+                                                            <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                                                                <Link href={{
+                                                                    pathname: '/[lang]/gallery/drawings',
+                                                                    query: { lang: router?.query?.lang }
+                                                                }}>{isCurrentLang('Drawings', 'Gambar')}</Link>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </>
+                                            } />
                                         </li>
                                         <li>
-                                            <button className="w-full group focus:outline-none">
-                                                <div className="flex items-center justify-between h-12 px-3 font-semibold hover:bg-gray-200">
-                                                    <span className="truncate">Blog</span>
-                                                    <svg className="h-4 w-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                                    </svg>
-                                                </div>
-                                                <div className="max-h-0 overflow-hidden duration-300 group-focus:max-h-40">
-                                                    <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                                                        <a href="https://pintuhighspeeddoor.com/" target='_blank'>Blog High Speed Door</a>
-                                                    </div>
-                                                    <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                                                        <a href="https://coadindonesiaoverheaddoorgaragedoor.wordpress.com/" target='_blank'>Blog Over Head Door</a>
-                                                    </div>
-                                                </div>
-                                            </button>
+                                            <Accordion title="Blog" content={
+                                                <>
+                                                    <ul className='dropdown-list'>
+                                                        <li>
+                                                            <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                                                                <a href="https://pintuhighspeeddoor.com/" target='_blank'>Blog High Speed Door</a>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                                                                <a href="https://coadindonesiaoverheaddoorgaragedoor.wordpress.com/" target='_blank'>Blog Over Head Door</a>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </>
+                                            } />
                                         </li>
                                         <li className='h-12 px-3 font-semibold flex items-center' onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                             <Link href={{
