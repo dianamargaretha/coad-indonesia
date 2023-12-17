@@ -66,13 +66,23 @@ const index = () => {
                         sourceUrl
                       }
                   }
+                  specdetailgroup {
+                    title
+                    listspec {
+                      desc
+                      title
+                      thumb {
+                        sourceUrl
+                      }
+                    }
+                  }
                 }
               }
           }
     }
     `);
 
-    const { gallery, title, spec, specdetail } = data?.post?.detailProduct?.product ?? {}
+    const { gallery, title, spec, specdetail, specdetailgroup } = data?.post?.detailProduct?.product ?? {}
     return (
         <div className='section-product'>
             <PublicHead
@@ -308,6 +318,25 @@ const index = () => {
                     <div className='section-title'>
                         <h2 className='title'>{isCurrentLang('Specification Detail', 'Detail Spesifikasi')}</h2>
                     </div>
+                    {specdetailgroup && (
+                        <div className='each-spec-wrapper border-b pt-8 pb-3'>
+                            <h3 className='title'>{specdetailgroup?.title}</h3>
+                            <div className='flex flex-wrap flex-row  pt-8 pb-3'>
+                                {specdetailgroup?.listspec?.map(list => (
+                                    <div className='w-12/12 md:w-6/12'>
+                                        <div className="flex flex-col md:flex-row gap-4 items-center pb-3">
+                                            {list?.thumb && <div className="flex-shrink-0 pt-4">
+                                                <img className=':w-[180px] object-contain' src={list?.thumb?.sourceUrl} alt="Spec Motor" />
+                                            </div>}
+                                            <div className="detail flex-1 min-w-0 pt-8 ms-4">
+                                                <div dangerouslySetInnerHTML={{ __html: list?.desc }} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                     {specdetail?.map((list, index) => {
                         return (
                             <div className='each-spec-wrapper border-b pt-8 pb-3' key={index}>

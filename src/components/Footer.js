@@ -19,7 +19,6 @@ const Footer = () => {
   `);
 
     const { footer } = dataHomePage?.post?.homepage ?? {}
-    console.log({ footer })
     return (
         <footer>
             <div className='footer-top'>
