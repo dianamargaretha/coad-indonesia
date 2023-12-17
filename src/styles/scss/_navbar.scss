@@ -438,7 +438,7 @@ nav {
 
 // mobile menu
 .mobile-menu {
-    @apply py-10;
+    @apply pt-4 pb-8;
     .max-h-0 {
         max-height: 0;
     }
@@ -454,6 +454,11 @@ nav {
             > li {
                 @apply border-b;
             }
+        }
+    }
+    .header-top-right {
+        a {
+            @apply justify-center;
         }
     }
 }

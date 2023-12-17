@@ -248,10 +248,13 @@ const Navbar = () => {
                                         </Link>
                                     </div>
                                     <div>
-                                        <button onClick={() => setShowMobileMenu(!showMobileMenu)}>Close</button>
+                                        <button className='p-1.5 bg-[#ee3231] rounded-full' onClick={() => setShowMobileMenu(!showMobileMenu)}><img src='/assets/images/close-hd.svg' alt='close' /></button>
                                     </div>
                                 </div>
                                 <nav>
+                                    <div className="header-top-right">
+                                        <LanguageSelector />
+                                    </div>
                                     <ul className='flex flex-col'>
                                         <li className='h-12 px-3 font-semibold flex items-center' onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                             <Link href={{
@@ -352,6 +355,61 @@ const Navbar = () => {
                                         </li>
                                     </ul>
                                 </nav>
+                                <div className="flex flex-col justify-between items-start pt-8">
+                                    <div className="header-top-left">
+                                        <h2 className='font-semibold mb-4'>Social Media:</h2>
+                                        <div className='flex flex-col gap-16'>
+                                            <div className='flex gap-2'>
+                                                <div>
+                                                    <a href='https://www.youtube.com/channel/UCUQKv9js7oDcl0afO7tPfXw' target='_blank'>
+                                                        <img width={24} height={24} src='/assets/images/socmed/yt.svg' alt='Youtube Coad Indonesia' />
+                                                    </a>
+                                                </div>
+                                                <div>
+                                                    <a href='https://www.facebook.com/profile.php?id=100063706263984&viewas=&show_switched_toast=false&show_switched_tooltip=false&is_tour_dismissed=false&is_tour_completed=false&show_podcast_settings=false&show_community_review_changes=false&should_open_composer=false&badge_type=NEW_MEMBER&show_community_rollback_toast=false&show_community_rollback=false&show_follower_visibility_disclosure=false&bypass_exit_warning=true' target='_blank'>
+                                                        <img width={24} height={24} src='/assets/images/socmed/fb.svg' alt='Facebook Coad Indonesia' />
+                                                    </a>
+                                                </div>
+                                                <div>
+                                                    <a href='https://www.linkedin.com/company/pt-blue-sky-indonusa-pintu-high-speed-door' target='_blank'>
+                                                        <img width={24} height={24} src='/assets/images/socmed/link.svg' alt='LinkedIn Coad Indonesia' />
+                                                    </a>
+                                                </div>
+                                                <div>
+                                                    <a href='https://www.coadautodoor.com/' target='_blank'>
+                                                        <img width={24} height={24} src='/assets/images/socmed/blogger-round-color-icon.svg' alt='Blog Coad Indonesia' />
+                                                    </a>
+                                                </div>
+                                                <div>
+                                                    <a href='https://pintuhighspeeddoor.com/' target='_blank'>
+                                                        <img width={24} height={24} src='/assets/images/socmed/wordpress.png' alt='Wordpress Coad Indonesia' />
+                                                    </a>
+                                                </div>
+                                                <div>
+                                                    <a href='https://coadindonesiaoverheaddoorgaragedoor.wordpress.com/' target='_blank'>
+                                                        <img width={24} height={24} src='/assets/images/socmed/wordpress.png' alt='Wordpress Coad Indonesia' />
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div className='flex flex-col gap-4'>
+                                                <h2 className='font-semibold'>Contact Us:</h2>
+                                                <a href='tel:02129916111'>
+                                                    <div className='flex items-start gap-2'>
+                                                        <img className='mt-[6px]' src='/assets/coad-images/telephone-icon-dark.svg' alt='Contact Us Coad Indonesia' />
+                                                        <p>+62-21-299-16111</p>
+                                                    </div>
+                                                </a>
+                                                <a href='mailto:mkt@coad.co.id'>
+                                                    <div className='flex items-start gap-2'>
+                                                        <img className='mt-[6px]' src='/assets/coad-images/email-icon-dark.svg' alt='Email Coad Indonesia' />
+                                                        <p>mkt@coad.co.id</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
