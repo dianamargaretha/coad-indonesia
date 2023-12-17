@@ -15,12 +15,12 @@ const ButtonToTop = ({ className }) => {
     return isShow && (
         <button
             type="button"
-            className={classnames('fixed focus:outline-none bottom-8 right-5 p-2 bg-[red] rounded-md shadow-xl animate__animated animate__fadeIn', className)}
+            className={classnames('fixed focus:outline-none bottom-7 right-[24px] bg-[red] rounded-md shadow-xl animate__animated animate__fadeIn', className)}
             onClick={() => {
                 window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
         >
-            <svg className="w-6 h-6" fill="none" stroke="#FFF" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg className="w-[42px] h-[42px]" fill="none" stroke="#FFF" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
             </svg>
         </button>
