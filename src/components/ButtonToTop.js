@@ -15,7 +15,7 @@ const ButtonToTop = ({ className }) => {
     return isShow && (
         <button
             type="button"
-            className={classnames('fixed focus:outline-none bottom-7 right-[24px] bg-[red] rounded-md shadow-xl animate__animated animate__fadeIn', className)}
+            className={classnames('fixed z-50 focus:outline-none bottom-7 right-[24px] bg-[red] rounded-md shadow-xl animate__animated animate__fadeIn', className)}
             onClick={() => {
                 window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
