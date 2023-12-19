@@ -161,7 +161,7 @@ const index = () => {
                     <div className='section-title'>
                         <h2 className='title'>{isCurrentLang('Specification Detail', 'Detail Spesifikasi')}</h2>
                     </div>
-                    {specdetailgroup && (
+                    {specdetailgroup?.title && (
                         <div className='each-spec-wrapper border-b pt-8 pb-3'>
                             <h3 className='title'>{specdetailgroup?.title}</h3>
                             <div className='flex flex-wrap flex-row  pt-8 pb-3'>

@@ -2,9 +2,9 @@
     @apply text-white bg-[#ee3231] uppercase px-8 py-4;
 }
 .section-title {
-    @apply mb-14;
+    @apply mb-8 md:mb-14;
     .title {
-        @apply text-2xl md:text-4xl;
+        @apply text-xl md:text-4xl;
         position: relative;
         padding-left: 50px;
         // font-size: 36px;
