@@ -142,7 +142,7 @@ const index = () => {
                                         <dl className="border-b py-4" key={index}>
                                             <div className="flex flex-col pb-3">
                                                 <dt className="mb-1 text-gray-500 text-lg font-semibold md:text-lg dark:text-gray-400">{list?.title}</dt>
-                                                <dd className='list-disc'>
+                                                <dd className='list-disc ml-3'>
                                                     <div dangerouslySetInnerHTML={{ __html: list?.specList }} />
                                                 </dd>
                                             </div>
@@ -184,11 +184,11 @@ const index = () => {
                         return (
                             <div className='each-spec-wrapper border-b pt-8 pb-3' key={index}>
                                 <h3 className='title'>{list?.title}</h3>
-                                <div className="flex flex-col md:flex-row  gap-4 items-center pb-3">
-                                    {list?.thumb && <div className="flex-shrink-0 pt-4">
+                                <div className="flex flex-col md:flex-row gap-4 items-center pb-3">
+                                    {list?.thumb && <div className=" pt-4">
                                         <img className='w-[180px] object-contain' src={list?.thumb?.sourceUrl} alt="Spec Motor" />
                                     </div>}
-                                    <div className="detail flex-1 min-w-0 pt-8 ms-4">
+                                    <div className="detail min-w-0 pt-8 ms-4">
                                         <div dangerouslySetInnerHTML={{ __html: list?.specList }} />
                                     </div>
                                 </div>

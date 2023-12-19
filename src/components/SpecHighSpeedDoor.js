@@ -13,12 +13,12 @@ const SpecHighSpeedDoor = () => {
                         <div className='flex-1'></div>
                         <div className='flex-1'>
                             <div className='header-title'>
-                                <span>Standard Model <br /> C-VE</span>
+                                <span>Standard Model <br /> C-1</span>
                             </div>
                         </div>
                         <div className='flex-1'>
                             <div className='header-title'>
-                                <span>Standard Model <br /> C-1</span>
+                                <span>Standard Model <br /> C-2</span>
                             </div>
                         </div>
                         <div className='flex-1'>
@@ -31,7 +31,7 @@ const SpecHighSpeedDoor = () => {
                         <div className='flex-1'>Maximum Size</div>
                         <div className='flex-1'>
                             <div>
-                                <span>(W) 5000mm * (H) 5000mm</span>
+                                <span>(W) 6000mm * (H) 5000mm</span>
                             </div>
                         </div>
                         <div className='flex-1'>
@@ -41,7 +41,7 @@ const SpecHighSpeedDoor = () => {
                         </div>
                         <div className='flex-1'>
                             <div>
-                                <span>(W) 8000mm * (H) 6000mm</span>
+                                <span>(W) 6000mm * (H) 8000mm</span>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ const SpecHighSpeedDoor = () => {
                         <div className='flex-1'>Opening/closing speed</div>
                         <div className='flex-1'>
                             <div>
-                                <span>0.4 - 1.0 m/s</span>
+                                <span>~1.5 m/s</span>
                             </div>
                         </div>
                         <div className='flex-1'>
@@ -77,15 +77,15 @@ const SpecHighSpeedDoor = () => {
                         </div>
                         <div className='flex-1'>
                             <div>
-                                <span>40m/sec</span>
+                                <span>25m/sec</span>
                             </div>
                         </div>
                     </div>
                     <div className='flex gap-4 list' data-title='Curtains'>
-                        <div className='flex-1'>Curtains</div>
+                        <div className='flex-1'>Sheet</div>
                         <div className='flex-1'>
                             <div>
-                                <span>PVC sheet 1mm</span>
+                                <span>PVC sheet 2mm</span>
                             </div>
                         </div>
                         <div className='flex-1'>
@@ -113,7 +113,7 @@ const SpecHighSpeedDoor = () => {
                         </div>
                         <div className='flex-1'>
                             <div>
-                                <span><img className='mx-auto' src='/assets/ornamen/check-mark.svg' alt='check' /></span>
+                                <span><img className='mx-auto' src='/assets/ornamen/close-icon.svg' alt='close' /></span>
                             </div>
                         </div>
                     </div>
@@ -121,12 +121,12 @@ const SpecHighSpeedDoor = () => {
                         <div className='flex-1'>Internal structure</div>
                         <div className='flex-1'>
                             <div>
-                                <span>Built-in self-contained bristles</span>
+                                <span>Built-in self-contained brush</span>
                             </div>
                         </div>
                         <div className='flex-1'>
                             <div>
-                                <span>Built-in self-contained bristles</span>
+                                <span>Built-in self-contained brush</span>
                             </div>
                         </div>
                         <div className='flex-1'>
@@ -160,12 +160,12 @@ const SpecHighSpeedDoor = () => {
                         <div className='flex-1'>Outstanding Features</div>
                         <div className='flex-1'>
                             <div>
-                                <span className='text-[#37A76B]'>Low cost</span>
+                                <span className='text-[#37A76B]'> Suitable for many sectors</span>
                             </div>
                         </div>
                         <div className='flex-1'>
                             <div>
-                                <span className='text-[#37A76B]'>Suitable for many different production plants</span>
+                                <span className='text-[#37A76B]'>Suitable for limited spaces</span>
                             </div>
                         </div>
                         <div className='flex-1'>
