@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 
 const TabsPhoto = () => {
     const router = useRouter();
-    console.log({ router })
     return (
         <div className="mb-8 font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
             <ul className="flex overflow-x-scroll gap-2 -mb-px text-sm md:text-xl">

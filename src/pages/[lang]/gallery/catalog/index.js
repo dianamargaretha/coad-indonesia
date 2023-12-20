@@ -40,7 +40,6 @@ const catalog = () => {
     }
     `);
     const { catalogs: catalog } = data?.post?.galleryCatalogs ?? {}
-    console.log({ catalog })
     return (
         <div className='gallery-wrapper'>
             <PublicHead title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | Catalog | Gallery | COAD" />

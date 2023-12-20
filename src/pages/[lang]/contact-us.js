@@ -5,6 +5,8 @@ import { validateInput, validateForm } from '@/lib/validation'
 import PublicHead from '@/components/PublicHead';
 import { gql, useQuery } from "@apollo/client";
 
+import { trackContactUs } from "@/lib/analytics"
+
 
 const InputText = ({ required, ...props }) => {
     const { id, label, type, value, maxLength } = props;
@@ -202,6 +204,7 @@ const contactUs = () => {
 
                                 <div className='mb-20 lg:mb-40 xl:mb-30'>
                                     <button
+                                        onClick={() => trackContactUs('Submit Contact Us')}
                                         disabled={loading}
                                         type="submit" className='button-send btn btn-custom-size lg-size btn-primary'>{loading ? <LoadingSend /> : isCurrentLang('Send Information', 'Kirim')}</button>
                                 </div>

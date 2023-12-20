@@ -22,7 +22,6 @@ const Benefit = ({ imgUrl, title }) => {
 const video = () => {
     const router = useRouter();
     const { slug } = router?.query;
-    console.log({ router, slug })
     const MY_QUERY = gql`
     query MyQuery($id: ID!){
         post(id: $id, idType: SLUG) {
