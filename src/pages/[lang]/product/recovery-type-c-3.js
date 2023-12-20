@@ -156,7 +156,15 @@ const highSpeedDoor = () => {
                     </div>
                 </div>
             </div>
-            {/* Spec table */}
+            {/* <div className='pb-28'>
+                <div className='container'>
+                    <video width="320" height="240" controls>
+                        <source src="/assets/coad-images/product/video/C-3.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div> */}
+        </div>
+            {/* Spec table */ }
             <SpecHighSpeedDoor />
             <div className="pb-28">
                 <div className='container'>
@@ -171,7 +179,7 @@ const highSpeedDoor = () => {
                                     <div className='w-12/12 md:w-6/12'>
                                         <div className="flex flex-col md:flex-row gap-4 items-center pb-3">
                                             {list?.thumb && <div className="flex-shrink-0 pt-4">
-                                                <img className=':w-[180px] object-contain' src={list?.thumb?.sourceUrl} alt="Spec Motor" />
+                                                <img className='w-[180px] object-contain' src={list?.thumb?.sourceUrl} alt="Spec Motor" />
                                             </div>}
                                             <div className="detail flex-1 min-w-0 pt-8 ms-4">
                                                 <div dangerouslySetInnerHTML={{ __html: list?.desc }} />
@@ -212,7 +220,7 @@ const highSpeedDoor = () => {
                 </div>
             </div>
 
-        </div>
+        </div >
     )
 }
 
