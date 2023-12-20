@@ -162,9 +162,9 @@ const highSpeedDoor = () => {
                         <source src="/assets/coad-images/product/video/C-3.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
-                </div> */}
-        </div>
-            {/* Spec table */ }
+                </div>
+            </div> */}
+            {/* Spec table */}
             <SpecHighSpeedDoor />
             <div className="pb-28">
                 <div className='container'>
