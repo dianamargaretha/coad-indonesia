@@ -24,9 +24,8 @@ const catalog = () => {
     const { data, loading, error } = useQuery(gql`
     query {
         post(id: "gallery-catalog", idType: SLUG) {
-            galleryCatalog {
-              catalog {
-                fieldGroupName
+            galleryCatalogs {
+              catalogs {
                 file {
                   mediaItemUrl
                 }
@@ -40,7 +39,8 @@ const catalog = () => {
           }
     }
     `);
-    const { catalog } = data?.post?.galleryCatalog ?? {}
+    const { catalogs: catalog } = data?.post?.galleryCatalogs ?? {}
+    console.log({ catalog })
     return (
         <div className='gallery-wrapper'>
             <PublicHead title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | Catalog | Gallery | COAD" />

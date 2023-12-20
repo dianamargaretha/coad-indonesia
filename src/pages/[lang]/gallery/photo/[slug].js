@@ -3,6 +3,9 @@ import { gql, useQuery } from "@apollo/client";
 import Loader from '@/components/Loader';
 import isCurrentLang from '@/utils/isCurrentLang'
 import PublicHead from '@/components/PublicHead';
+import { useRouter } from "next/router";
+import TabsPhoto from '@/components/TabsPhoto';
+
 // gallery - photo
 const Benefit = ({ imgUrl, title }) => {
     return (
@@ -17,9 +20,12 @@ const Benefit = ({ imgUrl, title }) => {
 
 
 const video = () => {
-    const { data, loading, error } = useQuery(gql`
-    query {
-        post(id: "gallery-photo", idType: SLUG) {
+    const router = useRouter();
+    const { slug } = router?.query;
+    console.log({ router, slug })
+    const MY_QUERY = gql`
+    query MyQuery($id: ID!){
+        post(id: $id, idType: SLUG) {
             galleryPhoto {
               catalog {
                 thumb {
@@ -30,7 +36,12 @@ const video = () => {
             }
           }
     }
-    `);
+`;
+
+    const variables = {
+        id: slug,
+    };
+    const { data, loading, error } = useQuery(MY_QUERY, { variables });
     const { catalog } = data?.post?.galleryPhoto ?? {}
     return (
         <div>
@@ -40,6 +51,7 @@ const video = () => {
                     <div className='section-title'>
                         <h2 className='title uppercase'>{isCurrentLang('Photos', 'Foto')}</h2>
                     </div>
+                    <TabsPhoto />
                     {loading && <div className='flex justify-center'>
                         <Loader />
                     </div>}

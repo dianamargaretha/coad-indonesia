@@ -156,14 +156,17 @@ const highSpeedDoor = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className='pb-28'>
+            <div className='pb-28'>
                 <div className='container'>
-                    <video width="320" height="240" controls>
+                    <div className='section-title'>
+                        <h2 className='title'>{isCurrentLang('Video Detail', 'Detail Video')}</h2>
+                    </div>
+                    <video width="60%" height="240" controls>
                         <source src="/assets/coad-images/product/video/C-3.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
-            </div> */}
+            </div>
             {/* Spec table */}
             <SpecHighSpeedDoor />
             <div className="pb-28">

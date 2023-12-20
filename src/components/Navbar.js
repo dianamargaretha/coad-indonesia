@@ -183,8 +183,8 @@ const Navbar = () => {
                                                         <ul className="drop-menu">
                                                             <li>
                                                                 <Link href={{
-                                                                    pathname: '/[lang]/gallery/photo',
-                                                                    query: { lang: router?.query?.lang }
+                                                                    pathname: '/[lang]/gallery/photo/[slug]',
+                                                                    query: { lang: router?.query?.lang, slug: 'gallery-photo-high-speed-door' }
                                                                 }}>{isCurrentLang('Photo', 'Foto')}</Link>
                                                             </li>
                                                             <li>
@@ -308,8 +308,8 @@ const Navbar = () => {
                                                         <li>
                                                             <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                                                 <Link href={{
-                                                                    pathname: '/[lang]/gallery/photo',
-                                                                    query: { lang: router?.query?.lang }
+                                                                    pathname: '/[lang]/gallery/photo/[slug]',
+                                                                    query: { lang: router?.query?.lang, slug: 'gallery-photo-high-speed-door' }
                                                                 }}>{isCurrentLang('Photo', 'Foto')}</Link>
                                                             </div>
                                                         </li>

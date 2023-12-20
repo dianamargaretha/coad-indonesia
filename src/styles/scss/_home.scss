@@ -1,7 +1,7 @@
 .section-worldwide {
     @apply py-20;
     background-image: url("/assets/ornamen/map-home.png");
-    background-size: contain;
+    background-size: auto;
     background-repeat: no-repeat;
     background-position: bottom right;
     .info-title {
@@ -71,7 +71,7 @@
 .section-product-category {
     @apply bg-[#f4f4f4];
     background-image: url("/assets/ornamen/representative.png");
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
     .each-product-unggulan {
