@@ -135,7 +135,7 @@ const highSpeedDoor = () => {
                                 <h4 className='font-bold'>Category :</h4>
                                 <p>High Speed Door</p>
                             </div>
-                            <h3 className='subtitle mb-4'>{isCurrentLang('Specification', 'Spesifikasi')}</h3>
+                            <h3 className='subtitle font-medium mb-4'>{isCurrentLang('Specification', 'Spesifikasi')}</h3>
 
                             <div>
                                 {spec?.map((list, index) => {

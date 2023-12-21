@@ -390,6 +390,7 @@ export default function Home() {
           </Swiper>
         </section>
         <section className='py-28 section-product-category overflow-hidden'>
+          <div className='bg-ornamen'></div>
           <div className='container'>
             <div className='section-title'>
               <h2 className='title'>{isCurrentLang('Featured Product', 'Produk Unggulan')}</h2>

@@ -69,16 +69,20 @@
     }
 }
 .section-product-category {
-    @apply bg-[#f4f4f4];
-    background-image: url("/assets/ornamen/representative.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom;
+    @apply relative bg-[#f4f4f4];
     .each-product-unggulan {
         transition: all 0.3s ease-out;
         &:hover {
             opacity: 0.7;
         }
+    }
+    .bg-ornamen {
+        @apply absolute top-0 left-0 w-full h-full;
+        background-image: url("/assets/ornamen/representative.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        opacity: 0.4;
     }
 }
 .section-about-us {
