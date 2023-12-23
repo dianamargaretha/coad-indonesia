@@ -12,4 +12,15 @@
             }
         }
     }
+    .benefit {
+        @apply cursor-pointer;
+        &:hover {
+            .title {
+                @apply bg-white text-gray-500 transition-all;
+            }
+        }
+        .title {
+            @apply transition-all text-center;
+        }
+    }
 }

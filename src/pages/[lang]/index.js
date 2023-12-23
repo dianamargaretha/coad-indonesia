@@ -492,7 +492,7 @@ export default function Home() {
         <section className='mt-28 pb-40 section-our-client overflow-hidden'>
           <div className='container'>
             <div className='section-title'>
-              <h2 className='title'>{isCurrentLang('Our Client', 'Klien Kami')}</h2>
+              <h2 className='title'>{isCurrentLang('Trusted By Our Client', 'Dipercaya Oleh Klien Kami')}</h2>
             </div>
             <div className='flex flex-wrap justify-center md:justify-start gap-4'>
               <div className='flex-initial w-[70%]'>
@@ -541,6 +541,9 @@ export default function Home() {
 
             </div>
           </div>
+        </section>
+        <section className='mt-28 pb-40 section-sitemap overflow-hidden'>
+          Test
         </section>
       </div>
     </main>

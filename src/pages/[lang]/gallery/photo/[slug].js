@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { gql, useQuery } from "@apollo/client";
 import Loader from '@/components/Loader';
 import isCurrentLang from '@/utils/isCurrentLang'
@@ -6,14 +6,25 @@ import PublicHead from '@/components/PublicHead';
 import { useRouter } from "next/router";
 import TabsPhoto from '@/components/TabsPhoto';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
+
+// import required modules
+import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide, useSwiperSlide } from 'swiper/react';
+
 // gallery - photo
 const Benefit = ({ imgUrl, title }) => {
     return (
-        <div className='card-benefit'>
-            <div className='flex gap-2 justify-start items-center mb-4'>
-                <h2 className='text-h5-m lg:text-h5 font-semibold'>{title}</h2>
+        <div className='benefit flex items-center p-4 w-[280px] h-[280px] md:w-[375px] md:h-[375px] relative'>
+            <img className='absolute w-full h-full object-cover left-0 top-0' width='100%' src={imgUrl} alt={title} />
+            <div className='relative z-10'>
+                <h2 className='title text-3xl text-white p-4 border-8 border-white font-light uppercase word-spacing-[-0.15em]'>{title}</h2>
             </div>
-            <img width='100%' src={imgUrl} alt={title} />
         </div>
     )
 }
@@ -21,27 +32,42 @@ const Benefit = ({ imgUrl, title }) => {
 
 const video = () => {
     const router = useRouter();
+    const [showModal, isShowModal] = useState(false);
+    const [slideDetail, setSlideDetail] = useState()
     const { slug } = router?.query;
+
     const MY_QUERY = gql`
     query MyQuery($id: ID!){
         post(id: $id, idType: SLUG) {
-            galleryPhoto {
-              catalog {
-                thumb {
-                  sourceUrl
+            galleryPhotos {
+                photogroup {
+                  title
+                  slug
+                  thumb {
+                    sourceUrl
+                  }
+                  slide {
+                    title
+                    thumb {
+                      sourceUrl
+                    }
+                  }
                 }
-                title
               }
-            }
           }
     }
-`;
+    `
 
     const variables = {
         id: slug,
     };
-    const { data, loading, error } = useQuery(MY_QUERY, { variables });
-    const { catalog } = data?.post?.galleryPhoto ?? {}
+
+    const { data, loading, error } = useQuery(MY_QUERY, { variables })
+    const { photogroup } = data?.post?.galleryPhotos ?? {}
+    const handleModalSlide = (slug) => {
+        isShowModal(!showModal)
+        setSlideDetail(photogroup?.filter(list => list.slug === slug))
+    }
     return (
         <div>
             <PublicHead title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | Catalog | Gallery | COAD" />
@@ -55,12 +81,48 @@ const video = () => {
                         <Loader />
                     </div>}
                     <div className='flex flex-wrap justify-start gap-4'>
-                        {catalog?.map((list, index) => {
-                            return <Benefit key={index} title={list?.title} imgUrl={list?.thumb?.sourceUrl} />
+                        {photogroup?.map((list, index) => {
+                            return (
+                                <div key={index} onClick={() => handleModalSlide(list?.slug)}>
+                                    <Benefit key={index} title={list?.title} imgUrl={list?.thumb?.sourceUrl} />
+                                </div>
+                            )
                         })}
                     </div>
                 </div>
             </div>
+            {showModal && (
+                <div className='fixed top-0 left-0 w-full h-[100vh] z-[100000] bg-white overflow-scroll flex justify-center items-center'>
+                    <div className='max-w-[500px] w-full p-4'>
+                        <div className='absolute top-4 right-4 cursor-pointer' onClick={() => isShowModal(false)}>close</div>
+                        <Swiper
+                            modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
+                            loop={false}
+                            slidesPerView={1}
+                            centeredSlides={true}
+                            spaceBetween={32}
+                            navigation
+                            pagination={{ clickable: true }}
+                            breakpoints={{
+                                640: {
+                                    spaceBetween: 20
+                                },
+                                768: {
+                                    spaceBetween: 32
+                                }
+                            }}
+                        >
+                            {slideDetail[0].slide.map((list, index) => (
+                                <SwiperSlide key={index}>
+                                    <div className='flex justify-center'>
+                                        <Benefit key={index} title={list?.title} imgUrl={list?.thumb?.sourceUrl} />
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
+                </div>
+            )}
         </div>
     )
 
