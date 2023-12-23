@@ -404,10 +404,10 @@ export default function Home() {
                 spaceBetween={32}
                 navigation
                 pagination={{ clickable: true }}
-                // autoplay={{
-                //   delay: 2500,
-                //   disableOnInteraction: false,
-                // }}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
                 breakpoints={{
                   640: {
                     spaceBetween: 20
