@@ -115,7 +115,12 @@ const video = () => {
                             {slideDetail[0].slide.map((list, index) => (
                                 <SwiperSlide key={index}>
                                     <div className='flex justify-center'>
-                                        <Benefit key={index} title={list?.title} imgUrl={list?.thumb?.sourceUrl} />
+                                        <div className='benefit flex items-center p-4 w-[280px] h-[280px] md:w-[375px] md:h-[375px] relative'>
+                                            <img className='absolute w-full h-full object-cover left-0 top-0' width='100%' src={list?.thumb?.sourceUrl} alt={list?.title} />
+                                            <div className='relative z-10'>
+                                                <h2 className='title text-2xl text-white p-2 border-4 border-white font-light uppercase word-spacing-[-0.15em]'>{list?.title}</h2>
+                                            </div>
+                                        </div>
                                     </div>
                                 </SwiperSlide>
                             ))}
