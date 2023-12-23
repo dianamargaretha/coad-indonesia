@@ -106,7 +106,7 @@ const aboutUs = () => {
             <div className='container about-banner-content py-24'>
                 <span className='about-sub-title'>{isCurrentLang('OUR HISTORY', 'SEJARAH KAMI')}</span>
                 <h2 className='about-title'>COAD INDONESIA</h2>
-                <div className='short-desc'>
+                <div className='short-desc mt-8 tracking-wide'>
                     <div dangerouslySetInnerHTML={{ __html: isCurrentLang(aboutUs?.historyDetailEn, aboutUs?.historyDetail) }} />
                 </div>
             </div>

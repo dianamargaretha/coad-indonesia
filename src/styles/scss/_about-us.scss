@@ -43,8 +43,10 @@
             line-height: 120%;
         }
         .desc {
+            @apply mt-8;
             color: #6d6e70;
             ol {
+                @apply flex flex-col gap-3 tracking-widest;
                 list-style: auto;
             }
         }
