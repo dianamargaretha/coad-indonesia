@@ -16,17 +16,19 @@ import 'swiper/css/autoplay';
 // import required modules
 import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide, useSwiperSlide } from 'swiper/react';
+import Image from 'next/image';
 
 // gallery - photo
 const Benefit = ({ imgUrl, title }) => {
     return (
         <div className='benefit flex items-center p-4 w-[280px] h-[280px] md:w-[375px] md:h-[375px] relative'>
-            <img className='absolute w-full h-full object-cover left-0 top-0' width='100%' src={imgUrl} alt={title} />
-            <div className='relative z-10'>
+            <div className='absolute image-container left-0 top-0'>
+                <Image src={imgUrl} alt={title} layout="fill" className={'image'} />
+            </div>
+            <div className='relative z-10 p-4'>
                 <div className='p-2 border-4 border-white'>
                     <h2 className='title text-3xl bg-white p-2 font-light uppercase word-spacing-[-0.15em]'>{title}</h2>
                 </div>
-                {/* <h2 className='title text-3xl text-white p-4 border-8 border-white font-light uppercase word-spacing-[-0.15em]'>{title}</h2> */}
             </div>
         </div>
     )
@@ -83,10 +85,10 @@ const video = () => {
                     {loading && <div className='flex justify-center'>
                         <Loader />
                     </div>}
-                    <div className='flex flex-wrap justify-start gap-4'>
+                    <div className='flex flex-wrap justify-center md:justify-start gap-4'>
                         {photogroup?.map((list, index) => {
                             return (
-                                <div key={index} onClick={() => handleModalSlide(list?.slug)}>
+                                <div key={index} className='flex justify-center' onClick={() => handleModalSlide(list?.slug)}>
                                     <Benefit key={index} title={list?.title} imgUrl={list?.thumb?.sourceUrl} />
                                 </div>
                             )
@@ -119,8 +121,10 @@ const video = () => {
                                 <SwiperSlide key={index}>
                                     <div className='flex justify-center'>
                                         <div className='benefit flex items-center p-4 w-[280px] h-[280px] md:w-[500px] md:h-[500px] relative'>
-                                            <img className='absolute w-full h-full object-cover left-0 top-0' width='100%' src={list?.thumb?.sourceUrl} alt={list?.title} />
-                                            <div className='relative z-10'>
+                                            <div className='absolute left-0 top-0 image-container'>
+                                                <Image src={list?.thumb?.sourceUrl} alt={list?.title} layout="fill" className={'image'} />
+                                            </div>
+                                            <div className='relative p-4 z-10'>
                                                 <h2 className='title text-2xl text-white p-2 border-4 border-white font-light uppercase word-spacing-[-0.15em]'>{list?.title}</h2>
                                             </div>
                                         </div>
