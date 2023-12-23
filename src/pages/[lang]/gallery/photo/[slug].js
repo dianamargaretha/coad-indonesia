@@ -23,7 +23,10 @@ const Benefit = ({ imgUrl, title }) => {
         <div className='benefit flex items-center p-4 w-[280px] h-[280px] md:w-[375px] md:h-[375px] relative'>
             <img className='absolute w-full h-full object-cover left-0 top-0' width='100%' src={imgUrl} alt={title} />
             <div className='relative z-10'>
-                <h2 className='title text-3xl text-white p-4 border-8 border-white font-light uppercase word-spacing-[-0.15em]'>{title}</h2>
+                <div className='p-2 border-4 border-white'>
+                    <h2 className='title text-3xl bg-white p-2 font-light uppercase word-spacing-[-0.15em]'>{title}</h2>
+                </div>
+                {/* <h2 className='title text-3xl text-white p-4 border-8 border-white font-light uppercase word-spacing-[-0.15em]'>{title}</h2> */}
             </div>
         </div>
     )

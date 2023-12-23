@@ -404,10 +404,10 @@ export default function Home() {
                 spaceBetween={32}
                 navigation
                 pagination={{ clickable: true }}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
-                }}
+                // autoplay={{
+                //   delay: 2500,
+                //   disableOnInteraction: false,
+                // }}
                 breakpoints={{
                   640: {
                     spaceBetween: 20
@@ -423,16 +423,20 @@ export default function Home() {
                       pathname: `/[lang]/product/${item?.linkproduct}`,
                       query: { lang: router?.query?.lang }
                     }}>
-                      <div className='each-product-unggulan relative flex justify-center items-center'>
-                        <Image
-                          src={item?.imageproduct?.sourceUrl}
-                          alt={index}
-                          width={270}
-                          height={337}
-                          priority
-                        />
-                        <div className='label absolute bg-white  p-2 text-center text-xs'>
-                          {item?.productname}
+                      <div className='benefit w-[280px] h-[337px] flex items-center relative'>
+                        <div className='absolute'>
+                          <Image
+                            src={item?.imageproduct?.sourceUrl}
+                            alt={index}
+                            width={280}
+                            height={337}
+                            priority
+                          />
+                        </div>
+                        <div className='relative z-10 p-4'>
+                          <div className='p-2 border-2 border-white'>
+                            <h2 className='title bg-white text-lg md:text-lg p-2 font-light uppercase word-spacing-[-0.15em]'>{item?.productname}</h2>
+                          </div>
                         </div>
                       </div>
 
