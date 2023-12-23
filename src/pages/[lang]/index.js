@@ -542,9 +542,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className='mt-28 pb-40 section-sitemap overflow-hidden'>
-          Test
-        </section>
       </div>
     </main>
   )

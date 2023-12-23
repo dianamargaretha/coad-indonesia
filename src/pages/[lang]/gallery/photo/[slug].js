@@ -93,7 +93,7 @@ const video = () => {
             </div>
             {showModal && (
                 <div className='fixed top-0 left-0 w-full h-[100vh] z-[100000] bg-white overflow-scroll flex justify-center items-center'>
-                    <div className='max-w-[500px] w-full p-4'>
+                    <div className='max-w-[640px] w-full p-4'>
                         <div className='absolute top-4 right-4 cursor-pointer' onClick={() => isShowModal(false)}>close</div>
                         <Swiper
                             modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
@@ -115,7 +115,7 @@ const video = () => {
                             {slideDetail[0].slide.map((list, index) => (
                                 <SwiperSlide key={index}>
                                     <div className='flex justify-center'>
-                                        <div className='benefit flex items-center p-4 w-[280px] h-[280px] md:w-[375px] md:h-[375px] relative'>
+                                        <div className='benefit flex items-center p-4 w-[280px] h-[280px] md:w-[500px] md:h-[500px] relative'>
                                             <img className='absolute w-full h-full object-cover left-0 top-0' width='100%' src={list?.thumb?.sourceUrl} alt={list?.title} />
                                             <div className='relative z-10'>
                                                 <h2 className='title text-2xl text-white p-2 border-4 border-white font-light uppercase word-spacing-[-0.15em]'>{list?.title}</h2>
