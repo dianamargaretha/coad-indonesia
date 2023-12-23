@@ -489,7 +489,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className='mt-28 pb-40 section-our-client overflow-hidden'>
+        <section className='mt-28 pb-24 section-our-client overflow-hidden'>
           <div className='container'>
             <div className='section-title'>
               <h2 className='title'>{isCurrentLang('Trusted By Our Client', 'Dipercaya Oleh Klien Kami')}</h2>

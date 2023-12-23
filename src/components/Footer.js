@@ -24,13 +24,13 @@ const Footer = () => {
     const { footer } = dataHomePage?.post?.homepage ?? {}
     return (
         <footer>
-            <div className='mt-28 py-12 section-sitemap overflow-hidden bg-[#e5e2e2]'>
+            <div className='py-12 section-sitemap overflow-hidden bg-[#e5e2e2]'>
                 <div className='container'>
-                    <div className='flex'>
+                    <div className='flex flex-col md:flex-row gap-8 md:gap-0'>
                         <div className='w-12/12 md:w-3/12'>
                             <img width={200} src='/assets/coad-images/coad.png' alt='Coad Indonesia' />
                         </div>
-                        <div className='w-3/12'>
+                        <div className='w-12/12 md:w-3/12'>
                             <h3 className='uppercase font-bold tracking-wider mb-6'>{isCurrentLang('Company', 'Perusahaan Kami')}</h3>
                             <ul className='flex flex-col gap-1 tracking-wide'>
                                 <li>
@@ -47,7 +47,7 @@ const Footer = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className='w-3/12'>
+                        <div className='w-12/12 md:w-3/12'>
                             <h3 className='uppercase font-bold tracking-wider mb-6'>{isCurrentLang('Product', 'Produk Kami')}</h3>
                             <ul className='flex flex-col gap-1 tracking-wide'>
                                 <li>
@@ -70,7 +70,7 @@ const Footer = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className='w-3/12'>
+                        <div className='w-12/12 md:w-3/12'>
                             <h3 className='uppercase font-bold tracking-wider mb-6'>{isCurrentLang('Gallery', 'Galeri Kami')}</h3>
                             <ul className='flex flex-col gap-1 tracking-wide'>
                                 <li>
@@ -149,7 +149,7 @@ const Footer = () => {
                 </div>
             </div> */}
 
-        </footer>
+        </footer >
     )
 }
 
