@@ -403,7 +403,7 @@ export default function Home() {
                 slidesPerView={"auto"}
                 spaceBetween={32}
                 navigation
-                pagination={{ clickable: true }}
+                // pagination={{ clickable: true }}
                 autoplay={{
                   delay: 2500,
                   disableOnInteraction: false,
@@ -512,7 +512,7 @@ export default function Home() {
                   slidesPerView={"auto"}
                   spaceBetween={32}
                   navigation
-                  pagination={{ clickable: true }}
+                  // pagination={{ clickable: true }}
                   autoplay={{
                     delay: 2500,
                     disableOnInteraction: false,

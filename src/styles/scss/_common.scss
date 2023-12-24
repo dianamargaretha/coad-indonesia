@@ -30,6 +30,21 @@
 .swiper-rtl .swiper-button-prev:after {
     color: #ee3231;
 }
+.swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    color: #000;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+    color: #fff;
+    background: #007aff;
+}
 
 @media (max-width: 320px) {
     // recapcha
