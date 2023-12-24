@@ -90,6 +90,32 @@ const index = () => {
                 description="this page shows Sliding Door Model. Comes with built-in communication ports which enable you to use the remote control and monitoring functions by connecting to available communication methods. " />
             <div className='container mt-12 pb-28'>
                 <div className='flex flex-col md:flex-row  gap-16'>
+                    <div className='w-12/12 md:w-7/12'>
+                        <div>
+                            <h2 className='title mb-1'>{title}</h2>
+                            <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
+                                <h4 className='font-bold'>Category :</h4>
+                                <p>Garage Door</p>
+                            </div>
+                            <h3 className='subtitle mb-4'>{isCurrentLang('Specification', 'Spesifikasi')}</h3>
+
+                            <div>
+                                {spec?.map((list, index) => {
+                                    return (
+                                        <dl className="border-b py-4" key={index}>
+                                            <div className="flex flex-col pb-3">
+                                                <dt className="mb-1 text-gray-500 text-lg font-semibold md:text-lg dark:text-gray-400">{list?.title}</dt>
+                                                <dd className='list-disc ml-3'>
+                                                    <div dangerouslySetInnerHTML={{ __html: list?.specList }} />
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    )
+                                })}
+                            </div>
+                        </div>
+
+                    </div>
                     <div className='w-12/12 md:w-5/12'>
                         <div>
                             <Swiper
@@ -125,33 +151,6 @@ const index = () => {
                                 )))}
                             </Swiper>
                         </div>
-                    </div>
-
-                    <div className='w-12/12 md:w-7/12'>
-                        <div>
-                            <h2 className='title mb-1'>{title}</h2>
-                            <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
-                                <h4 className='font-bold'>Category :</h4>
-                                <p>Garage Door</p>
-                            </div>
-                            <h3 className='subtitle mb-4'>{isCurrentLang('Specification', 'Spesifikasi')}</h3>
-
-                            <div>
-                                {spec?.map((list, index) => {
-                                    return (
-                                        <dl className="border-b py-4" key={index}>
-                                            <div className="flex flex-col pb-3">
-                                                <dt className="mb-1 text-gray-500 text-lg font-semibold md:text-lg dark:text-gray-400">{list?.title}</dt>
-                                                <dd className='list-disc ml-3'>
-                                                    <div dangerouslySetInnerHTML={{ __html: list?.specList }} />
-                                                </dd>
-                                            </div>
-                                        </dl>
-                                    )
-                                })}
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>

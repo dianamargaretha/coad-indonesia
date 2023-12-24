@@ -91,6 +91,32 @@ const highSpeedDoor = () => {
                 description="this page shows Standard Model. high speed door's Best selling products, Sheet has been designed to be easy to replace." />
             <div className='container mt-12 pb-28'>
                 <div className='flex flex-col md:flex-row gap-16'>
+                    <div className='w-12/12 md:w-7/12'>
+                        <div>
+                            <h2 className='title mb-1'>{title}</h2>
+                            <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
+                                <h4 className='font-bold'>Category :</h4>
+                                <p>High Speed Door</p>
+                            </div>
+                            <h3 className='subtitle font-medium mb-4'>{isCurrentLang('Specification', 'Spesifikasi')}</h3>
+
+                            <div>
+                                {spec?.map((list, index) => {
+                                    return (
+                                        <dl className="border-b py-4" key={index}>
+                                            <div className="flex flex-col pb-3">
+                                                <dt className="mb-1 text-gray-500 text-lg font-semibold md:text-lg dark:text-gray-400">{list?.title}</dt>
+                                                <dd className='list-disc ml-3'>
+                                                    <div dangerouslySetInnerHTML={{ __html: list?.specList }} />
+                                                </dd>
+                                            </div>
+                                        </dl>
+                                    )
+                                })}
+                            </div>
+                        </div>
+
+                    </div>
                     <div className='w-12/12 md:w-5/12'>
                         <div>
                             <Swiper
@@ -126,33 +152,6 @@ const highSpeedDoor = () => {
                                 )))}
                             </Swiper>
                         </div>
-                    </div>
-
-                    <div className='w-12/12 md:w-7/12'>
-                        <div>
-                            <h2 className='title mb-1'>{title}</h2>
-                            <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
-                                <h4 className='font-bold'>Category :</h4>
-                                <p>High Speed Door</p>
-                            </div>
-                            <h3 className='subtitle font-medium mb-4'>{isCurrentLang('Specification', 'Spesifikasi')}</h3>
-
-                            <div>
-                                {spec?.map((list, index) => {
-                                    return (
-                                        <dl className="border-b py-4" key={index}>
-                                            <div className="flex flex-col pb-3">
-                                                <dt className="mb-1 text-gray-500 text-lg font-semibold md:text-lg dark:text-gray-400">{list?.title}</dt>
-                                                <dd className='list-disc ml-3'>
-                                                    <div dangerouslySetInnerHTML={{ __html: list?.specList }} />
-                                                </dd>
-                                            </div>
-                                        </dl>
-                                    )
-                                })}
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
