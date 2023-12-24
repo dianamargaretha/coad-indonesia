@@ -132,7 +132,9 @@ const highSpeedDoor = () => {
                             >
                                 {gallery?.map(((thumb, index) => (
                                     <SwiperSlide key={index}>
-                                        <img src={thumb?.thumb?.sourceUrl} />
+                                        <div className='image-container left-0 top-0'>
+                                            <Image src={thumb?.thumb?.sourceUrl} alt={index} layout="fill" className={'image'} />
+                                        </div>
                                     </SwiperSlide>
                                 )))}
                             </Swiper>
@@ -147,7 +149,9 @@ const highSpeedDoor = () => {
                             >
                                 {gallery?.map(((thumb, index) => (
                                     <SwiperSlide key={index}>
-                                        <img src={thumb?.thumb?.sourceUrl} />
+                                        <div className='image-container left-0 top-0'>
+                                            <Image src={thumb?.thumb?.sourceUrl} alt={index} layout="fill" className={'image'} />
+                                        </div>
                                     </SwiperSlide>
                                 )))}
                             </Swiper>
