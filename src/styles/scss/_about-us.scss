@@ -36,6 +36,10 @@
         }
     }
     .our-vision-mission {
+        @apply relative;
+        background-image: url("/assets/ornamen/ornamen-bg-about.png");
+        background-size: cover;
+        background-repeat: no-repeat;
         h3 {
             color: #060d20;
             font-size: 2.625rem;

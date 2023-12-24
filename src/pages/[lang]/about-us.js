@@ -86,7 +86,6 @@ const aboutUs = () => {
         AboutAnimation(completeAnimation)
     }, [])
 
-
     return (
         <div className='about-us'>
             <PublicHead
@@ -110,8 +109,8 @@ const aboutUs = () => {
                     <div dangerouslySetInnerHTML={{ __html: isCurrentLang(aboutUs?.historyDetailEn, aboutUs?.historyDetail) }} />
                 </div>
             </div>
-            <div className='our-vision-mission bg-[#f4f4f4] py-28'>
-                <div className='container'>
+            <div className='our-vision-mission bg-[#f4f4f4]'>
+                <div className='container py-28'>
                     <div className='flex flex-col md:flex-row gap-4'>
                         <div className='flex-1 bg-white text-neutral-50 px-10 py-16 rounded-xl'>
                             <div className='flex flex-col gap-4 items-center'>
@@ -162,7 +161,7 @@ const aboutUs = () => {
                     </div>
                 </div>
             </div>
-            <div className='our-vision-mission bg-[#f4f4f4] py-28'>
+            <div className='bg-[#f4f4f4] py-28'>
                 <div className='container'>
                     <div className='section-title'>
                         <h2 className='title'>{isCurrentLang('Patents and certifications', 'Hak Paten dan Sertifikasi')}</h2>
