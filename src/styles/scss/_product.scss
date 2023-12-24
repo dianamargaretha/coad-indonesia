@@ -1,12 +1,10 @@
 .section-product {
     .title {
+        @apply text-4xl md:text-5xl font-bold tracking-wide;
         color: #444;
-        font-size: 30px;
-        font-weight: 500;
-        line-height: 1.2;
     }
     .subtitle {
-        font-size: 24px;
+        @apply text-2xl font-medium tracking-widest;
         color: #dc3545;
     }
     //Swiper
@@ -80,11 +78,16 @@
     .section-title {
         .title {
             @apply font-bold;
+            font-size: 30px;
+            line-height: 1.2;
         }
     }
     .each-spec-wrapper {
         .title {
             @apply text-[#dc3545];
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 1.2;
         }
         .detail {
             @apply text-[#444444];
