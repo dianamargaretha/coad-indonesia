@@ -17,6 +17,8 @@ import { useRouter } from 'next/router';
 import PublicHead from '@/components/PublicHead';
 import SpecHighSpeedDoor from '@/components/SpecHighSpeedDoor';
 
+import VideoC3Cover from '/public/assets/cover-video-c3.png'
+
 const Benefit = ({ thumb, title, link, lang }) => {
     return (
         <Link href={{
@@ -44,6 +46,7 @@ const highSpeedDoor = () => {
     const lang = router?.query?.lang
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const [showVideo, setShowVideo] = useState(false);
 
     const { data, loading, error } = useQuery(gql`
     query {
@@ -165,10 +168,11 @@ const highSpeedDoor = () => {
                     <div className='section-title'>
                         <h2 className='title'>{isCurrentLang('Video Detail', 'Detail Video')}</h2>
                     </div>
-                    <video width="60%" height="240" controls>
-                        <source src="/assets/coad-images/product/video/C-3.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
+                    <div className='w-12/12 md:w-7/12'>
+                        <div className='rounded-lg overflow-hidden' onClick={() => setShowVideo(true)}>
+                            <Image src={VideoC3Cover} />
+                        </div>
+                    </div>
                 </div>
             </div>
             {/* Spec table */}
@@ -226,8 +230,18 @@ const highSpeedDoor = () => {
                     </div>
                 </div>
             </div>
-
-        </div >
+            {showVideo && (
+                <div className='fixed top-0 left-0 w-full h-[100vh] z-[100000] bg-white overflow-scroll flex justify-center items-center'>
+                    <div className='flex justify-center w-full'>
+                        <div className='absolute top-4 right-4 cursor-pointer' onClick={() => setShowVideo(false)}>close</div>
+                        <video width="60%" height="240" controls>
+                            <source src="/assets/coad-images/product/video/C-3.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            )}
+        </div>
     )
 }
 
