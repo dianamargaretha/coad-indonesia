@@ -168,9 +168,14 @@ const highSpeedDoor = () => {
                     <div className='section-title'>
                         <h2 className='title'>{isCurrentLang('Video Detail', 'Detail Video')}</h2>
                     </div>
-                    <div className='w-12/12 md:w-7/12'>
-                        <div className='rounded-lg overflow-hidden' onClick={() => setShowVideo(true)}>
-                            <Image src={VideoC3Cover} />
+                    <div className='w-12/12 md:w-8/12'>
+                        <div className='relative rounded-lg overflow-hidden cursor-pointer' onClick={() => setShowVideo(true)}>
+                            <div className='absolute z-10 flex justify-center w-[50px] h-[50px] md:w-[100px] md:h-[100px] left-[calc(50%_-_25px)] top-[calc(50%_-_25px)] md:left-[calc(50%_-_50px)] md:top-[calc(50%_-_50px)]'>
+                                <img src='/assets/images/ic-player.svg' className='w-[40px] h-[40px] md:w-[80px] md:h-[80px]' />
+                            </div>
+                            <div className='opacity-70'>
+                                <Image src={VideoC3Cover} />
+                            </div>
                         </div>
                     </div>
                 </div>
