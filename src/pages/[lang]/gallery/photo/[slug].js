@@ -126,7 +126,7 @@ const video = () => {
                                                 <Image src={list?.thumb?.sourceUrl} alt={list?.title} layout="fill" className={'image'} />
                                             </div>
                                             <div className='relative p-4 z-10'>
-                                                <h2 className='title text-2xl text-white p-2 border-4 border-white font-light uppercase word-spacing-[-0.15em]'>{list?.title}</h2>
+                                                {list?.title && <h2 className='title text-2xl text-white p-2 border-4 border-white font-light uppercase word-spacing-[-0.15em]'>{list?.title}</h2>}
                                             </div>
                                         </div>
                                     </div>
