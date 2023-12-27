@@ -21,7 +21,7 @@ import Image from 'next/image';
 // gallery - photo
 const Benefit = ({ imgUrl, title }) => {
     return (
-        <div className='benefit flex items-center p-4 w-[280px] h-[280px] md:w-[375px] md:h-[375px] relative'>
+        <div className='benefit flex justify-center items-center p-4 w-[280px] h-[280px] md:w-[375px] md:h-[375px] relative'>
             <div className='absolute image-container left-0 top-0'>
                 <Image src={imgUrl} alt={title} layout="fill" className={'image'} />
             </div>

@@ -423,7 +423,7 @@ export default function Home() {
                       pathname: `/[lang]/product/${item?.linkproduct}`,
                       query: { lang: router?.query?.lang }
                     }}>
-                      <div className='benefit w-[280px] h-[337px] flex items-center relative'>
+                      <div className='benefit w-[280px] h-[337px] flex items-center justify-center relative'>
                         <div className='absolute'>
                           <Image
                             src={item?.imageproduct?.sourceUrl}
@@ -435,7 +435,7 @@ export default function Home() {
                         </div>
                         <div className='relative z-10 p-4'>
                           <div className='p-2 border-2 border-white'>
-                            <h2 className='title bg-white text-lg md:text-lg p-2 font-light uppercase word-spacing-[-0.15em]'>{item?.productname}</h2>
+                            <h2 className='title text-center bg-white text-lg md:text-lg p-2 font-light uppercase word-spacing-[-0.15em]'>{item?.productname}</h2>
                           </div>
                         </div>
                       </div>
