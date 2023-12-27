@@ -6,7 +6,7 @@ const TabsPhoto = () => {
     const router = useRouter();
     return (
         <div className="mb-8 font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
-            <ul className="flex overflow-x-scroll gap-2 -mb-px text-sm md:text-xl">
+            <ul className="gallery-photo-tabs flex overflow-x-scroll gap-2 -mb-px text-sm md:text-xl">
                 <li>
                     <Link href={{
                         pathname: '/[lang]/gallery/photo/[slug]',
