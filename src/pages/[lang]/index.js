@@ -355,8 +355,8 @@ export default function Home() {
                   <div className='slide-style-2 animation-style-02 homebanner' style={{ backgroundImage: `url(${slide?.banner?.sourceUrl})` }}>
                     <div className="slide-inner bg-height px-8 md:px-16">
                       <div className='hidden md:block homebanner-ornamen'></div>
-                      <div className="relative z-10 container flex gap-0 md:gap-16">
-                        <div className="md:w-5/12">
+                      <div className="relative z-10 container">
+                        <div className="md:w-5/12 bg-[rgba(255,255,255,0.1)] p-12">
                           <div className="slide-content">
                             <div className=''>
                               <h2 className="title mb-4">
