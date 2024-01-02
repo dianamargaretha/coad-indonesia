@@ -136,6 +136,17 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
+                        <div className='w-12/12 md:w-2/12'></div>
+                        <div className='w-12/12 md:w-3/12'>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.29632552944!2d106.781861!3d-6.220927!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f12d82b5cad9%3A0xec3043c856077a11!2sThe%20Bellezza%20Shopping%20Arcade!5e0!3m2!1sen!2sid!4v1703346478174!5m2!1sen!2sid"
+                                width="100%"
+                                height="auto"
+                                style={{ border: 0, minHeight: '200px' }}
+                                allowFullScreen=""
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                 </div>
                 <div className="w-full h-[1px] opacity-50 bg-white"></div>
