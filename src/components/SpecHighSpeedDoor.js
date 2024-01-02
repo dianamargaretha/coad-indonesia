@@ -28,7 +28,7 @@ const SpecHighSpeedDoor = ({ type }) => {
                         </div>
                     </div>
                     <div className={`list-table-wrapper type-${type}`}>
-                        <div className='flex gap-0 md:gap-4 list list-first' data-title='>Maximum Size'>
+                        <div className='flex gap-0 md:gap-4 list list-first' data-title='Maximum Size'>
                             <div className='flex-1'>Maximum Size</div>
                             <div className='flex-1'>
                                 <div>
