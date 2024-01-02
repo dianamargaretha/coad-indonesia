@@ -6,7 +6,6 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link rel="icon" href="/assets/favicon.ico" sizes="any" />
-        {/* <title>high-speed-door, rapid-door, pintu-high-speed-door, pintu-rapid-door, harga-high-speed-door, harga-rapid-door, jual-high-speed-door, jual-rapid-door, pvc-roller-shutter-door- CONVENIENCE auto door | COAD CONVENIENCE AUTO DOOR</title> */}
         {/* Plugin wa chat default */}
         <script
           type="text/javascript"
@@ -16,39 +15,34 @@ export default function Document() {
         >
         </script>
 
-        {/* <script
-          type="text/javascript"
-          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
-          id="aisensy-wa-widget"
-          widget-id="WWFzoy"
-        >
-        </script> */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','G-W545Q1VWVX');`,
+          }}
+        />
 
       </Head>
       <body>
         <Main />
         <NextScript />
         {/* <!-- Google tag (gtag.js) --> */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-W545Q1VWVX" />
-        <Script id="google-analytics">
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=G-W545Q1VWVX" height="0" width="0" style="display: none; visibility: hidden;" />`,
+          }}
+        />
+        {/* <!-- Google analytics (analytics.js) --> */}
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+          function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
- 
-          gtag('config', 'G-W545Q1VWVX');
-        `}
-        </Script>
-        {/* <!-- Google analytics (analytics.js) --> */}
-        <Script id="google-analytics">
-          {`
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
- 
-          ga('create', 'AW-349252447', 'auto');
-          ga('send', 'pageview');
+
+          gtag('config', 'AW-349252447');
         `}
         </Script>
       </body>

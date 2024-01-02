@@ -4,6 +4,7 @@ import { gql, useQuery } from "@apollo/client";
 import { useRouter } from 'next/router'
 import Loader from '@/components/Loader';
 import PublicHead from '@/components/PublicHead';
+import Image from 'next/image';
 
 const Benefit = ({ imgUrl, title, fileUrl, type }) => {
     return (
@@ -13,7 +14,11 @@ const Benefit = ({ imgUrl, title, fileUrl, type }) => {
                     <div className={`icon ${type === 'docs' ? 'docs' : ''}`}></div>
                     <h2 className='text-h5-m lg:text-h5'>{title}</h2>
                 </div>
-                <img width='100%' src={imgUrl} alt={title} />
+                <div className='w-[248px] h-[248px] md:w-[343px] md:h-[343px] relative'>
+                    <div className='absolute image-container left-0 top-0' style={{ height: '100%' }}>
+                        <Image src={imgUrl} alt={title} fill style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </div>
+                </div>
             </a>
         </div>
     )

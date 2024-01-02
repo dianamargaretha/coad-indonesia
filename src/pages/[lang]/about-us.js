@@ -93,7 +93,7 @@ const aboutUs = () => {
                 description='This page shows Korea Auto Door company overview and talking about high speed door also We introduce our overseas corporation. ' />
             <div className='banner overflow-hidden'>
                 <Image src={bannerAbout}
-                    objectFit="cover"
+                    // objectFit="cover"
                     fill
                     alt="About Coad Indonesia" />
                 <div className='container relative z-2'>
@@ -114,7 +114,7 @@ const aboutUs = () => {
                     <div className='flex flex-col md:flex-row gap-4'>
                         <div className='flex-1 bg-white text-neutral-50 px-10 py-16 rounded-xl'>
                             <div className='flex flex-col gap-4 items-center'>
-                                <Image src={'/assets/coad-images/ic-our-vision.svg'} width={52} height={52} />
+                                <Image src={'/assets/coad-images/ic-our-vision.svg'} width={52} height={52} alt='our vision' />
                                 <h3>{isCurrentLang('Our Vision', 'Visi Kami')}</h3>
                                 <div className='desc'>
                                     <div dangerouslySetInnerHTML={{ __html: isCurrentLang(aboutUs?.visiEn, aboutUs?.visi) }} />
@@ -123,7 +123,7 @@ const aboutUs = () => {
                         </div>
                         <div className='flex-1 bg-white text-neutral-50 px-10 py-16 rounded-xl'>
                             <div className='flex flex-col gap-4 items-center'>
-                                <Image src={'/assets/coad-images/ic-our-mission.svg'} width={52} height={52} />
+                                <Image src={'/assets/coad-images/ic-our-mission.svg'} width={52} height={52} alt='our mission' />
                                 <h3>{isCurrentLang('Our Mission', 'Misi Kami')}</h3>
                                 <div className='desc'>
                                     <div dangerouslySetInnerHTML={{ __html: isCurrentLang(aboutUs?.misiEn, aboutUs?.misi) }} />

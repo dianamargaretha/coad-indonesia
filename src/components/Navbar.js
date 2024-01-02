@@ -5,17 +5,24 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import LanguageSelector from './LanguageSelector'
 import isCurrentLang from '@/utils/isCurrentLang';
-import Image from 'next/image';
+import { ReactGA, initialize } from "@/lib/analytics"
 import Accordion from './Accordion';
 if (typeof window !== "undefined") {
     // Init ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
+    initialize();
 }
 
 
 const Navbar = () => {
     const router = useRouter();
+
     const [showMobileMenu, setShowMobileMenu] = useState(false)
+
+    useEffect(() => {
+        // Track current page on route change
+        ReactGA.pageview(router.asPath)
+    }, [router.asPath])
 
     useEffect(() => {
         // Clean up all scroll trigger
@@ -162,7 +169,7 @@ const Navbar = () => {
                                                             </li>
                                                             <li>
                                                                 <Link href={{
-                                                                    pathname: '/[lang]/product/industrial-overhead-door-30',
+                                                                    pathname: '/[lang]/product/stacking-overhead-door-20',
                                                                     query: { lang: router?.query?.lang }
                                                                 }}>{isCurrentLang('Overhead Door', 'Overhead Door')}</Link>
                                                             </li>

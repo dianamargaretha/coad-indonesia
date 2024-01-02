@@ -39,7 +39,7 @@ export default function Home() {
       post(id: "home-slide-banner", idType: SLUG) {
         homeSlideBanner {
           slideBanner {
-            slideBanner {
+            banner {
               sourceUrl
             }
             subtitle
@@ -184,7 +184,7 @@ export default function Home() {
         markers: false
       }
     })
-      .from('.section-product-category .title', {
+      .from('.section-product-category .section-title > .title', {
         autoAlpha: 0,
         x: 100,
         duration: 0.5
@@ -289,15 +289,15 @@ export default function Home() {
             className="banner-swiper"
             loop={true}
             pagination={{ clickable: true }}
-            autoplay={{
-              delay: 10000,
-              disableOnInteraction: false,
-            }}
+            // autoplay={{
+            //   delay: 10000,
+            //   disableOnInteraction: false,
+            // }}
             onSlideChangeTransitionStart={function() {
               // bullet
               gsap
                 .timeline({ defaults: { duration: 0.6 } })
-                .fromTo('.swiper-wrapper .swiper-slide.swiper-slide-active .slide-img', {
+                .fromTo('.banner-swiper .swiper-wrapper .swiper-slide.swiper-slide-active', {
                   duration: 1,
                   scale: 1.2,
                   autoAlpha: 0
@@ -307,7 +307,7 @@ export default function Home() {
                   scale: 1,
                   autoAlpha: 1
                 })
-                .fromTo('.swiper-wrapper .swiper-slide.swiper-slide-active .slide-content .title', {
+                .fromTo('.banner-swiper .swiper-wrapper .swiper-slide.swiper-slide-active .slide-content .title', {
                   x: 40,
                   autoAlpha: 0
                 }, {
@@ -315,7 +315,7 @@ export default function Home() {
                   x: 0,
                   autoAlpha: 1
                 }, "<0.5")
-                .fromTo('.swiper-wrapper .swiper-slide.swiper-slide-active .slide-content .subtitle', {
+                .fromTo('.banner-swiper .swiper-wrapper .swiper-slide.swiper-slide-active .slide-content .subtitle', {
                   x: 40,
                   autoAlpha: 0
                 }, {
@@ -323,7 +323,7 @@ export default function Home() {
                   x: 0,
                   autoAlpha: 1
                 }, "<0.3")
-                .fromTo('.swiper-wrapper .swiper-slide.swiper-slide-active .slide-content .short-desc', {
+                .fromTo('.banner-swiper .swiper-wrapper .swiper-slide.swiper-slide-active .slide-content .short-desc', {
                   x: 40,
                   autoAlpha: 0
                 }, {
@@ -352,33 +352,33 @@ export default function Home() {
                     </div>
                   </div>
                 ) : (
-                  <div className='slide-style-2 animation-style-02'>
-                    <div className="slide-inner bg-height py-6 px-16">
-                      <div className='banner-image absolute top-0 left-0 object-cover bg-cover bg-center w-full h-full brightness-75' style={{ backgroundImage: `url(${slide?.slideBanner?.sourceUrl})` }}></div>
-                      <div className="relative z-10 w-full flex gap-0 md:gap-16">
-                        <div className="flex-auto md:flex-[7]">
+                  <div className='slide-style-2 animation-style-02 homebanner' style={{ backgroundImage: `url(${slide?.banner?.sourceUrl})` }}>
+                    <div className="slide-inner bg-height px-8 md:px-16">
+                      <div className='hidden md:block homebanner-ornamen'></div>
+                      <div className="relative z-10 container flex gap-0 md:gap-16">
+                        <div className="md:w-5/12">
                           <div className="slide-content">
-                            <div className='max-w-[640px]'>
+                            <div className=''>
                               <h2 className="title mb-4">
                                 <span className='block'>{slide.title}</span>
                               </h2>
-                              <p className="subtitle mb-10">
+                              <p className="subtitle mb-5 md:mb-10">
                                 {slide.subtitle}
                               </p>
-                              <p className="short-desc mb-10">
+                              <p className="short-desc mb-5 md:mb-10">
                                 {isCurrentLang(slide.descEn, slide.desc)}
                               </p>
                               <div className="button-wrap pt-8 pb-2">
                                 <a href='https://api.whatsapp.com/send?phone=6281211102255&text=Hi' target='_blank'>
                                   <span
-                                    className="btn btn-custom-size lg-size btn-primary"
+                                    className="btn btn-custom-size text-xs md:text-base lg-size btn-primary"
                                   >{isCurrentLang('Contact Us', 'Hubungi Kami')}</span>
                                 </a>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div className="flex-0 md:flex-[5]">
+                        <div className="flex flex-0 md:flex-[5] absolute">
                         </div>
                       </div>
                     </div>
@@ -389,7 +389,7 @@ export default function Home() {
             ))}
           </Swiper>
         </section>
-        <section className='py-28 section-product-category overflow-hidden'>
+        <section className='pt-16 pb-5 md:py-28 section-product-category overflow-hidden'>
           <div className='bg-ornamen'></div>
           <div className='container'>
             <div className='section-title'>
@@ -404,10 +404,10 @@ export default function Home() {
                 spaceBetween={32}
                 navigation
                 // pagination={{ clickable: true }}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
-                }}
+                // autoplay={{
+                //   delay: 2500,
+                //   disableOnInteraction: false,
+                // }}
                 breakpoints={{
                   640: {
                     spaceBetween: 20

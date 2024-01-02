@@ -90,7 +90,7 @@ const index = () => {
                 description="this page shows Sliding Door Model. Comes with built-in communication ports which enable you to use the remote control and monitoring functions by connecting to available communication methods. " />
             <div className='container mt-12 pb-28'>
                 <div className='flex flex-col md:flex-row  gap-16'>
-                    <div className='w-12/12 md:w-7/12'>
+                    <div className='w-12/12 md:w-7/12 order-2 md:order-1'>
                         <div>
                             <h2 className='title mb-1'>{title}</h2>
                             <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
@@ -116,7 +116,7 @@ const index = () => {
                         </div>
 
                     </div>
-                    <div className='w-12/12 md:w-5/12'>
+                    <div className='w-12/12 md:w-5/12 order-1 md:order-2'>
                         <div>
                             <Swiper
                                 style={{
@@ -175,6 +175,7 @@ const index = () => {
                                                 <img className=':w-[180px] object-contain' src={list?.thumb?.sourceUrl} alt="Spec Motor" />
                                             </div>}
                                             <div className="detail flex-1 min-w-0 pt-8 ms-4">
+                                                <h4 className='text-xl mb-4 font-medium'>{list?.title}</h4>
                                                 <div dangerouslySetInnerHTML={{ __html: list?.desc }} />
                                             </div>
                                         </div>

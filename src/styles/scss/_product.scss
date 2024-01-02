@@ -112,8 +112,190 @@
                 @apply relative px-0 py-4 text-center;
                 &:nth-child(1) {
                     &::after {
-                        @apply absolute w-4 h-[1px] block bg-white bottom-[-1px] right-0;
+                        @apply absolute w-8 h-[1px] block bg-white bottom-[-1px] -right-4;
                         content: "";
+                    }
+                }
+            }
+        }
+        @media (min-width: 1025px) {
+            .list-table-wrapper {
+                @apply mt-4;
+                > div {
+                    > div {
+                        @apply px-2;
+                    }
+                    &:nth-child(1) {
+                        > div {
+                            &:nth-child(2),
+                            &:nth-child(3),
+                            &:nth-child(4) {
+                                @apply border-t border-[#37A76B];
+                            }
+                            &:nth-child(2),
+                            &:nth-child(3) {
+                                &::after {
+                                    @apply absolute w-8 h-[1px] block top-[-1px] -right-4 bg-[#37A76B];
+                                    content: "";
+                                }
+                            }
+                            &:nth-child(2) {
+                                @apply border-l rounded-tl-lg;
+                            }
+                            &:nth-child(4) {
+                                @apply border-r rounded-tr-lg;
+                            }
+                        }
+                    }
+                    &:nth-child(2),
+                    &:nth-child(3),
+                    &:nth-child(4),
+                    &:nth-child(5),
+                    &:nth-child(6),
+                    &:nth-child(7),
+                    &:nth-child(8) {
+                        > div {
+                            &:nth-child(2) {
+                                @apply border-l border-[#37A76B];
+                            }
+                            &:nth-child(4) {
+                                @apply border-r border-[#37A76B];
+                            }
+                        }
+                    }
+                    &:nth-last-child(1) {
+                        @apply border-b-0;
+                        div {
+                            &:nth-child(2),
+                            &:nth-child(3) {
+                                &::after {
+                                    @apply absolute w-8 h-[1px] block bg-[#37A76B] bottom-[-1px] -right-4;
+                                    content: "";
+                                }
+                            }
+                            &:nth-child(2),
+                            &:nth-child(3),
+                            &:nth-child(4) {
+                                @apply border-b border-[#37A76B];
+                            }
+                            &:nth-child(2) {
+                                @apply rounded-bl-lg;
+                            }
+                            &:nth-last-child(1) {
+                                @apply rounded-br-lg;
+                            }
+                        }
+                    }
+                }
+                &.type-1 {
+                    .list {
+                        > div {
+                            &:nth-child(2) {
+                                @apply bg-[#f7f7f7];
+                            }
+                        }
+                    }
+                }
+                &.type-2 {
+                    .list {
+                        > div {
+                            &:nth-child(3) {
+                                @apply bg-[#f7f7f7];
+                            }
+                        }
+                    }
+                }
+                &.type-3 {
+                    .list {
+                        > div {
+                            &:nth-child(4) {
+                                @apply bg-[#f7f7f7];
+                            }
+                        }
+                    }
+                }
+            }
+            .list-table-wrapper-2 {
+                @apply mt-4;
+                > div {
+                    > div {
+                        @apply px-2;
+                    }
+                    &:nth-child(1) {
+                        > div {
+                            &:nth-child(2),
+                            &:nth-child(3) {
+                                @apply border-t border-[#37A76B];
+                            }
+                            &:nth-child(2) {
+                                &::after {
+                                    @apply absolute w-8 h-[1px] block top-[-1px] -right-4 bg-[#37A76B];
+                                    content: "";
+                                }
+                            }
+                            &:nth-child(2) {
+                                @apply border-l rounded-tl-lg;
+                            }
+                            &:nth-child(3) {
+                                @apply border-r rounded-tr-lg;
+                            }
+                        }
+                    }
+                    &:nth-child(2),
+                    &:nth-child(3),
+                    &:nth-child(4),
+                    &:nth-child(5),
+                    &:nth-child(6),
+                    &:nth-child(7),
+                    &:nth-child(8),
+                    &:nth-child(9) {
+                        > div {
+                            &:nth-child(2) {
+                                @apply border-l border-[#37A76B];
+                            }
+                            &:nth-child(3) {
+                                @apply border-r border-[#37A76B];
+                            }
+                        }
+                    }
+                    &:nth-last-child(1) {
+                        @apply border-b-0;
+                        div {
+                            &:nth-child(2) {
+                                &::after {
+                                    @apply absolute w-8 h-[1px] block bg-[#37A76B] bottom-[-1px] -right-4;
+                                    content: "";
+                                }
+                            }
+                            &:nth-child(2),
+                            &:nth-child(3) {
+                                @apply border-b border-[#37A76B];
+                            }
+                            &:nth-child(2) {
+                                @apply rounded-bl-lg;
+                            }
+                            &:nth-last-child(1) {
+                                @apply rounded-br-lg;
+                            }
+                        }
+                    }
+                }
+                &.type-1 {
+                    .list {
+                        > div {
+                            &:nth-child(2) {
+                                @apply bg-[#f7f7f7];
+                            }
+                        }
+                    }
+                }
+                &.type-2 {
+                    .list {
+                        > div {
+                            &:nth-child(3) {
+                                @apply bg-[#f7f7f7];
+                            }
+                        }
                     }
                 }
             }

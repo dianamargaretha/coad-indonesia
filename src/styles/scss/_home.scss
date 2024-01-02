@@ -1,3 +1,30 @@
+.homebanner {
+    @media (max-width: 768px) {
+        background-size: cover;
+    }
+    background-size: calc(7 / 12 * 100vw) 100vh;
+    background-repeat: no-repeat;
+    background-position: right;
+    .slide-inner {
+        .homebanner-ornamen {
+            width: calc(5 / 12 * 100vw);
+            height: 100vh;
+            position: absolute;
+            z-index: 4;
+            background: rgb(49, 135, 104);
+            left: 0px;
+            &::before {
+                content: "";
+
+                position: absolute;
+                border-bottom: 100vh solid transparent;
+                border-left: 280px solid rgb(49, 135, 104);
+                border-top: 280px solid transparent;
+                right: -240px;
+            }
+        }
+    }
+}
 .section-worldwide {
     @apply py-20;
     background-image: url("/assets/ornamen/map-home.png");

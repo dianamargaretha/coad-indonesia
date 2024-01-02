@@ -28,7 +28,12 @@ const Footer = () => {
                 <div className='container'>
                     <div className='flex flex-col md:flex-row gap-8 md:gap-0'>
                         <div className='w-12/12 md:w-3/12'>
-                            <img width={200} src='/assets/coad-images/coad.png' alt='Coad Indonesia' />
+                            <Link href={{
+                                pathname: '/[lang]/',
+                                query: { lang: router?.query?.lang }
+                            }}>
+                                <img width={200} src='/assets/coad-images/coad.png' alt='Coad Indonesia' />
+                            </Link>
                         </div>
                         <div className='w-12/12 md:w-3/12'>
                             <h3 className='uppercase font-bold tracking-wider mb-6'>{isCurrentLang('Company', 'Perusahaan Kami')}</h3>

@@ -23,7 +23,7 @@ const Benefit = ({ imgUrl, title }) => {
     return (
         <div className='benefit flex justify-center items-center p-4 w-[280px] h-[280px] md:w-[375px] md:h-[375px] relative'>
             <div className='absolute image-container left-0 top-0'>
-                <Image src={imgUrl} alt={title} layout="fill" className={'image'} />
+                <Image src={imgUrl} alt={title} fill className={'image'} />
             </div>
             <div className='relative z-10 p-4'>
                 <div className='p-2 border-4 border-white'>

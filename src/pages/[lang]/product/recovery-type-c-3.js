@@ -94,7 +94,7 @@ const highSpeedDoor = () => {
                 description="this page shows Restoring Model. Premium automatic speed doors that automatically recover without additional cost to repair collision" />
             <div className='container mt-12 pb-28'>
                 <div className='flex flex-col md:flex-row  gap-16'>
-                    <div className='w-12/12 md:w-7/12'>
+                    <div className='w-12/12 md:w-7/12 order-2 md:order-1'>
                         <div>
                             <h2 className='title mb-1'>{title}</h2>
                             <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
@@ -121,7 +121,7 @@ const highSpeedDoor = () => {
 
                     </div>
 
-                    <div className='w-12/12 md:w-5/12'>
+                    <div className='w-12/12 md:w-5/12 order-1 md:order-2'>
                         <div>
                             <Swiper
                                 style={{
@@ -181,7 +181,7 @@ const highSpeedDoor = () => {
                 </div>
             </div>
             {/* Spec table */}
-            <SpecHighSpeedDoor />
+            <SpecHighSpeedDoor type={3} />
             <div className="pb-28">
                 <div className='container'>
                     <div className='section-title'>
@@ -198,6 +198,7 @@ const highSpeedDoor = () => {
                                                 <img className='w-[180px] object-contain' src={list?.thumb?.sourceUrl} alt="Spec Motor" />
                                             </div>}
                                             <div className="detail flex-1 min-w-0 pt-8 ms-4">
+                                                <h4 className='text-xl mb-4 font-medium'>{list?.title}</h4>
                                                 <div dangerouslySetInnerHTML={{ __html: list?.desc }} />
                                             </div>
                                         </div>
