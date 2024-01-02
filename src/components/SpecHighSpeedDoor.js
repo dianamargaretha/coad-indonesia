@@ -134,7 +134,7 @@ const SpecHighSpeedDoor = ({ type }) => {
                                 <div>
                                     <span>The two sides of the curtains are linked by a closed zipper (TOOTH)</span>
                                     <span>
-                                        <img className='mx-auto pt-2' src='/assets/ornamen/img-tb-1.png' alt='curtains' />
+                                        <img className='mx-auto pt-2' width={58} src='/assets/ornamen/img-tb-1.jpeg' alt='curtains' />
                                     </span>
                                 </div>
                             </div>

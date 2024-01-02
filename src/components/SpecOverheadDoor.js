@@ -81,7 +81,7 @@ const SpecOverheadDoor = ({ type }) => {
                                 <div>
                                     <span>Chain</span>
                                     <span>
-                                        <img className='mx-auto' src='/assets/ornamen/chain.png' alt='chain' />
+                                        <img width={100} className='mx-auto' src='/assets/ornamen/chain.jpeg' alt='chain' style={{ borderRadius: '50%' }} />
                                     </span>
                                 </div>
                             </div>
@@ -97,7 +97,7 @@ const SpecOverheadDoor = ({ type }) => {
                                 <div>
                                     <span>Stacking</span>
                                     <span>
-                                        <img className='mx-auto' src='/assets/ornamen/stacking.png' alt='stacking' />
+                                        <img width={100} className='mx-auto' src='/assets/ornamen/stacking.jpeg' alt='stacking' style={{ borderRadius: '50%' }} />
                                     </span>
                                 </div>
                             </div>
