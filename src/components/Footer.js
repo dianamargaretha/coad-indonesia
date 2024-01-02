@@ -63,7 +63,7 @@ const Footer = () => {
                                 </li>
                                 <li>
                                     <Link href={{
-                                        pathname: '/[lang]/product/industrial-overhead-door-30',
+                                        pathname: '/[lang]/product/stacking-overhead-door-20',
                                         query: { lang: router?.query?.lang }
                                     }}>{isCurrentLang('Overhead Door', 'Overhead Door')}</Link>
                                 </li>

@@ -219,7 +219,7 @@ const index = () => {
                         <h2 className='title'>{isCurrentLang('Other Product', 'Product Lainnya')}</h2>
                     </div>
                     <div className='flex flex-wrap gap-4'>
-                        <Benefit link='industrial-overhead-door-30' lang={lang} thumb={'/assets/coad-images/product/COAD-30-Industrial-Overhead-Door/1.png'} title='COAD-30 Industrial Overhead Door' />
+                        <Benefit link='industrial-overhead-door-30' lang={lang} thumb={'/assets/coad-images/product/COAD-30-Industrial-Overhead-Door/1.jpeg'} title='COAD-30 Industrial Overhead Door' />
                     </div>
                 </div>
             </div>
