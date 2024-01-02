@@ -356,7 +356,7 @@ export default function Home() {
                     <div className="slide-inner bg-height px-8 md:px-16">
                       <div className='hidden md:block homebanner-ornamen'></div>
                       <div className="relative z-10 container">
-                        <div className="md:w-5/12 bg-[rgba(255,255,255,0.1)] p-12">
+                        <div className="md:w-5/12 bg-[rgba(0,0,0,0.6)] p-4 md:bg-[rgba(255,255,255,0.1)] md:p-12">
                           <div className="slide-content">
                             <div className=''>
                               <h2 className="title mb-4">
