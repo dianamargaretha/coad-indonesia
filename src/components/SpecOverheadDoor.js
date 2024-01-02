@@ -105,19 +105,7 @@ const SpecOverheadDoor = ({ type }) => {
                                 <div>
                                     <span>Basic series of sliding doors, vertical</span>
                                     <div className='flex flex-wrap'>
-                                        <img className='mx-auto' src='/assets/ornamen/door-tb-2.png' alt='doors' />
-                                        {/* <div className='w-1/2'>
-                                            <img className='mx-auto' src='/assets/ornamen/door-tb-1.png' alt='doors' />
-                                        </div>
-                                        <div className='w-1/2'>
-                                            <img className='mx-auto' src='/assets/ornamen/door-tb-2.png' alt='doors' />
-                                        </div>
-                                        <div className='w-1/2'>
-                                            <img className='mx-auto' src='/assets/ornamen/door-tb-3.png' alt='doors' />
-                                        </div>
-                                        <div className='w-1/2'>
-                                            <img className='mx-auto' src='/assets/ornamen/door-tb-4.png' alt='doors' />
-                                        </div> */}
+                                        <img className='mx-auto' src='/assets/ornamen/opening-garage.jpeg' alt='doors' />
                                     </div>
                                 </div>
                             </div>

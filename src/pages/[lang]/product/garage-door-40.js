@@ -89,13 +89,22 @@ const index = () => {
                 title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | garage door | Product | COAD"
                 description="this page shows Sliding Door Model. Comes with built-in communication ports which enable you to use the remote control and monitoring functions by connecting to available communication methods. " />
             <div className='container mt-12 pb-28'>
+                <div className='block md:hidden mb-8'>
+                    <h2 className='title mb-1'>{title}</h2>
+                    <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
+                        <h4 className='font-bold'>Category :</h4>
+                        <p>Garage Door</p>
+                    </div>
+                </div>
                 <div className='flex flex-col md:flex-row  gap-16'>
                     <div className='w-12/12 md:w-7/12 order-2 md:order-1'>
                         <div>
-                            <h2 className='title mb-1'>{title}</h2>
-                            <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
-                                <h4 className='font-bold'>Category :</h4>
-                                <p>Garage Door</p>
+                            <div className='hidden md:block'>
+                                <h2 className='title mb-1'>{title}</h2>
+                                <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
+                                    <h4 className='font-bold'>Category :</h4>
+                                    <p>Garage Door</p>
+                                </div>
                             </div>
                             <h3 className='subtitle mb-4'>{isCurrentLang('Specification', 'Spesifikasi')}</h3>
 

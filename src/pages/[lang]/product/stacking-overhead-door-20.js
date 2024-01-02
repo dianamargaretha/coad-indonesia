@@ -90,13 +90,22 @@ const index = () => {
                 title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | overhead door | Product | COAD"
                 description="this page shows over head door. this industrial door is designed for Logistics Center' doors." />
             <div className='container mt-12 pb-28'>
+                <div className='block md:hidden mb-8'>
+                    <h2 className='title mb-1'>{title}</h2>
+                    <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
+                        <h4 className='font-bold'>Category :</h4>
+                        <p>Overhead Door</p>
+                    </div>
+                </div>
                 <div className='flex flex-col md:flex-row  gap-16'>
                     <div className='w-12/12 md:w-7/12 order-2 md:order-1'>
                         <div>
-                            <h2 className='title mb-1'>{title}</h2>
-                            <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
-                                <h4 className='font-bold'>Category :</h4>
-                                <p>Overhead Door</p>
+                            <div className='hidden md:block'>
+                                <h2 className='title mb-1'>{title}</h2>
+                                <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
+                                    <h4 className='font-bold'>Category :</h4>
+                                    <p>Overhead Door</p>
+                                </div>
                             </div>
                             <h3 className='subtitle mb-4'>{isCurrentLang('Specification', 'Spesifikasi')}</h3>
 

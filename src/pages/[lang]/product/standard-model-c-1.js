@@ -90,13 +90,22 @@ const highSpeedDoor = () => {
                 title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | K-1(Standard Model) | Speed door | Product | COAD"
                 description="this page shows Standard Model. high speed door's Best selling products, Sheet has been designed to be easy to replace." />
             <div className='container mt-12 pb-28'>
+                <div className='block md:hidden mb-8'>
+                    <h2 className='title mb-1'>{title}</h2>
+                    <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
+                        <h4 className='font-bold'>Category :</h4>
+                        <p>High Speed Door</p>
+                    </div>
+                </div>
                 <div className='flex flex-col md:flex-row gap-16'>
                     <div className='w-12/12 md:w-7/12 order-2 md:order-1'>
                         <div>
-                            <h2 className='title mb-1'>{title}</h2>
-                            <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
-                                <h4 className='font-bold'>Category :</h4>
-                                <p>High Speed Door</p>
+                            <div className='hidden md:block'>
+                                <h2 className='title mb-1'>{title}</h2>
+                                <div className='flex justify-start gap-4 mb-4 text-[#8c93a0]'>
+                                    <h4 className='font-bold'>Category :</h4>
+                                    <p>High Speed Door</p>
+                                </div>
                             </div>
                             <h3 className='subtitle font-medium mb-4'>{isCurrentLang('Specification', 'Spesifikasi')}</h3>
                             <div>
