@@ -183,7 +183,7 @@ const index = () => {
                                     <div className='w-12/12 md:w-6/12'>
                                         <div className="flex flex-col md:flex-row gap-4 pb-3">
                                             {list?.thumb && <div className="flex-shrink-0 pt-4">
-                                                <img className='w-full md:w-[180px] object-contain' src={list?.thumb?.sourceUrl} alt="Spec Motor" />
+                                                <img className='w-full md:w-[180px] px-4 md:px-0 object-contain' src={list?.thumb?.sourceUrl} alt="Spec Motor" />
                                             </div>}
                                             <div className="detail flex-1 min-w-0 pt-8 ms-4">
                                                 <h4 className='text-xl mb-4 font-medium'>{list?.title}</h4>
@@ -201,7 +201,7 @@ const index = () => {
                                 <h3 className='title'>{list?.title}</h3>
                                 <div className="flex flex-col md:flex-row gap-4 pb-3">
                                     {list?.thumb && <div className=" pt-4">
-                                        <img className='w-full md:w-[180px] object-contain' src={list?.thumb?.sourceUrl} alt="Spec Motor" />
+                                        <img className='w-full md:w-[180px] px-4 md:px-0 object-contain' src={list?.thumb?.sourceUrl} alt="Spec Motor" />
                                     </div>}
                                     <div className="detail min-w-0 pt-8 ms-4">
                                         <div dangerouslySetInnerHTML={{ __html: list?.specList }} />
