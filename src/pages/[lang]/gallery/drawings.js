@@ -48,7 +48,9 @@ const catalog = () => {
     const { drawing } = data?.post?.galleryDrawing ?? {}
     return (
         <div className='gallery-wrapper'>
-            <PublicHead title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | Catalog | Drawings | COAD" />
+            <PublicHead
+                title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | Catalog | Drawings | COAD"
+                description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program" />
             <div className='container py-16'>
                 <div className='section-title'>
                     <h2 className='title uppercase'>{isCurrentLang('Drawings', 'Gambar')}</h2>

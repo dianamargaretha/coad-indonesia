@@ -89,8 +89,8 @@ const aboutUs = () => {
     return (
         <div className='about-us'>
             <PublicHead
-                title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | About us  | Company | COAD"
-                description='This page shows Korea Auto Door company overview and talking about high speed door also We introduce our overseas corporation. ' />
+                title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | About us  | Company | COAD"
+                description='COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program' />
             <div className='banner overflow-hidden'>
                 <Image src={bannerAbout}
                     // objectFit="cover"

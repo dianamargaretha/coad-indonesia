@@ -278,8 +278,8 @@ export default function Home() {
       className={`${inter.className}`}
     >
       <PublicHead
-        title="high-speed-door, rapid-door, pintu-high-speed-door, pintu-rapid-door, harga-high-speed-door, harga-rapid-door, jual-high-speed-door, jual-rapid-door, pvc-roller-shutter-door- CONVENIENCE auto door | COAD CONVENIENCE AUTO DOOR"
-        description="COAD CONVENIENCE Auto Doors is the Korea’s largest company specializing in automatic doors. Focused on customers’ requirements to provide the excellent products and services" />
+        title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door"
+        description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program" />
       {/* <Navbar /> */}
       <div className='min-h-screen'>
         <section className='overflow-hidden'>
@@ -290,7 +290,7 @@ export default function Home() {
             loop={true}
             pagination={{ clickable: true }}
             autoplay={{
-              delay: 10000,
+              delay: 100000000000,
               disableOnInteraction: false,
             }}
             onSlideChangeTransitionStart={function() {

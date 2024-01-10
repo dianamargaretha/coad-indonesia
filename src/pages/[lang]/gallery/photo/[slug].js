@@ -75,7 +75,9 @@ const video = () => {
     }
     return (
         <div>
-            <PublicHead title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | Catalog | Gallery | COAD" />
+            <PublicHead
+                title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | Catalog | Gallery | COAD"
+                description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program" />
             <div className='gallery-wrapper'>
                 <div className='container py-16'>
                     <div className='section-title'>

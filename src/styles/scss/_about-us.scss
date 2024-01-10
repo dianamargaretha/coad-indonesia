@@ -1,6 +1,6 @@
 .about-us {
     .banner {
-        @apply relative min-h-[300px] flex items-center;
+        @apply relative min-h-[180px] md:min-h-[45vh] flex items-center;
         h2 {
             text-transform: uppercase;
             font-size: 36px;

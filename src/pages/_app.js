@@ -15,7 +15,9 @@ const App = props => {
   return (
     <ApolloProvider client={clientApollo}>
       <div>
-        <PublicHead title="high-speed-door, rapid-door, pintu-high-speed-door, pintu-rapid-door, harga-high-speed-door, harga-rapid-door, jual-high-speed-door, jual-rapid-door, pvc-roller-shutter-door- CONVENIENCE auto door | COAD CONVENIENCE AUTO DOOR" />
+        <PublicHead
+          title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door"
+          description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program" />
 
         <Navbar />
         <Component {...pageProps} />

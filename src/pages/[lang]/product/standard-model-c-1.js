@@ -87,8 +87,8 @@ const highSpeedDoor = () => {
     return (
         <div className='section-product'>
             <PublicHead
-                title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | K-1(Standard Model) | Speed door | Product | COAD"
-                description="this page shows Standard Model. high speed door's Best selling products, Sheet has been designed to be easy to replace." />
+                title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | C-1(Standard Model) | Speed door | Product | COAD"
+                description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program" />
             <div className='container mt-12 pb-28'>
                 <div className='block md:hidden mb-8'>
                     <h2 className='title mb-1'>{title}</h2>

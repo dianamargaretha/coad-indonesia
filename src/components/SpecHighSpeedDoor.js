@@ -32,17 +32,17 @@ const SpecHighSpeedDoor = ({ type }) => {
                             <div className='flex-1'>Maximum Size</div>
                             <div className='flex-1'>
                                 <div>
-                                    <span>(W) 6000mm * (H) 5000mm</span>
+                                    <span>(W) 6000mm </span><span className='whitespace-nowrap'>* (H) 5000mm</span>
                                 </div>
                             </div>
                             <div className='flex-1'>
                                 <div>
-                                    <span>(W) 6000mm * (H) 5000mm</span>
+                                    <span>(W) 6000mm </span><span className='whitespace-nowrap'>* (H) 5000mm</span>
                                 </div>
                             </div>
                             <div className='flex-1'>
                                 <div>
-                                    <span>(W) 6000mm * (H) 8000mm</span>
+                                    <span>(W) 6000mm </span><span className='whitespace-nowrap'>* (H) 8000mm</span>
                                 </div>
                             </div>
                         </div>
@@ -139,8 +139,8 @@ const SpecHighSpeedDoor = ({ type }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex gap-4 list' data-title='Self-healing feature'>
-                            <div className='flex-1'>Self-healing feature</div>
+                        <div className='flex gap-4 list' data-title='Auto-recovery'>
+                            <div className='flex-1'>Auto-recovery</div>
                             <div className='flex-1'>
                                 <div>
                                     <span><img className='mx-auto' src='/assets/ornamen/close-icon.svg' alt='close' /></span>
@@ -166,13 +166,13 @@ const SpecHighSpeedDoor = ({ type }) => {
                             </div>
                             <div className='flex-1'>
                                 <div>
-                                    <span className='text-[#37A76B]'>Suitable for limited spaces</span>
+                                    <span className='text-[#37A76B]'>Suitable for narrow spaces</span>
                                 </div>
                             </div>
                             <div className='flex-1'>
                                 <div>
                                     <span className='text-[#37A76B]'>Save on maintenance costs with auto-recovery
-                                        Can design doors with large sizes</span>
+                                        Design doors with large sizes</span>
                                 </div>
                             </div>
                         </div>

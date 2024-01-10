@@ -86,8 +86,8 @@ const index = () => {
     return (
         <div className='section-product'>
             <PublicHead
-                title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | garage door | Product | COAD"
-                description="this page shows Sliding Door Model. Comes with built-in communication ports which enable you to use the remote control and monitoring functions by connecting to available communication methods. " />
+                title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | garage door 40 | Product | COAD"
+                description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program" />
             <div className='container mt-12 pb-28'>
                 <div className='block md:hidden mb-8'>
                     <h2 className='title mb-1'>{title}</h2>

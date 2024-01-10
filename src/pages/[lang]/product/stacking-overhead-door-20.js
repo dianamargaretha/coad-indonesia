@@ -87,8 +87,9 @@ const index = () => {
     return (
         <div className='section-product'>
             <PublicHead
-                title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | overhead door | Product | COAD"
-                description="this page shows over head door. this industrial door is designed for Logistics Center' doors." />
+                title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | stacking overhead door 20 | Product | COAD"
+                description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program"
+            />
             <div className='container mt-12 pb-28'>
                 <div className='block md:hidden mb-8'>
                     <h2 className='title mb-1'>{title}</h2>

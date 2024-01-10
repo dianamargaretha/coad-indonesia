@@ -147,8 +147,8 @@ const contactUs = () => {
     return (
         <div>
             <PublicHead
-                title="high speed door indonesia , industrial door, rapid door, high speed rolling door- convenience auto door | 견적문의 | Cs center | COAD"
-                description="COAD Estimate inquiry" />
+                title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | Cs center | COAD"
+                description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program | COAD Estimate inquiry" />
             <div className='container mt-10'>
                 <div className='section-title'>
                     <h2 className='title uppercase'>{isCurrentLang('Contact Us', 'Hubungi Kami')}</h2>

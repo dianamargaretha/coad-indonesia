@@ -12,16 +12,42 @@
             height: 100vh;
             position: absolute;
             z-index: 4;
-            background: rgb(49, 135, 104);
+            // background: rgb(49, 135, 104);
+
+            // background: linear-gradient(
+            //     45deg,
+            //     #39b16c 0%,
+            //     #1d2e5e 100%
+            // );
+
+            // background: linear-gradient(
+            //     to right,
+            //     #39b16c 0%,
+            //     #1d2e5e 100%
+            // );
+
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#39b16c+0,1d2e5e+75,1d2e5e+100 */
+            background: linear-gradient(105deg, #39b16c 0%, #1d2e5e 75%, #1d2e5e 100%);
+
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#39b16c+0,1d2e5e+75,1d2e5e+100 */
+            // background: linear-gradient(
+            //     135deg,
+            //     #39b16c 0%,
+            //     #1d2e5e 75%,
+            //     #1d2e5e 100%
+            // );
+
+            // background: linear-gradient(45deg, #39b16c 0%, #1d2e5e 75%, #1d2e5e 100%);
+
             left: 0px;
             &::before {
                 content: "";
 
                 position: absolute;
                 border-bottom: 100vh solid transparent;
-                border-left: 280px solid rgb(49, 135, 104);
+                border-left: 208px solid #1d2e5e;
                 border-top: 280px solid transparent;
-                right: -240px;
+                right: -207px;
             }
         }
     }
@@ -53,7 +79,7 @@
                 @apply flex flex-col justify-center w-full h-full p-4 md:p-[3.2rem] text-white text-center rounded-full;
                 background: linear-gradient(90deg, #5ff59f 3.67%, #518494 71.67%, #5a72b3 102.67%);
                 .info-title {
-                    @apply text-lg md:text-xl md:text-4xl md:leading-tight font-semibold;
+                    @apply text-lg md:text-lg md:text-4xl md:leading-tight font-semibold;
                 }
             }
         }
