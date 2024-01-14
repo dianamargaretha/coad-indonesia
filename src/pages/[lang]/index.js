@@ -389,7 +389,35 @@ export default function Home() {
             ))}
           </Swiper>
         </section>
-        <section className='pt-16 pb-5 md:py-28 section-product-category overflow-hidden'>
+        <section className='pt-16 pb-5 md:py-28 section-product-category overflow-hidden hidden md:block'>
+          <div className='bg-ornamen'></div>
+          <div className='container'>
+            <div className='section-title'>
+              <h2 className='title'>{isCurrentLang('Featured Product', 'Produk Unggulan')}</h2>
+            </div>
+            <div className='relative z-10'>
+              <div className='grid grid-cols-3 gap-8'>
+                {productunggulan?.map((item, index) => (
+                  <div class="rounded bg-white overflow-hidden shadow-lg" key={index}>
+                    <Link href={{
+                      pathname: `/[lang]/product/${item?.linkproduct}`,
+                      query: { lang: router?.query?.lang }
+                    }}>
+                      <img class="w-full" src={item?.imageproduct?.sourceUrl} alt={item?.productname} />
+                      <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">{item?.productname}</div>
+                        <div class="pt-4 pb-2">
+                          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{item?.productcategory}</span>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className='pt-16 pb-5 md:py-28 section-product-category overflow-hidden block md:hidden'>
           <div className='bg-ornamen'></div>
           <div className='container'>
             <div className='section-title'>

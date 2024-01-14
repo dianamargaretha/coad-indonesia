@@ -4,6 +4,7 @@ import isCurrentLang from '@/utils/isCurrentLang'
 import { validateInput, validateForm } from '@/lib/validation'
 import PublicHead from '@/components/PublicHead';
 import { gql, useQuery } from "@apollo/client";
+const nodemailer = require('nodemailer');
 
 import { trackContactUs } from "@/lib/analytics"
 
@@ -86,20 +87,46 @@ const contactUs = () => {
         }
     `);
     const { contactUs } = data?.post ?? {}
-    const handleSubmit = (e = {}) => {
+
+    const handleSubmit = async (e = {}) => {
         e?.preventDefault()
         if (validateForm("jobform")) {
             setLoading(true)
             setStatus({ value: null, message: null })
             if (state.where === "other") state.where = state.whereotherdesc
 
-            const { resume, name, email, content, phone } = state
+            const { name, email, content, phone } = state
             const formData = new FormData()
             formData.append("full-name", name)
             formData.append("email", email)
             formData.append("phone", phone)
             formData.append("content", content)
+            console.log({ formData, name, email, content, phone })
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: 'marketing@highspeeddoorindonesiacoad.com',
+                    pass: 'Coad!2345'
+                }
+            });
+            const mailOptions = {
+                from: email,
+                to: email,
+                subject: 'Contact Us From Website',
+                text: content,
+                //html: `
+                //  <h1>Sample Heading Here</h1>
+                //  <p>message here</p>
+                //`,
+            };
 
+            transporter.sendMail(mailOptions, function(error, info) {
+                if (error) {
+                    console.log(error);
+                } else {
+                    console.log('Email sent: ' + info.response);
+                }
+            })
             // service.post(process.env.NEXT_PUBLIC_WP_URI + "/wp-json/contact-form-7/v1/contact-forms/49/feedback", formData, {
             //     headers: {
             //         "Content-Type": "multipart/form-data",
@@ -143,6 +170,13 @@ const contactUs = () => {
         }
 
         validateInput("jobform", name)
+    }
+    const LoadingSend = () => {
+        return (
+            <div className="inline-flex leading-8">
+                <span className="mr-5">Send Contact Us</span>
+            </div>
+        )
     }
     return (
         <div>

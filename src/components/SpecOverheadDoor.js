@@ -88,6 +88,9 @@ const SpecOverheadDoor = ({ type }) => {
                             <div className='flex-1'>
                                 <div>
                                     <span>Cable</span>
+                                    <span>
+                                        <img width={100} className='mx-auto' src='/assets/ornamen/CABLE.jpg' alt='chain' />
+                                    </span>
                                 </div>
                             </div>
                         </div>
