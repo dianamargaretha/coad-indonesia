@@ -140,7 +140,13 @@
     }
 }
 .section-about-us {
-    @apply bg-[#f4f4f4];
+    @apply relative bg-[#f4f4f4];
+    @media (min-width: 768px) {
+        background-image: url("/assets/images/about-us-banner.png");
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: bottom right;
+    }
 }
 .homebanner-about-us > img {
     @apply w-full;

@@ -101,7 +101,7 @@ const contactUs = () => {
             formData.append("email", email)
             formData.append("phone", phone)
             formData.append("content", content)
-            console.log({ formData, name, email, content, phone })
+            // console.log({ formData, name, email, content, phone })
             const transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {

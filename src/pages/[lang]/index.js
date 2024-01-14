@@ -516,7 +516,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='flex-1 homebanner-about-us'>
-                <Image src={aboutUsBanner} alt='about us' width={'100%'} />
+                <Image src={aboutUsBanner} alt='about us' width={'100%'} className='opacity-0' />
               </div>
             </div>
           </div>
