@@ -79,7 +79,7 @@
                 @apply flex flex-col justify-center w-full h-full p-4 md:p-[3.2rem] text-white text-center rounded-full;
                 background: linear-gradient(90deg, #5ff59f 3.67%, #518494 71.67%, #5a72b3 102.67%);
                 .info-title {
-                    @apply text-lg md:text-lg md:text-4xl md:leading-tight font-semibold;
+                    @apply text-lg md:text-3xl md:leading-tight font-semibold;
                 }
             }
         }
