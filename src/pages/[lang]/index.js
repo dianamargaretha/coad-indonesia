@@ -7,6 +7,7 @@ import { gql, useQuery } from "@apollo/client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import aboutUsBanner from '/public/assets/images/about-us-banner.png';
+import aboutUsTitleBanner from '/public/assets/images/coad-logo-text.png';
 const inter = Inter({ subsets: ['latin'] })
 
 // Init ScrollTrigger
@@ -184,9 +185,9 @@ export default function Home() {
         markers: false
       }
     })
-      .from('.section-product-category .section-title > .title', {
+      .from('.section-product-category .section-title > .title-img', {
         autoAlpha: 0,
-        x: 100,
+        y: 100,
         duration: 0.5
       })
   }, [loading, loadingProduct, loadingHomePage])
@@ -392,9 +393,12 @@ export default function Home() {
         <section className='pt-16 pb-5 md:py-28 section-product-category overflow-hidden hidden md:block'>
           <div className='bg-ornamen'></div>
           <div className='container'>
-            <div className='section-title'>
-              <h2 className='title'>{isCurrentLang('Featured Product', 'Produk Unggulan')}</h2>
+            <div className='section-title flex justify-center mb-16'>
+              <h2 className='title-img relative z-10 w-full md:w-6/12'><Image src={aboutUsTitleBanner} alt='smart title' /> </h2>
             </div>
+            {/* <div className='section-title'>
+              <h2 className='title'>{isCurrentLang('Featured Product', 'Produk Unggulan')}</h2>
+            </div> */}
             <div className='relative z-10'>
               <div className='grid grid-cols-3 gap-8'>
                 {productunggulan?.map((item, index) => (
@@ -420,9 +424,12 @@ export default function Home() {
         <section className='pt-16 pb-5 md:py-28 section-product-category overflow-hidden block md:hidden'>
           <div className='bg-ornamen'></div>
           <div className='container'>
-            <div className='section-title'>
-              <h2 className='title'>{isCurrentLang('Featured Product', 'Produk Unggulan')}</h2>
+            <div className='section-title flex justify-center mb-16'>
+              <h2 className='title-img relative z-10 w-full md:w-6/12'><Image src={aboutUsTitleBanner} alt='smart title' /> </h2>
             </div>
+            {/* <div className='section-title'>
+              <h2 className='title'>{isCurrentLang('Featured Product', 'Produk Unggulan')}</h2>
+            </div> */}
             <div>
               <Swiper
                 modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
