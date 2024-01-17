@@ -191,7 +191,13 @@ const contactUs = () => {
                     <div className='w-12/12 md:w-6/12'>
                         <div className='flex'>
                             <div className='w-12/12 md:w-6/12'>
-                                <p>{isCurrentLang(contactUs?.descEn, contactUs?.desc)}</p>
+                                <p className='mb-4'>{isCurrentLang(contactUs?.descEn, contactUs?.desc)}</p>
+                                <ul>
+                                    <li>Email : mkt@coad.co.id</li>
+                                    <li>Phone : +62-21-299-16111</li>
+                                </ul>
+
+
                             </div>
                         </div>
                         <form onSubmit={handleSubmit} id="jobform" name="jobform" className='form-apply mt-12'>
