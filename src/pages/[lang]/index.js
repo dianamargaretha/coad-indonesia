@@ -29,18 +29,24 @@ import Image from 'next/image';
 import isCurrentLang from '@/utils/isCurrentLang';
 import IntroOverlay from '@/components/IntroOverlay';
 import PublicHead from '@/components/PublicHead';
+import useWindowSize from '@/lib/useWindowSize';
 
 const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
+
 
 export default function Home() {
   const router = useRouter()
   const [mute, setMute] = useState(true)
+  const [width, height] = useWindowSize();
   const { data, loading, error } = useQuery(gql`
     query {
       post(id: "home-slide-banner", idType: SLUG) {
         homeSlideBanner {
           slideBanner {
             banner {
+              sourceUrl
+            }
+            bannermobile {
               sourceUrl
             }
             subtitle
@@ -358,7 +364,7 @@ export default function Home() {
                     </div>
                   </div>
                 ) : (
-                  <div className='slide-style-2 animation-style-02 homebanner' style={{ backgroundImage: `url(${slide?.banner?.sourceUrl})` }}>
+                  <div className='slide-style-2 animation-style-02 homebanner' style={{ backgroundImage: width < 640 ? `url(${slide?.bannermobile?.sourceUrl})` : `url(${slide?.banner?.sourceUrl})` }}>
                     <div className="slide-inner bg-height px-8 md:px-16">
                       <div className='hidden md:block homebanner-ornamen'></div>
                       <div className="relative z-10 container">
@@ -407,16 +413,16 @@ export default function Home() {
             <div className='relative z-10'>
               <div className='list-product grid grid-cols-3 gap-8'>
                 {productunggulan?.map((item, index) => (
-                  <div class="rounded bg-white overflow-hidden shadow-lg" key={index}>
+                  <div className="rounded bg-white overflow-hidden shadow-lg" key={index}>
                     <Link href={{
                       pathname: `/[lang]/product/${item?.linkproduct}`,
                       query: { lang: router?.query?.lang }
                     }}>
-                      <img class="w-full" src={item?.imageproduct?.sourceUrl} alt={item?.productname} />
-                      <div class="px-6 py-4">
-                        <div class="font-bold text-xl mb-2 min-h-[56px]">{item?.productname}</div>
-                        <div class="pt-4 pb-2">
-                          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{item?.productcategory}</span>
+                      <img className="w-full" src={item?.imageproduct?.sourceUrl} alt={item?.productname} />
+                      <div className="px-6 py-4">
+                        <div className="font-bold text-xl mb-2 min-h-[56px]">{item?.productname}</div>
+                        <div className="pt-4 pb-2">
+                          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{item?.productcategory}</span>
                         </div>
                       </div>
                     </Link>
