@@ -46,7 +46,7 @@ const SpecHighSpeedDoor = ({ type }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex gap-4 list' data-title='Opening/closing speed'>
+                        <div className='flex gap-0 md:gap-4 list' data-title='Opening/closing speed'>
                             <div className='flex-1'>Opening/closing speed</div>
                             <div className='flex-1'>
                                 <div>
@@ -64,7 +64,7 @@ const SpecHighSpeedDoor = ({ type }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex gap-4 list' data-title='Maximum wind speed'>
+                        <div className='flex gap-0 md:gap-4 list' data-title='Maximum wind speed'>
                             <div className='flex-1'>Maximum wind speed</div>
                             <div className='flex-1'>
                                 <div>
@@ -82,7 +82,7 @@ const SpecHighSpeedDoor = ({ type }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex gap-4 list' data-title='Curtains'>
+                        <div className='flex gap-0 md:gap-4 list' data-title='Curtains'>
                             <div className='flex-1'>Sheet</div>
                             <div className='flex-1'>
                                 <div>
@@ -100,7 +100,7 @@ const SpecHighSpeedDoor = ({ type }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex gap-4 list' data-title='Windshield Safety bar'>
+                        <div className='flex gap-0 md:gap-4 list' data-title='Windshield Safety bar'>
                             <div className='flex-1'>Windshield Safety bar</div>
                             <div className='flex-1'>
                                 <div>
@@ -118,16 +118,22 @@ const SpecHighSpeedDoor = ({ type }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex gap-4 list' data-title='Internal structure'>
+                        <div className='flex gap-0 md:gap-4 list' data-title='Internal structure'>
                             <div className='flex-1'>Internal structure</div>
                             <div className='flex-1'>
                                 <div>
                                     <span>Built-in self-contained brush</span>
+                                    <span>
+                                        <img className='mx-auto pt-2 rounded-full' width={58} src='/assets/ornamen/brush.jpg' alt='curtains' />
+                                    </span>
                                 </div>
                             </div>
                             <div className='flex-1'>
                                 <div>
                                     <span>Built-in self-contained brush</span>
+                                    <span>
+                                        <img className='mx-auto pt-2 rounded-full' width={58} src='/assets/ornamen/brush.jpg' alt='curtains' />
+                                    </span>
                                 </div>
                             </div>
                             <div className='flex-1'>
@@ -139,7 +145,7 @@ const SpecHighSpeedDoor = ({ type }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex gap-4 list' data-title='Auto-recovery'>
+                        <div className='flex gap-0 md:gap-4 list' data-title='Auto-recovery'>
                             <div className='flex-1'>Auto-recovery</div>
                             <div className='flex-1'>
                                 <div>
@@ -157,7 +163,7 @@ const SpecHighSpeedDoor = ({ type }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex gap-4 list' data-title='Outstanding Features'>
+                        <div className='flex gap-0 md:gap-4 list' data-title='Outstanding Features'>
                             <div className='flex-1'>Outstanding Features</div>
                             <div className='flex-1'>
                                 <div>
@@ -171,7 +177,7 @@ const SpecHighSpeedDoor = ({ type }) => {
                             </div>
                             <div className='flex-1'>
                                 <div>
-                                    <span className='text-[#37A76B]'>Save on maintenance costs with auto-recovery
+                                    <span className='text-[#37A76B]'>Save on maintenance costs with auto-recovery.
                                         Design doors with large sizes</span>
                                 </div>
                             </div>

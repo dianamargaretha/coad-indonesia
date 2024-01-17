@@ -24,7 +24,7 @@ const Footer = () => {
     const { footer } = dataHomePage?.post?.homepage ?? {}
     return (
         <footer>
-            <div className='py-12 section-sitemap overflow-hidden bg-[#e5e2e2]'>
+            <div className='py-6 section-sitemap overflow-hidden bg-[#e5e2e2]'>
                 <div className='container'>
                     <div className='flex flex-col md:flex-row gap-8 md:gap-0'>
                         <div className='w-12/12 md:w-3/12'>
@@ -103,7 +103,7 @@ const Footer = () => {
             </div>
             <div className='footer-top'>
                 <div className='container'>
-                    <div className='flex flex-col md:flex-row gap-8 md:gap-4 justify-start py-10'>
+                    <div className='flex flex-col md:flex-row gap-8 md:gap-4 justify-start pt-10 pb-6'>
                         <div className='w-12/12 md:w-3/12'>
                             <h3 className='uppercase font-bold tracking-wider mb-6'>{isCurrentLang('COAD BRANCH', 'CABANG COAD')}</h3>
                             <div className='flex flex-col gap-2 tracking-wide'>
@@ -151,7 +151,7 @@ const Footer = () => {
                 </div>
                 <div className="w-full h-[1px] opacity-50 bg-white"></div>
                 <div className='container'>
-                    <div className='flex justify-center items-center py-6'>
+                    <div className='flex justify-center items-center py-4'>
                         <p>2023 Copyright &copy; COAD INDO</p>
                     </div>
                 </div>

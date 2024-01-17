@@ -291,7 +291,7 @@ const Navbar = () => {
                                                         <li>
                                                             <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                                                 <Link href={{
-                                                                    pathname: '/[lang]/product/industrial-overhead-door-30',
+                                                                    pathname: '/[lang]/product//stacking-overhead-door-20',
                                                                     query: { lang: router?.query?.lang }
                                                                 }}>{isCurrentLang('Overhead Door', 'Overhead Door')}</Link>
                                                             </div>

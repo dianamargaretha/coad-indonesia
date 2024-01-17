@@ -89,7 +89,7 @@ const SpecOverheadDoor = ({ type }) => {
                                 <div>
                                     <span>Cable</span>
                                     <span>
-                                        <img width={100} className='mx-auto' src='/assets/ornamen/CABLE.jpg' alt='chain' />
+                                        <img width={100} className='mx-auto' src='/assets/ornamen/CABLE.png' alt='chain' />
                                     </span>
                                 </div>
                             </div>
