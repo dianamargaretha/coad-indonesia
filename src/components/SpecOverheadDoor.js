@@ -108,7 +108,7 @@ const SpecOverheadDoor = ({ type }) => {
                                 <div>
                                     <span>Lift</span>
                                     <div className='flex flex-wrap'>
-                                        <img className='mx-auto' src='/assets/ornamen/opening-garage.jpeg' alt='doors' />
+                                        <img width={100} className='mx-auto' src='/assets/ornamen/opening-garage-c-30.png' alt='doors' />
                                     </div>
                                 </div>
                             </div>
