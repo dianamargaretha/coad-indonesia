@@ -36,7 +36,7 @@ const SpecOverheadDoor = ({ type }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex gap-4 list' data-title='Opening/closing speed'>
+                        <div className='flex gap-0 md:gap-4 list' data-title='Opening/closing speed'>
                             <div className='flex-1'>Opening/closing speed</div>
                             <div className='flex-1'>
                                 <div>
@@ -49,7 +49,7 @@ const SpecOverheadDoor = ({ type }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex gap-4 list' data-title='Maximum wind speed'>
+                        <div className='flex gap-0 md:gap-4 list' data-title='Maximum wind speed'>
                             <div className='flex-1'>Maximum wind speed</div>
                             <div className='flex-1'>
                                 <div>
@@ -62,7 +62,7 @@ const SpecOverheadDoor = ({ type }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex gap-4 list' data-title='Thermal conductivity'>
+                        <div className='flex gap-0 md:gap-4 list' data-title='Thermal conductivity'>
                             <div className='flex-1'>Thermal conductivity</div>
                             <div className='flex-1'>
                                 <div>
@@ -75,7 +75,7 @@ const SpecOverheadDoor = ({ type }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex gap-4 list' data-title='Operation principle'>
+                        <div className='flex gap-0 md:gap-4 list' data-title='Operation principle'>
                             <div className='flex-1'>Operation principle</div>
                             <div className='flex-1'>
                                 <div>
@@ -94,7 +94,7 @@ const SpecOverheadDoor = ({ type }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex gap-4 list' data-title='Rolling door type'>
+                        <div className='flex gap-0 md:gap-4 list' data-title='Rolling door type'>
                             <div className='flex-1'>Rolling door type</div>
                             <div className='flex-1'>
                                 <div>
@@ -113,7 +113,7 @@ const SpecOverheadDoor = ({ type }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex gap-4 list' data-title='Panel'>
+                        <div className='flex gap-0 md:gap-4 list' data-title='Panel'>
                             <div className='flex-1'>Panel</div>
                             <div className='flex-1'>
                                 <div>
@@ -126,7 +126,7 @@ const SpecOverheadDoor = ({ type }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex gap-4 list' data-title='Motor'>
+                        <div className='flex gap-0 md:gap-4 list' data-title='Motor'>
                             <div className='flex-1'>Motor</div>
                             <div className='flex-1'>
                                 <div>
@@ -139,7 +139,7 @@ const SpecOverheadDoor = ({ type }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex gap-4 list' data-title='Outstanding Features'>
+                        <div className='flex gap-0 md:gap-4 list' data-title='Outstanding Features'>
                             <div className='flex-1'>Outstanding Features</div>
                             <div className='flex-1'>
                                 <div>
