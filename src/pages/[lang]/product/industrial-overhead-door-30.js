@@ -23,7 +23,7 @@ const Benefit = ({ thumb, title, link, lang }) => {
             pathname: `/[lang]/product/${link}`,
             query: { lang: lang }
         }}>
-            <div className='relative flex justify-center items-center'>
+            <div className='benefit relative flex justify-center items-center'>
 
                 <Image
                     src={thumb}
@@ -178,9 +178,9 @@ const index = () => {
                     {specdetailgroup?.title && (
                         <div className='each-spec-wrapper border-b pt-8 pb-3'>
                             <h3 className='title'>{specdetailgroup?.title}</h3>
-                            <div className='flex flex-wrap flex-row pt-8 pb-3'>
+                            <div className='grid grid-cols-1 md:grid-cols-2 gap-12 pt-8 pb-3'>
                                 {specdetailgroup?.listspec?.map(list => (
-                                    <div className='w-12/12 md:w-6/12 pb-4 md:pb-8'>
+                                    <div className='pb-4 md:pb-8'>
                                         <div className="flex flex-col gap-4 pb-3">
                                             {list?.thumb && <div className="flex-shrink-0 pt-4">
                                                 <img className='w-full md:w-auto md:max-w-[30vw] px-4 object-contain' src={list?.thumb?.sourceUrl} alt={list?.title} />

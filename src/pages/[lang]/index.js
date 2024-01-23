@@ -364,11 +364,11 @@ export default function Home() {
                     </div>
                   </div>
                 ) : (
-                  <div className='slide-style-2 animation-style-02 homebanner' style={{ backgroundImage: width < 640 ? `url(${slide?.bannermobile?.sourceUrl})` : `url(${slide?.banner?.sourceUrl})` }}>
+                  <div className='slide-style-2 animation-style-02 homebanner' style={{ backgroundImage: width < 1024 ? `url(${slide?.bannermobile?.sourceUrl})` : `url(${slide?.banner?.sourceUrl})` }}>
                     <div className="slide-inner bg-height px-8 md:px-16">
                       <div className='hidden md:block homebanner-ornamen'></div>
                       <div className="relative z-10 container">
-                        <div className="md:w-5/12 bg-[rgba(0,0,0,0.4)] p-4 md:bg-transparent md:p-12">
+                        <div className="xl:w-5/12 bg-[rgba(0,0,0,0.4)] p-4 xl:bg-transparent xl:p-12">
                           <div className="slide-content">
                             <div className=''>
                               <h2 className="title mb-4">
@@ -390,7 +390,7 @@ export default function Home() {
                             </div>
                           </div>
                         </div>
-                        <div className="flex flex-0 md:flex-[5] absolute">
+                        <div className="flex flex-0 lg:flex-[5] absolute">
                         </div>
                       </div>
                     </div>
@@ -495,8 +495,8 @@ export default function Home() {
         </section>
         <section className='mt-0 md:mt-28 section-worldwide overflow-hidden'>
           <div className='container'>
-            <div className='flex flex-col md:flex-row gap-16'>
-              <div className='flex-1'>
+            <div className='flex flex-col lg:flex-row gap-16'>
+              <div className='lg:flex-1'>
                 <div className='info-title'>
                   <div className='info-box'>
                     <div className='info-box-inner'>

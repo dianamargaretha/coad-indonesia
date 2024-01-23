@@ -334,3 +334,24 @@
         }
     }
 }
+
+.benefit {
+    @apply overflow-hidden;
+    > img {
+        transition: all 0.2s;
+    }
+    > div {
+        transition: all 0.2s;
+        transition-timing-function: ease-in;
+        @apply flex justify-center items-center;
+    }
+    &:hover {
+        > img {
+            opacity: 0.8;
+            transform: scale(1.01);
+        }
+        > div {
+            @apply p-4;
+        }
+    }
+}
