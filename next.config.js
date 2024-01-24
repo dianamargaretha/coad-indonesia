@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['localhost', '195.35.14.168'],
+        domains: ['localhost', '195.35.14.168', 'highspeeddoorindonesiacoad.com'],
     },
     webpack5: true,
     webpack: (config) => {

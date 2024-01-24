@@ -196,21 +196,26 @@ const highSpeedDoor = () => {
                             </div>
                         </div>
                     )}
-                    {specdetail?.map((list, index) => {
-                        return (
-                            <div className='each-spec-wrapper border-b pt-8 pb-3' key={index}>
-                                <h3 className='title'>{list?.title}</h3>
-                                <div className="flex flex-col gap-4 pb-3">
-                                    {list?.thumb && <div className=" pt-4">
-                                        <img className='w-full md:w-auto md:max-w-[30vw] px-4 md:px-0 object-contain' src={list?.thumb?.sourceUrl} alt={list?.title} />
-                                    </div>}
-                                    <div className="detail min-w-0 pt-8 ms-4">
-                                        <div dangerouslySetInnerHTML={{ __html: list?.specList }} />
+                    {specdetail && (
+                        <div className='each-spec-wrapper border-b pt-8 pb-3'>
+                            <div className='grid grid-cols-1 md:grid-cols-2 gap-12 pt-8 pb-3'>
+                                {specdetail?.map(list => (
+                                    <div className='pb-4 md:pb-8'>
+                                        <div className="flex flex-col gap-4 pb-3">
+
+                                            <h3 className='title'>{list?.title}</h3>
+                                            {list?.thumb && <div className="flex-shrink-0 pt-4">
+                                                <img className='w-full md:w-auto md:max-w-[30vw] px-4 object-contain' src={list?.thumb?.sourceUrl} alt={list?.title} />
+                                            </div>}
+                                            <div className="detail flex-1 min-w-0 pt-8 ms-4 text-justify">
+                                                <div dangerouslySetInnerHTML={{ __html: list?.specList }} />
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                ))}
                             </div>
-                        )
-                    })}
+                        </div>
+                    )}
                 </div>
             </div>
 
