@@ -28,14 +28,15 @@ export default function Document() {
       </Head>
       <body>
         <Main />
-        <NextScript />
-        {/* <!-- Google tag (gtag.js) --> */}
-        <noscript
-          dangerouslySetInnerHTML={{
-            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=G-W545Q1VWVX" height="0" width="0" style="display: none; visibility: hidden;" />`,
-          }}
-        />
+        {/* <!-- Google Tag Manager (noscript) --> */}
+        <noscript>
+          <iframe src={`https://www.googletagmanager.com/ns.html?id=G-W545Q1VWVX`}
+            height="0" width="0" style={{ display: 'none', visibility: "hidden" }}>
+          </iframe>
+        </noscript>
+        {/* <!-- End Google Tag Manager (noscript) --> */}
         {/* <!-- Google analytics (analytics.js) --> */}
+        <NextScript />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
           window.dataLayer = window.dataLayer || [];
