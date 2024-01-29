@@ -6,11 +6,18 @@ export default function Document() {
       <Head>
         <link rel="icon" href="/assets/favicon.ico" sizes="any" />
         {/* Plugin wa chat default */}
-        <script
+        {/* <script
           type="text/javascript"
           src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
           id="aisensy-wa-widget"
           widget-id="67nxE5"
+        >
+        </script> */}
+        <script
+          type="text/javascript"
+          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
+          id="aisensy-wa-widget"
+          widget-id="gDCw2g"
         >
         </script>
 
