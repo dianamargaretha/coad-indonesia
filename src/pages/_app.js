@@ -8,12 +8,15 @@ import Footer from '@/components/Footer';
 import ButtonToTop from '@/components/ButtonToTop';
 import PublicHead from '@/components/PublicHead';
 import ButtonFacebook from '@/components/ButtonFacebook';
+import Script from 'next/script'
 
 const App = props => {
   const { Component, pageProps } = props;
 
   return (
     <ApolloProvider client={clientApollo}>
+      <Script id="google-tag" src={`https://www.googletagmanager.com/gtm.js?id=G-W545Q1VWVX`} />
+      <Script id="google-ads" src={`https://www.googletagmanager.com/gtm.js?id=AW-349252447`} />
       <div>
         <PublicHead
           title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door"
