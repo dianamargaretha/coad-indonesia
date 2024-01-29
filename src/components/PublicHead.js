@@ -5,6 +5,7 @@ const PublicHead = ({ title, description }) => {
         <Head>
             <meta charSet="utf-8" />
             <title>{title}</title>
+            <meta name="google-site-verification" content="esnisdAKKwM4vC5LBawCq65SjAVZ2nY5j967JZzGAtE" />
             <meta name="description" content={description}></meta>
             <link rel="shortcut icon" href="/favicon-32x32.png" />
         </Head>
