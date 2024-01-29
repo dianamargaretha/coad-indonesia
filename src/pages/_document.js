@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <meta name="google-site-verification" content="esnisdAKKwM4vC5LBawCq65SjAVZ2nY5j967JZzGAtE" />
         <link rel="icon" href="/assets/favicon.ico" sizes="any" />
         {/* Plugin wa chat default */}
         {/* <script
