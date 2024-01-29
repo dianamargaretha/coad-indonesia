@@ -1,12 +1,13 @@
-import React, { useReducer, useState, useRef } from 'react'
+import React, { useReducer, useState, useRef, useEffect } from 'react'
 import Recaptcha from 'react-google-recaptcha';
 import isCurrentLang from '@/utils/isCurrentLang'
 import { validateInput, validateForm } from '@/lib/validation'
 import PublicHead from '@/components/PublicHead';
 import { gql, useQuery } from "@apollo/client";
-const nodemailer = require('nodemailer');
 
 import { trackContactUs } from "@/lib/analytics"
+import ModalApply from '@/components/ModalApply';
+import service from '@/lib/service';
 
 
 const InputText = ({ required, ...props }) => {
@@ -68,14 +69,6 @@ const reducer = (state, { type, name, value }) => {
 }
 
 const contactUs = () => {
-    const [state, dispatch] = useReducer(reducer, initialState())
-    const [loading, setLoading] = useState(false)
-    const [status, setStatus] = useState({ value: null, message: null })
-    const [captchaStatus, setCaptchaStatus] = useState(false)
-
-
-    const captcha = useRef(null)
-
     const { data, loading: loadingCms, error } = useQuery(gql`
     query {
         post(id: "contact-us", idType: SLUG) {
@@ -87,6 +80,24 @@ const contactUs = () => {
         }
     `);
     const { contactUs } = data?.post ?? {}
+
+    const inputFile = useRef(null)
+    const captcha = useRef(null)
+
+    const [captchaStatus, setCaptchaStatus] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [loading, setLoading] = useState(false)
+    const [status, setStatus] = useState({ value: null, message: null })
+    const [state, dispatch] = useReducer(reducer, initialState())
+
+    useEffect(() => {
+        if (captchaStatus) validateInput("jobform", "captcha")
+    }, [captchaStatus]);
+
+    const resetState = () => {
+        inputFile.current.value = null
+        dispatch({ type: "reset" })
+    }
 
     const handleSubmit = async (e = {}) => {
         e?.preventDefault()
@@ -102,60 +113,36 @@ const contactUs = () => {
             formData.append("phone", phone)
             formData.append("content", content)
             // console.log({ formData, name, email, content, phone })
-            const transporter = nodemailer.createTransport({
-                service: 'gmail',
-                auth: {
-                    user: 'marketing@highspeeddoorindonesiacoad.com',
-                    pass: 'Coad!2345'
-                }
-            });
-            const mailOptions = {
-                from: email,
-                to: email,
-                subject: 'Contact Us From Website',
-                text: content,
-                //html: `
-                //  <h1>Sample Heading Here</h1>
-                //  <p>message here</p>
-                //`,
-            };
 
-            transporter.sendMail(mailOptions, function(error, info) {
-                if (error) {
-                    console.log(error);
-                } else {
-                    console.log('Email sent: ' + info.response);
-                }
+            service.post(process.env.NEXT_PUBLIC_WP_URI + "/wp-json/contact-form-7/v1/contact-forms/6cbe7f1/feedback", formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
             })
-            // service.post(process.env.NEXT_PUBLIC_WP_URI + "/wp-json/contact-form-7/v1/contact-forms/49/feedback", formData, {
-            //     headers: {
-            //         "Content-Type": "multipart/form-data",
-            //     },
-            // })
-            //     .then(({ data }) => {
-            //         setLoading(false)
-            //         if (data.status === "mail_sent") {
-            //             captcha.current.reset()
-            //             resetState()
-            //             setStatus({ value: true, message: null })
-            //             trackCareerApply(position, 'Success')
-            //             setLoading(false)
-            //             setIsModalOpen(true)
-            //         } else {
-            //             const message = `${data.message} ${data.invalidFields ? data.invalidFields.map(({ message }) => `${message}`) : ""}`
-            //             setStatus({ value: false, message })
-            //             trackCareerApply(position, 'Failed')
-            //             setLoading(false)
-            //             setIsModalOpen(true)
-            //         }
-            //     })
-            //     .catch((err) => {
-            //         setStatus({ value: false, message: "Failed! please try again later." })
-            //         trackCareerApply(position, 'Failed')
-            //         setLoading(false)
-            //         console.error(err)
-            //         setIsModalOpen(true)
-            //     })
+                .then(({ data }) => {
+                    setLoading(false)
+                    if (data.status === "mail_sent") {
+                        captcha.current.reset()
+                        resetState()
+                        setStatus({ value: true, message: null })
+                        trackContactUs(email, 'Success')
+                        setLoading(false)
+                        setIsModalOpen(true)
+                    } else {
+                        const message = `${data.message} ${data.invalidFields ? data.invalidFields.map(({ message }) => `${message}`) : ""}`
+                        setStatus({ value: false, message })
+                        trackContactUs(email, 'Failed')
+                        setLoading(false)
+                        setIsModalOpen(true)
+                    }
+                })
+                .catch((err) => {
+                    setStatus({ value: false, message: "Failed! please try again later." })
+                    trackContactUs(email, 'Failed')
+                    setLoading(false)
+                    console.error(err)
+                    setIsModalOpen(true)
+                })
         }
     }
     const handleChange = ({ currentTarget: { name, value } }) => {
@@ -174,12 +161,13 @@ const contactUs = () => {
     const LoadingSend = () => {
         return (
             <div className="inline-flex leading-8">
-                <span className="mr-5">Send Contact Us</span>
+                <span className="mr-5">Send Information</span>
             </div>
         )
     }
     return (
         <div>
+            <ModalApply isOpen={isModalOpen} status={status} position={state.email} close={() => setIsModalOpen(!isModalOpen)} />
             <PublicHead
                 title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | Cs center | COAD"
                 description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program | COAD Estimate inquiry" />
@@ -193,7 +181,7 @@ const contactUs = () => {
                             <div className='w-12/12 md:w-6/12'>
                                 <p className='mb-4'>{isCurrentLang(contactUs?.descEn, contactUs?.desc)}</p>
                                 <ul>
-                                    <li>Email : mkt@coad.co.id</li>
+                                    <li>Email : marketing@highspeeddoorindonesiacoad.com</li>
                                     <li>Phone : +62-21-299-16111</li>
                                 </ul>
 
