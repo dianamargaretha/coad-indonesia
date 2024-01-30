@@ -36,7 +36,6 @@ export const setLanguageCookie = (ctx, language) => {
 };
 
 export const getLanguageCookie = (ctx) => {
-    console.log({ ctx })
     return parseCookies(ctx).language;
 };
 
@@ -50,7 +49,7 @@ export const configureLanguage = (ctx) => {
     let lang = getLanguage(language, ctx);
 
     if (asPath === "/") {
-        redirectToLanguage(lang, res);
+        redirectToLanguage('id', res);
     } else {
         lang = validateLanguage(query.lang);
         setLanguageCookie(ctx, lang);
