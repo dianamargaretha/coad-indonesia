@@ -1,9 +1,9 @@
 import Router from "next/router";
 import { parseCookies, setCookie } from "nookies";
 
-export const fallbackLanguage = "en";
+export const fallbackLanguage = "id";
 
-export const languages = ["en", "nl"];
+export const languages = ["en", "id"];
 
 export const validateLanguage = (lang) => {
     return languages.includes(lang) ? lang : fallbackLanguage;
@@ -36,6 +36,7 @@ export const setLanguageCookie = (ctx, language) => {
 };
 
 export const getLanguageCookie = (ctx) => {
+    console.log({ ctx })
     return parseCookies(ctx).language;
 };
 
