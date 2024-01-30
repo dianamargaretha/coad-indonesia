@@ -8,23 +8,12 @@ import Footer from '@/components/Footer';
 import ButtonToTop from '@/components/ButtonToTop';
 import PublicHead from '@/components/PublicHead';
 import ButtonFacebook from '@/components/ButtonFacebook';
-// import Script from 'next/script'
-import { useEffect } from 'react';
-import { initializeGoogleTagManager } from '@/lib/googleTagManager';
-import { initialize, logPageView } from '@/lib/analytics';
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 
 const App = props => {
   const { Component, pageProps } = props;
-  useEffect(() => {
-    initialize();
-    logPageView();
-    // Initialize Google Tag Manager with your GTM ID
-    initializeGoogleTagManager('AW-349252447');
-  }, [])
   return (
     <ApolloProvider client={clientApollo}>
-      {/* <Script id="google-tag" src={`https://www.googletagmanager.com/gtm.js?id=G-W545Q1VWVX`} />
-      <Script id="google-ads" src={`https://www.googletagmanager.com/gtm.js?id=AW-349252447`} /> */}
       <div>
         <PublicHead
           title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door"
@@ -36,6 +25,8 @@ const App = props => {
         <ButtonFacebook />
         <ButtonToTop />
         <Footer />
+        <GoogleTagManager gtmId="G-W545Q1VWVX" />
+        <GoogleAnalytics gaId="G-W545Q1VWVX" />
       </div>
     </ApolloProvider>
   );
