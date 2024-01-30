@@ -8,15 +8,23 @@ import Footer from '@/components/Footer';
 import ButtonToTop from '@/components/ButtonToTop';
 import PublicHead from '@/components/PublicHead';
 import ButtonFacebook from '@/components/ButtonFacebook';
-import Script from 'next/script'
+// import Script from 'next/script'
+import { useEffect } from 'react';
+import { initializeGoogleTagManager } from '@/lib/googleTagManager';
+import { initialize, logPageView } from '@/lib/analytics';
 
 const App = props => {
   const { Component, pageProps } = props;
-
+  useEffect(() => {
+    initialize();
+    logPageView();
+    // Initialize Google Tag Manager with your GTM ID
+    initializeGoogleTagManager('G-W545Q1VWVX');
+  }, [])
   return (
     <ApolloProvider client={clientApollo}>
-      <Script id="google-tag" src={`https://www.googletagmanager.com/gtm.js?id=G-W545Q1VWVX`} />
-      <Script id="google-ads" src={`https://www.googletagmanager.com/gtm.js?id=AW-349252447`} />
+      {/* <Script id="google-tag" src={`https://www.googletagmanager.com/gtm.js?id=G-W545Q1VWVX`} />
+      <Script id="google-ads" src={`https://www.googletagmanager.com/gtm.js?id=AW-349252447`} /> */}
       <div>
         <PublicHead
           title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door"
