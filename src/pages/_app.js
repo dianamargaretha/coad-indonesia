@@ -19,7 +19,7 @@ const App = props => {
     initialize();
     logPageView();
     // Initialize Google Tag Manager with your GTM ID
-    initializeGoogleTagManager('G-W545Q1VWVX');
+    initializeGoogleTagManager('AW-349252447');
   }, [])
   return (
     <ApolloProvider client={clientApollo}>
