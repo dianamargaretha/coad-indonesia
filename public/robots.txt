@@ -1,8 +1,6 @@
-User-agent: *
+User-Agent: *
+Allow: /
 Disallow: /wp-json/
 Disallow: /wp-admin/
-
-User-agent: *
-Allow: /
 
 Sitemap: http://highspeeddoorindonesiacoad.com/sitemap.xml
