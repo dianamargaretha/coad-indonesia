@@ -16,6 +16,9 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        {/* <!-- LOGGER(TM) TRACKING SCRIPT V.40 FOR logger.co.kr / 112018 : COMBINE TYPE / DO NOT ALTER THIS SCRIPT. --> */}
+        <noscript><img alt="Logger Script" width="1" height="1" src="http://ssl.logger.co.kr/tracker.1.tsp?u=112018&amp;js=N" /></noscript>
+        {/* <!-- END OF LOGGER TRACKING SCRIPT --> */}
       </body>
     </Html>
   )
