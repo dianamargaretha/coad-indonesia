@@ -114,7 +114,7 @@ const contactUs = () => {
             formData.append("content", content)
             // console.log({ formData, name, email, content, phone })
 
-            service.post(process.env.NEXT_PUBLIC_WP_URI + "/wp-json/contact-form-7/v1/contact-forms/6cbe7f1/feedback", formData, {
+            service.post(process.env.NEXT_PUBLIC_WP_JSON_URI + "/wp-json/contact-form-7/v1/contact-forms/6cbe7f1/feedback", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
