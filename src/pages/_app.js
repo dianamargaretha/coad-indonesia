@@ -9,7 +9,6 @@ import ButtonToTop from '@/components/ButtonToTop';
 import PublicHead from '@/components/PublicHead';
 import ButtonFacebook from '@/components/ButtonFacebook';
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
-import Script from 'next/script';
 
 const App = props => {
   const { Component, pageProps } = props;
@@ -28,7 +27,6 @@ const App = props => {
         <Footer />
         <GoogleTagManager gtmId="G-W545Q1VWVX" />
         <GoogleAnalytics gaId="G-W545Q1VWVX" />
-        <Script src='/log.js' />
       </div>
     </ApolloProvider>
   );
