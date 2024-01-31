@@ -28,7 +28,7 @@ const App = props => {
         <Footer />
         <GoogleTagManager gtmId="G-W545Q1VWVX" />
         <GoogleAnalytics gaId="G-W545Q1VWVX" />
-        <Script src='log.js' />
+        <Script src='/log.js' />
       </div>
     </ApolloProvider>
   );
