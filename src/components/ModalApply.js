@@ -2,6 +2,7 @@ import React from 'react'
 // import Button from 'components/Button'
 import Image from 'next/image'
 import Link from 'next/link'
+import isCurrentLang from '@/utils/isCurrentLang'
 
 const ModalApply = ({ isOpen, status, position, close }) => {
     return (
@@ -16,18 +17,18 @@ const ModalApply = ({ isOpen, status, position, close }) => {
                         <div className='text-center'>
                             <Image src={`/icons/${status.value ? 'ic-form-success.svg' : 'ic-form-failed.svg'}`} height={90} width={90} className='mb-10 mx-auto' />
                             <h5 className='text-h5 text-[#333] my-8'>
-                                {status.value ? <>Your email has been successfully submitted</> :
-                                    <>Your email can’t be submitted</>}
+                                {status.value ? <>{isCurrentLang('Your email has been successfully submitted', 'Email anda berhasil di kirim')}</> :
+                                    <>{isCurrentLang('Your email can’t be submitted', 'Email anda tidak berhasil dikirim')}</>}
                             </h5>
                             <p className='text-p2 text-[#333] mb-10'>
-                                {status.value ? <>Thanks! We have received your email.<br /> While you are waiting you can explore more about COAD Indonesia.</> :
-                                    <>Uh-oh! Something went wrong.<br />Please keep calm and send via email.</>}
+                                {status.value ? <>{isCurrentLang('Thanks! We have received your email.', 'Terimakasih! Kami telah menerima email anda.')}<br /> {isCurrentLang('While you are waiting you can explore more about COAD Indonesia.', 'Kamu bisa melanjutkan mencari info mengenai COAD Indonesia.')}</> :
+                                    <>{isCurrentLang('Uh-oh! Something went wrong.', 'Maaf! Terjadi kesalahan.')}<br />{isCurrentLang('Please keep calm and send via email.', 'Kamu bisa menghubungi kami melalui email.')}</>}
                             </p>
                             <Link href={`${status.value ? '/' : 'mailto:marketing@highspeeddoorindonesiacoad.com?subject=Email '} ${position}`} passHref>
                                 <div
-                                    className='btn'>
+                                    className='btn !bg-[#318a68]'>
                                     <>
-                                        <span className='label'>  {status.value ? 'Go to home' : 'Send email'}</span>
+                                        <span className='label'>  {status.value ? isCurrentLang('Go to home', 'Kembali ke beranda') : isCurrentLang('Send email', 'Kirim email')}</span>
                                     </>
                                 </div>
                             </Link>

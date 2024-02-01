@@ -8,7 +8,7 @@ import { gql, useQuery } from "@apollo/client";
 import { trackContactUs } from "@/lib/analytics"
 import ModalApply from '@/components/ModalApply';
 import service from '@/lib/service';
-
+import Image from 'next/image';
 
 const InputText = ({ required, ...props }) => {
     const { id, label, type, value, maxLength } = props;
@@ -60,7 +60,8 @@ const reducer = (state, { type, name, value }) => {
             return {
                 name: "",
                 email: "",
-                phone: ""
+                phone: "",
+                content: ""
             }
         default:
             console.error(`There is no ${type} type in reducer`)
@@ -81,7 +82,6 @@ const contactUs = () => {
     `);
     const { contactUs } = data?.post ?? {}
 
-    const inputFile = useRef(null)
     const captcha = useRef(null)
 
     const [captchaStatus, setCaptchaStatus] = useState(false)
@@ -95,16 +95,14 @@ const contactUs = () => {
     }, [captchaStatus]);
 
     const resetState = () => {
-        inputFile.current.value = null
         dispatch({ type: "reset" })
     }
 
-    const handleSubmit = async (e = {}) => {
+    const handleSubmit = (e = {}) => {
         e?.preventDefault()
         if (validateForm("jobform")) {
             setLoading(true)
             setStatus({ value: null, message: null })
-            if (state.where === "other") state.where = state.whereotherdesc
 
             const { name, email, content, phone } = state
             const formData = new FormData()
@@ -112,16 +110,15 @@ const contactUs = () => {
             formData.append("email", email)
             formData.append("phone", phone)
             formData.append("content", content)
-            // console.log({ formData, name, email, content, phone })
 
-            service.post(process.env.NEXT_PUBLIC_WP_JSON_URI + "/wp-json/contact-form-7/v1/contact-forms/6cbe7f1/feedback", formData, {
+            service.post("http://highspeeddoorindonesiacoad.com/wordpress/wp-json/contact-form-7/v1/contact-forms/1058158/feedback", formData, {
                 headers: {
-                    "Content-Type": "multipart/form-data",
-                },
+                    "Content-Type": "multipart/form-data"
+                }
             })
-                .then(({ data }) => {
+                .then((res) => {
                     setLoading(false)
-                    if (data.status === "mail_sent") {
+                    if (res.status === 200) {
                         captcha.current.reset()
                         resetState()
                         setStatus({ value: true, message: null })
@@ -129,7 +126,7 @@ const contactUs = () => {
                         setLoading(false)
                         setIsModalOpen(true)
                     } else {
-                        const message = `${data.message} ${data.invalidFields ? data.invalidFields.map(({ message }) => `${message}`) : ""}`
+                        const message = `${res.statusText}`
                         setStatus({ value: false, message })
                         trackContactUs(email, 'Failed')
                         setLoading(false)
@@ -160,8 +157,8 @@ const contactUs = () => {
     }
     const LoadingSend = () => {
         return (
-            <div className="inline-flex leading-8">
-                <span className="mr-5">Send Information</span>
+            <div className="inline-flex leading-8 items-center">
+                <span className="mr-5">Send Information</span> <span><Image src='/icons/ic-loading.svg' height={20} width={20} /></span>
             </div>
         )
     }
@@ -192,20 +189,20 @@ const contactUs = () => {
                             <div className='container'>
                                 <div className='grid grid-cols-1 mb-10 md:mb-20'>
                                     <div>
-                                        <InputText id="name" name='name' label='Your Full Name' onChange={handleChange} value={state.name} className="validate[required]" required maxLength={100} disabled={loading} />
+                                        <InputText id="name" name='name' label={isCurrentLang('Your Full Name', 'Nama Lengkap')} onChange={handleChange} value={state.name} className="validate[required]" required maxLength={100} disabled={loading} />
                                     </div>
                                 </div>
                                 <div className='grid grid-cols-2 gap-10 mb-10 md:mb-20'>
                                     <div className='col-span-2 md:col-span-1'>
-                                        <InputText type="text" id="email" name='email' label='Your Email' onChange={handleChange} value={state.email} className="validate[required,email]" required maxLength={100} disabled={loading} />
+                                        <InputText type="text" id="email" name='email' label={isCurrentLang('Your Email', 'Email')} onChange={handleChange} value={state.email} className="validate[required,email]" required maxLength={100} disabled={loading} />
                                     </div>
                                     <div className='col-span-2 md:col-span-1'>
-                                        <InputText id="phone" name='phone' label='Your Phone' onChange={handleChange} value={state.phone} className="validate[required]" required maxLength={15} disabled={loading} />
+                                        <InputText id="phone" name='phone' label={isCurrentLang('Your Phone', 'Nomor Telephon')} onChange={handleChange} value={state.phone} className="validate[required]" required maxLength={15} disabled={loading} />
                                     </div>
                                 </div>
                                 <div className='grid grid-cols-1 mb-10 md:mb-20'>
                                     <div>
-                                        <InputTextArea id="content" name="content" label="Content" onChange={handleChange} value={state.content} className="validate[required]" required maxLength={500} disabled={loading} />
+                                        <InputTextArea id="content" name="content" label={isCurrentLang("Content", 'Konten')} onChange={handleChange} value={state.content} className="validate[required]" required maxLength={500} disabled={loading} />
                                         {/* <InputText id="content" name='content' label='Content' onChange={handleChange} value={state.name} className="validate[required]" required maxLength={500} disabled={loading} /> */}
                                     </div>
                                 </div>
