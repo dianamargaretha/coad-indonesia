@@ -26,7 +26,7 @@ const ModalApply = ({ isOpen, status, position, close }) => {
                             </p>
                             <Link href={`${status.value ? '/' : 'mailto:marketing@highspeeddoorindonesiacoad.com?subject=Email '} ${position}`} passHref>
                                 <div
-                                    className='btn !bg-[#318a68]'>
+                                    className={`btn ${status.value ? '!bg-[#318a68]' : ''} `}>
                                     <>
                                         <span className='label'>  {status.value ? isCurrentLang('Go to home', 'Kembali ke beranda') : isCurrentLang('Send email', 'Kirim email')}</span>
                                     </>

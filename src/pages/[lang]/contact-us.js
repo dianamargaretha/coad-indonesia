@@ -118,7 +118,7 @@ const contactUs = () => {
             })
                 .then((res) => {
                     setLoading(false)
-                    if (res.status === 200) {
+                    if (res.data.status === "mail_sent") {
                         captcha.current.reset()
                         resetState()
                         setStatus({ value: true, message: null })
