@@ -97,49 +97,35 @@ const contactUs = () => {
     const resetState = () => {
         dispatch({ type: "reset" })
     }
-
-    const handleSubmit = (e = {}) => {
-        e?.preventDefault()
-        if (validateForm("jobform")) {
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+        const data = Object.fromEntries(new FormData(event.target).entries());
+        try {
             setLoading(true)
-            setStatus({ value: null, message: null })
-
-            const { name, email, content, phone } = state
-            const formData = new FormData()
-            formData.append("full-name", name)
-            formData.append("email", email)
-            formData.append("phone", phone)
-            formData.append("content", content)
-
-            service.post("http://highspeeddoorindonesiacoad.com/wordpress/wp-json/contact-form-7/v1/contact-forms/1058158/feedback", formData, {
-                headers: {
-                    "Content-Type": "multipart/form-data"
-                }
-            })
-                .then((res) => {
-                    setLoading(false)
-                    if (res.data.status === "mail_sent") {
-                        captcha.current.reset()
-                        resetState()
-                        setStatus({ value: true, message: null })
-                        trackContactUs(email, 'Success')
-                        setLoading(false)
-                        setIsModalOpen(true)
-                    } else {
-                        const message = `${res.statusText}`
-                        setStatus({ value: false, message })
-                        trackContactUs(email, 'Failed')
-                        setLoading(false)
-                        setIsModalOpen(true)
-                    }
+            const response = await fetch('/api/contact', {
+                method: 'post',
+                body: JSON.stringify({
+                    name: data.name,
+                    email: data.email,
+                    phone: data.phone,
+                    content: data.content
                 })
-                .catch((err) => {
-                    setStatus({ value: false, message: "Failed! please try again later." })
-                    trackContactUs(email, 'Failed')
-                    setLoading(false)
-                    console.error(err)
-                    setIsModalOpen(true)
-                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`response status: ${response.status}`)
+            }
+            captcha.current.reset()
+            resetState()
+            setStatus({ value: true, message: null })
+            trackContactUs(email, 'Success')
+            setLoading(false)
+            setIsModalOpen(true)
+        } catch (err) {
+            setStatus({ value: false, message: "Failed! please try again later." })
+            trackContactUs(email, 'Failed')
+            setLoading(false)
+            setIsModalOpen(true)
         }
     }
     const handleChange = ({ currentTarget: { name, value } }) => {
@@ -158,7 +144,7 @@ const contactUs = () => {
     const LoadingSend = () => {
         return (
             <div className="inline-flex leading-8 items-center">
-                <span className="mr-5">Send Information</span> <span><Image src='/icons/ic-loading.svg' height={20} width={20} /></span>
+                <span className="mr-5">{isCurrentLang('Send Information', 'Kirim')}</span> <span><Image src='/icons/ic-loading.svg' height={20} width={20} /></span>
             </div>
         )
     }
