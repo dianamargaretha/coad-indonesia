@@ -1,5 +1,4 @@
 import React from 'react'
-// import Button from 'components/Button'
 import Image from 'next/image'
 import Link from 'next/link'
 import isCurrentLang from '@/utils/isCurrentLang'
@@ -21,7 +20,7 @@ const ModalApply = ({ isOpen, status, position, close }) => {
                                     <>{isCurrentLang('Your email can’t be submitted', 'Email anda tidak berhasil dikirim')}</>}
                             </h5>
                             <p className='text-p2 text-[#333] mb-10'>
-                                {status.value ? <>{isCurrentLang('Thanks! We have received your email.', 'Terimakasih! Kami telah menerima email anda.')}<br /> {isCurrentLang('While you are waiting you can explore more about COAD Indonesia.', 'Kamu bisa melanjutkan mencari info mengenai COAD Indonesia.')}</> :
+                                {status.value ? <>{isCurrentLang('Thank you! Your request for quote has been successfully received.', 'Terima kasih! Permintaan penawaran Anda telah berhasil diterima.')}<br /> {isCurrentLang('While you are waiting, you can explore more about COAD Indonesia.', 'Sambil menunggu, Anda bisa cari tahu lebih banyak tentang COAD Indonesia.')}</> :
                                     <>{isCurrentLang('Uh-oh! Something went wrong.', 'Maaf! Terjadi kesalahan.')}<br />{isCurrentLang('Please keep calm and send via email.', 'Kamu bisa menghubungi kami melalui email.')}</>}
                             </p>
                             <Link href={`${status.value ? '/' : 'mailto:marketing@highspeeddoorindonesiacoad.com?subject=Email '} ${position}`} passHref>

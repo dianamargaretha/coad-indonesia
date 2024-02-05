@@ -1,9 +1,3 @@
-import { NextResponse, NextRequest } from 'next/server'
-
-
-// Handles POST requests to /api
-
-
 export default async function(request, response) {
     let nodemailer = require('nodemailer');
     // create transporter object
