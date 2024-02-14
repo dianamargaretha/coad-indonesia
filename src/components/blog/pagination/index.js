@@ -13,7 +13,6 @@ const Pagination = ({ pagesCount, postName }) => {
 
 	const router = useRouter();
 	const currentPageNo = parseInt(router?.query?.pageNo) || 1;
-
 	const paginationLinks = createPaginationLinks(currentPageNo, pagesCount);
 
 	return (
@@ -24,10 +23,11 @@ const Pagination = ({ pagesCount, postName }) => {
 			{paginationLinks.map((pageNo, index) => {
 				return (
 					'number' === typeof pageNo ? (
-						<Link key={`id-${index}`} href={{
-							pathname: '/[lang]/blog/page/[slug]',
-							query: { lang: router?.query?.lang, slug: pageNo }
-						}}>
+						// <Link key={`id-${index}`} href={{
+						// 	pathname: '/[lang]/blog/page/[slug]/',
+						// 	query: { lang: router?.query?.lang, slug: pageNo }
+						// }}>
+						<Link key={`id-${index}`} href={`/${router?.query?.lang}/blog/page/${pageNo}/`}>
 							<span
 								className={cx('border border-gray-300 px-3 py-2 transition duration-500 ease-in-out hover:bg-gray-500 hover:text-white', {
 									'is-active bg-gray-500 text-white': pageNo === currentPageNo
