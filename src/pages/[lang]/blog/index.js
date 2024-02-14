@@ -1,35 +1,26 @@
 import Link from "next/link";
-// import { getPostList } from "@/lib/posts";
-// import FeaturedImage from "@/components/FeaturedImage";
-// import Date from "@/components/Date";
-// import LoadMore from "@/components/LoadMore";
-import { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
-
-// export async function getStaticProps() {
-//     const allPosts = await getPostList();
-
-//     return {
-//         props: {
-//             allPosts: allPosts,
-//         },
-//     }
-// }
+import Image from "next/image";
+import { useRouter } from "next/router";
+import Loader from "@/components/Loader";
+import { format } from 'date-fns'
+import { PER_PAGE_FIRST, totalPagesCount } from '@/utils/pagination';
+import Pagination from '@/components/blog/pagination';
+import PublicHead from "@/components/PublicHead";
 
 export default function BlogHome() {
+  const router = useRouter();
 
-  const GET_ALL_POSTS = gql`
-    query MyQuery {
-      posts {
+  const MY_QUERY = gql`
+    query MyQuery($perPage: Int, $offset: Int){
+      posts(where: { categoryName: "blog", offsetPagination: { size: $perPage, offset: $offset }}) {
         nodes {
-          databaseId
+          id
           title
+          content
           slug
-          author {
-            node {
-              name
-            }
-          }
+          uri
+          date
           featuredImage {
             node {
               altText
@@ -37,65 +28,61 @@ export default function BlogHome() {
             }
           }
         }
+        pageInfo {
+          hasNextPage
+          offsetPagination {
+            total
+            hasPrevious
+            hasMore
+          }
+        }
       }
     }
-  `;
+    `
+  const variables = {
+    perPage: PER_PAGE_FIRST,
+    offset: null,
+  };
 
-  const { loading, error, data } = useQuery(GET_ALL_POSTS);
+  const { data, loading, error } = useQuery(MY_QUERY, { variables })
 
+  const pagesCount = totalPagesCount(data?.posts?.pageInfo?.offsetPagination?.total ?? 0);
+
+  if (data?.posts?.nodes == 0) return <div className="container">No Data</div>
   return (
-    <>Testt</>
-    // <>
-    //     <div className="h-[50vh] min-h-[20rem] bg-[url('/home.jpg')] relative">
-    //         <div className="absolute bg-slate-900 inset-0 z-0 opacity-40"></div>
+    <>
+      <PublicHead
+        title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | Blog | COAD"
+        description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program" />
+      <div className="container my-8">
+        {loading ?
+          <div className='flex justify-center'>
+            <Loader />
+          </div> :
+          <div className="flex flex-wrap justify-center md:justify-start gap-4">
+            {data?.posts?.nodes.map((post, index) => {
+              return (
+                <div className="mb-8 w-[280px] md:w-[280px]" key={index}>
+                  <Link href={{
+                    pathname: '/[lang]/blog/[slug]',
+                    query: { lang: router?.query?.lang, slug: post?.slug }
+                  }}>
+                    <figure className="flex overflow-hidden mb-4">
+                      <div className="relative benefit flex justify-center items-center p-4 w-[280px] h-[280px] md:w-[280px] md:h-[280px]">
+                        <Image src={post?.featuredImage?.node?.sourceUrl ?? '/assets/images/400x225.webp'} alt={post?.featuredImage?.node?.altText} layout="fill" />
+                      </div>
+                    </figure>
+                    <p className="text-sm mb-1">{format(post?.date, 'dd MMMM yyyy') ?? ''}</p>
+                    <h2 className="font-bold mb-2 text-lg hover:text-[#2b6f65] capitalize" dangerouslySetInnerHTML={{ __html: post?.title ?? '' }} />
+                  </Link>
+                </div>
+              )
+            })}
+          </div>
+        }
 
-    //         <div className="container lg:max-w-4xl mx-auto">
-    //             <SiteHeader className="header-blog-home z-10 relative" />
-    //         </div>
-
-    //         <h1 className="text-6xl text-center text-slate-100 relative z-10 py-8">BLOG</h1>
-
-    //         <p className="relative z-10 text-center text-slate-200 text-2xl">Read our latest articles</p>
-
-    //     </div>
-    //     <main>
-    //         <section className="container mx-auto lg:max-w-5xl post-list mt-4">
-    //             <ul>
-    //                 {
-    //                     posts.nodes.map((post) => (
-    //                         <li key={post.slug} className="grid grid-cols-5 gap-4 mb-4">
-    //                             <div className="col-span-2">
-    //                                 <FeaturedImage post={post} />
-    //                             </div>
-    //                             <div className="col-span-3">
-    //                                 <h2 className="py-4">
-    //                                     <Link href={`/blog/${post.slug}`} className="text-blue-400 text-2xl hover:text-blue-600">{post.title}</Link>
-    //                                 </h2>
-    //                                 <div className="py-4">
-    //                                     Published on <Date dateString={post.date} />
-    //                                 </div>
-    //                                 <div className="text-lg" dangerouslySetInnerHTML={{ __html: post.excerpt }}></div>
-    //                                 <div className="py-4">
-    //                                     Posted under {
-    //                                         post.categories.nodes.map((category) => (
-    //                                             <Link className="text-blue-400 hover:text-blue-500" href={`/category/${category.slug}`} key={category.slug}>
-    //                                                 {category.name}
-    //                                             </Link>
-    //                                         ))
-    //                                     }
-    //                                 </div>
-    //                             </div>
-    //                         </li>
-    //                     ))
-    //                 }
-    //             </ul>
-    //             <div className="py-4 text-center">
-    //                 <LoadMore posts={posts} setPosts={setPosts} />
-    //             </div>
-
-    //         </section>
-    //     </main>
-    //     <SiteFooter />
-    // </>
+        <Pagination pagesCount={pagesCount} postName="blog" />
+      </div>
+    </>
   );
 }
