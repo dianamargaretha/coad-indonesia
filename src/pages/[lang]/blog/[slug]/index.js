@@ -42,11 +42,13 @@ const index = () => {
                 description={data?.post?.blog?.metaDescription ?? `COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program`} />
             <h2 className='text-4xl text-center uppercase mb-4'>{data?.post?.title}</h2>
             {loading ? '' : <p className="text-lg text-center mb-16">{format(data?.post?.date, 'dd MMMM yyyy') ?? ''}</p>}
-            {loading ?
-                <div className='flex justify-center'>
-                    <Loader />
-                </div> : <div dangerouslySetInnerHTML={{ __html: sanitize(data?.post?.content ?? '') }} />
-            }
+            <div className='wp-section'>
+                {loading ?
+                    <div className='flex justify-center'>
+                        <Loader />
+                    </div> : <div dangerouslySetInnerHTML={{ __html: sanitize(data?.post?.content ?? '') }} />
+                }
+            </div>
         </div>
     )
 }

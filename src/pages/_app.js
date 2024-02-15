@@ -1,5 +1,6 @@
 import '@/styles/globals.css'
 import '@/styles/scss/style.scss'
+import '@/styles/wp.scss'
 import clientApollo from '@/lib/apollo-config'
 import { ApolloProvider } from '@apollo/client'
 import { configureLanguage } from "../utils/language";
