@@ -49,7 +49,7 @@ export default function BlogHome() {
 
   const pagesCount = totalPagesCount(data?.posts?.pageInfo?.offsetPagination?.total ?? 0);
 
-  if (data?.posts?.nodes == 0) return <div className="container">No Data</div>
+  if (data?.posts?.nodes == 0) return <div className="container min-h-[50vh] my-16 flex justify-center">Blog content is in progress</div>
   return (
     <>
       <PublicHead
