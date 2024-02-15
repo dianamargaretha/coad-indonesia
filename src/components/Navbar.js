@@ -208,7 +208,7 @@ const Navbar = () => {
                                                             </li>
                                                         </ul>
                                                     </li>
-                                                    <li className="drop-holder">
+                                                    {/* <li className="drop-holder">
                                                         <a href="#"
                                                         >Blog
                                                             <i className="pe-7s-angle-down"></i>
@@ -221,6 +221,12 @@ const Navbar = () => {
                                                                 <a href="https://coadindonesiaoverheaddoorgaragedoor.wordpress.com/" target='_blank'>Blog Over Head Door</a>
                                                             </li>
                                                         </ul>
+                                                    </li> */}
+                                                    <li>
+                                                        <Link href={{
+                                                            pathname: '/[lang]/blog',
+                                                            query: { lang: router?.query?.lang }
+                                                        }}>{isCurrentLang('Blog', 'Blog')}</Link>
                                                     </li>
                                                     <li>
                                                         <Link href={{
@@ -341,7 +347,7 @@ const Navbar = () => {
                                                 </>
                                             } />
                                         </li>
-                                        <li>
+                                        {/* <li>
                                             <Accordion title="Blog" content={
                                                 <>
                                                     <ul className='dropdown-list'>
@@ -358,6 +364,12 @@ const Navbar = () => {
                                                     </ul>
                                                 </>
                                             } />
+                                        </li> */}
+                                        <li className='h-12 px-3 font-semibold flex items-center' onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                                            <Link href={{
+                                                pathname: '/[lang]/blog',
+                                                query: { lang: router?.query?.lang }
+                                            }}>{isCurrentLang('Blog', 'Blog')}</Link>
                                         </li>
                                         <li className='h-12 px-3 font-semibold flex items-center' onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                             <Link href={{
