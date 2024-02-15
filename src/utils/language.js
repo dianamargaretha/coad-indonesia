@@ -10,7 +10,7 @@ export const validateLanguage = (lang) => {
 };
 
 export const getLanguage = (lang, ctx) => {
-    let language = lang.match(/[a-zA-Z\-]{2,10}/g)[0] || fallbackLanguage;
+    let language = lang?.match(/[a-zA-Z\-]{2,10}/g)[0] || fallbackLanguage;
     language = language.split("-")[0];
 
     return getLanguageCookie(ctx) ?? validateLanguage(language);
@@ -41,7 +41,7 @@ export const getLanguageCookie = (ctx) => {
 
 export const configureLanguage = (ctx) => {
     const { req, res, asPath, query } = ctx;
-
+	
     const language = req
         ? req.headers["accept-language"]
         : window.navigator.language;

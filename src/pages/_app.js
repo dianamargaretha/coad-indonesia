@@ -12,6 +12,7 @@ import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 
 const App = props => {
   const { Component, pageProps } = props;
+	console.log('!!!!!!!!!!!!!!');
   return (
     <ApolloProvider client={clientApollo}>
       <div>
