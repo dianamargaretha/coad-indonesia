@@ -40,7 +40,7 @@ const index = () => {
             <PublicHead
                 title={data?.post?.title ?? `COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | Catalog | Gallery | COAD`}
                 description={data?.post?.blog?.metaDescription ?? `COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program`} />
-            <h2 className='text-4xl text-center uppercase mb-4'>{data?.post?.title}</h2>
+            <h2 className='text-4xl font-extrabold text-center uppercase mb-4'>{data?.post?.title}</h2>
             {loading ? '' : <p className="text-lg text-center mb-16">{format(data?.post?.date, 'dd MMMM yyyy') ?? ''}</p>}
             <div className='wp-section'>
                 <div>
