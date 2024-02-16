@@ -43,11 +43,13 @@ const index = () => {
             <h2 className='text-4xl text-center uppercase mb-4'>{data?.post?.title}</h2>
             {loading ? '' : <p className="text-lg text-center mb-16">{format(data?.post?.date, 'dd MMMM yyyy') ?? ''}</p>}
             <div className='wp-section'>
-                {loading ?
-                    <div className='flex justify-center'>
-                        <Loader />
-                    </div> : <div dangerouslySetInnerHTML={{ __html: sanitize(data?.post?.content ?? '') }} />
-                }
+                <div>
+                    {loading ?
+                        <div className='flex justify-center'>
+                            <Loader />
+                        </div> : <div className='entry-content' dangerouslySetInnerHTML={{ __html: sanitize(data?.post?.content ?? '') }} />
+                    }
+                </div>
             </div>
         </div>
     )
