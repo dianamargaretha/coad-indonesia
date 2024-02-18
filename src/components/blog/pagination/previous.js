@@ -19,7 +19,7 @@ const Previous = ({ currentPageNo, postName }) => {
 	return (
 		// <Link href={paginationLink}>
 		<Link key={`id-${currentPageNo}`} href={{
-			pathname: '/[lang]/blog/page/[slug]',
+			pathname: `/[lang]/blog/${postName}/page/[slug]`,
 			query: { lang: router?.query?.lang, slug: (currentPageNo - 1) }
 		}}>
 			<span className="border border-gray-300 px-3 py-2 mr-4 transition duration-500 ease-in-out hover:bg-gray-500 hover:text-white">Previous</span>

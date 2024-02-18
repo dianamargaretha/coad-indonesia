@@ -5,6 +5,8 @@ import Loader from '@/components/Loader';
 import { useRouter } from 'next/router';
 import { format } from 'date-fns'
 import PublicHead from '@/components/PublicHead';
+import { NextSeo } from 'next-seo';
+
 
 const index = () => {
     const router = useRouter();
@@ -27,6 +29,26 @@ const index = () => {
                 altText
                 }
             }
+            seo {
+                title
+                metaDesc
+                metaRobotsNoindex
+                metaRobotsNofollow
+                opengraphAuthor
+                opengraphDescription
+                opengraphTitle
+                opengraphImage {
+                  sourceUrl
+                }
+                opengraphSiteName
+                opengraphPublishedTime
+                twitterTitle
+                twitterDescription
+                twitterImage {
+                  sourceUrl
+                }
+                opengraphUrl
+            }
           }
     }
     `
@@ -37,6 +59,30 @@ const index = () => {
     const { data, loading, error } = useQuery(MY_QUERY, { variables })
     return (
         <div className='container mt-16 mb-24'>
+            <NextSeo
+                title={data?.post?.seo?.title}
+                description={data?.post?.seo?.opengraphDescription || data?.post?.seo?.metaDesc}
+                canonical={data?.post?.seo?.opengraphUrl}
+                noindex={"noindex" === data?.post?.seo?.metaRobotsNoindex}
+                nofollow={"nofollow" === data?.post?.seo?.metaRobotsNofollow}
+                openGraph={{
+                    type: 'website',
+                    locale: 'en_US',
+                    url: data?.post?.seo?.opengraphUrl,
+                    title: data?.post?.seo?.opengraphTitle,
+                    description: data?.post?.seo?.opengraphDescription,
+                    images: [
+                        {
+                            url: data?.post?.seo?.opengraphImage?.sourceUrl,
+                            width: 1280,
+                            height: 720
+                        }
+                    ],
+                    /* eslint-disable */
+                    site_name: data?.post?.seo?.opengraphSiteName
+                    /* eslint-enable */
+                }}
+            />
             <PublicHead
                 title={data?.post?.title ?? `COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | Catalog | Gallery | COAD`}
                 description={data?.post?.blog?.metaDescription ?? `COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program`} />

@@ -222,11 +222,25 @@ const Navbar = () => {
                                                             </li>
                                                         </ul>
                                                     </li> */}
-                                                    <li>
-                                                        <Link href={{
-                                                            pathname: '/[lang]/blog',
-                                                            query: { lang: router?.query?.lang }
-                                                        }}>{isCurrentLang('Blog', 'Blog')}</Link>
+                                                    <li className="drop-holder">
+                                                        <a href="#"
+                                                        >Blog
+                                                            <i className="pe-7s-angle-down"></i>
+                                                        </a>
+                                                        <ul className="drop-menu">
+                                                            <li>
+                                                                <Link href={{
+                                                                    pathname: '/[lang]/blog/[category]',
+                                                                    query: { lang: router?.query?.lang, category: 'blog-overhead-door' }
+                                                                }}>{isCurrentLang('Overhead Door', 'Overhead Door')}</Link>
+                                                            </li>
+                                                            <li>
+                                                                <Link href={{
+                                                                    pathname: '/[lang]/blog/[category]',
+                                                                    query: { lang: router?.query?.lang, category: 'blog-highspeed-door' }
+                                                                }}>{isCurrentLang('Highspeed Door', 'Highspeed Door')}</Link>
+                                                            </li>
+                                                        </ul>
                                                     </li>
                                                     <li>
                                                         <Link href={{
@@ -365,11 +379,29 @@ const Navbar = () => {
                                                 </>
                                             } />
                                         </li> */}
-                                        <li className='h-12 px-3 font-semibold flex items-center' onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                                            <Link href={{
-                                                pathname: '/[lang]/blog',
-                                                query: { lang: router?.query?.lang }
-                                            }}>{isCurrentLang('Blog', 'Blog')}</Link>
+                                        <li>
+                                            <Accordion title="Blog" content={
+                                                <>
+                                                    <ul className='dropdown-list'>
+                                                        <li>
+                                                            <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                                                                <Link href={{
+                                                                    pathname: '/[lang]/blog/blog-overhead-door',
+                                                                    query: { lang: router?.query?.lang }
+                                                                }}>{isCurrentLang('Overhead Door', 'Overhead Door')}</Link>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div className='flex items-center h-8 px-4 text-sm hover:bg-gray-200' onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                                                                <Link href={{
+                                                                    pathname: '/[lang]/blog/blog-highspeed-door',
+                                                                    query: { lang: router?.query?.lang }
+                                                                }}>{isCurrentLang('High Speed Door', 'High Speed Door')}</Link>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </>
+                                            } />
                                         </li>
                                         <li className='h-12 px-3 font-semibold flex items-center' onClick={() => setShowMobileMenu(!showMobileMenu)}>
                                             <Link href={{

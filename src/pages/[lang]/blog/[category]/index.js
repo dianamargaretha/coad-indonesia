@@ -11,10 +11,11 @@ import isCurrentLang from "@/utils/isCurrentLang";
 
 export default function BlogHome() {
   const router = useRouter();
+  console.log({ router })
 
   const MY_QUERY = gql`
-    query MyQuery($perPage: Int, $offset: Int){
-      posts(where: { categoryName: "blog", offsetPagination: { size: $perPage, offset: $offset }}) {
+    query MyQuery($perPage: Int, $offset: Int, $category: String){
+      posts(where: { categoryName: $category, offsetPagination: { size: $perPage, offset: $offset }}) {
         nodes {
           id
           title
@@ -43,9 +44,11 @@ export default function BlogHome() {
   const variables = {
     perPage: PER_PAGE_FIRST,
     offset: null,
+    category: router?.query?.category
   };
 
   const { data, loading, error } = useQuery(MY_QUERY, { variables })
+  console.log({ data })
 
   const pagesCount = totalPagesCount(data?.posts?.pageInfo?.offsetPagination?.total ?? 0);
 
@@ -70,8 +73,8 @@ export default function BlogHome() {
               return (
                 <div className="mb-8 w-[280px] md:w-[280px]" key={index}>
                   <Link href={{
-                    pathname: '/[lang]/blog/[slug]',
-                    query: { lang: router?.query?.lang, slug: post?.slug }
+                    pathname: '/[lang]/blog/[category]/[slug]',
+                    query: { lang: router?.query?.lang, category: router?.query?.category, slug: post?.slug }
                   }}>
                     <figure className="flex overflow-hidden mb-4">
                       <div className="relative benefit flex justify-center items-center p-4 w-[280px] h-[280px] md:w-[280px] md:h-[280px]">
@@ -87,7 +90,7 @@ export default function BlogHome() {
           </div>
         }
         <div className="pb-8">
-          <Pagination pagesCount={pagesCount} postName="blog" />
+          <Pagination pagesCount={pagesCount} postName={router?.query?.category} />
         </div>
       </div>
     </>

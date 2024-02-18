@@ -2832,7 +2832,7 @@ with others.
 
     .wp-block-cover-image .wp-block-cover__inner-container,
     .wp-block-cover .wp-block-cover__inner-container {
-        width: calc(100% - 4rem);
+        width: calc(100% - 4rem) !important;
         padding: 2rem 0;
     }
 
@@ -2976,7 +2976,7 @@ with others.
 
     .wp-block-pullquote.alignleft,
     .wp-block-pullquote.alignright {
-        max-width: calc(100% - 4rem);
+        max-width: calc(100% - 4rem) !important;
     }
 
     .wp-block-pullquote::before {
@@ -3371,7 +3371,7 @@ with others.
 
     .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
         max-width: 580px;
-        width: calc(100% - 4rem);
+        width: calc(100% - 4rem) !important;
     }
 
     [class*="__inner-container"]
@@ -3472,7 +3472,7 @@ with others.
         margin-left: auto;
         margin-right: auto;
         max-width: 580px;
-        width: calc(100% - 4rem);
+        width: calc(100% - 4rem) !important;
     }
 
     /* -------------------------------------------------------------------------- */

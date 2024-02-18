@@ -14,8 +14,8 @@ export default function BlogHome() {
     const { pageNo } = router?.query
     const offset = getPageOffset(pageNo)
     const MY_QUERY = gql`
-    query MyQuery($perPage: Int, $offset: Int){
-      posts(where: { categoryName: "blog", offsetPagination: { size: $perPage, offset: $offset }}) {
+    query MyQuery($perPage: Int, $offset: Int, $category: String){
+      posts(where: { categoryName: $category, offsetPagination: { size: $perPage, offset: $offset }}) {
         nodes {
           id
           title
@@ -43,7 +43,8 @@ export default function BlogHome() {
     `
     const variables = {
         perPage: '1' === pageNo ? PER_PAGE_FIRST : PER_PAGE_REST,
-        offset
+        offset,
+        category: router?.query?.category
     };
 
     const { data, loading, error } = useQuery(MY_QUERY, { variables })
@@ -71,8 +72,8 @@ export default function BlogHome() {
                             return (
                                 <div className="mb-8 w-[280px] md:w-[280px]" key={index}>
                                     <Link href={{
-                                        pathname: '/[lang]/blog/[slug]',
-                                        query: { lang: router?.query?.lang, slug: post?.slug }
+                                        pathname: '/[lang]/blog/[category]/[slug]',
+                                        query: { lang: router?.query?.lang, category: router?.query?.category, slug: post?.slug }
                                     }}>
                                         <figure className="flex overflow-hidden mb-4">
                                             <div className="relative benefit flex justify-center items-center p-4 w-[280px] h-[280px] md:w-[280px] md:h-[280px]">
