@@ -11,7 +11,6 @@ import isCurrentLang from "@/utils/isCurrentLang";
 
 export default function BlogHome() {
   const router = useRouter();
-  console.log({ router })
 
   const MY_QUERY = gql`
     query MyQuery($perPage: Int, $offset: Int, $category: String){
@@ -48,7 +47,6 @@ export default function BlogHome() {
   };
 
   const { data, loading, error } = useQuery(MY_QUERY, { variables })
-  console.log({ data })
 
   const pagesCount = totalPagesCount(data?.posts?.pageInfo?.offsetPagination?.total ?? 0);
 

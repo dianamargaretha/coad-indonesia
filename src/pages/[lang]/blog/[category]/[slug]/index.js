@@ -20,9 +20,6 @@ const index = () => {
             content
             slug
             date
-            blog {
-                metaDescription
-              }
             featuredImage {
                 node {
                 sourceUrl(size: LARGE)
@@ -57,7 +54,7 @@ const index = () => {
     };
 
     const { data, loading, error } = useQuery(MY_QUERY, { variables })
-    console.log({ data })
+
     return (
         <div className='container mt-16 mb-24'>
             <style jsx global>{`
