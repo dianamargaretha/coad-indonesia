@@ -57,8 +57,18 @@ const index = () => {
     };
 
     const { data, loading, error } = useQuery(MY_QUERY, { variables })
+    console.log({ data })
     return (
         <div className='container mt-16 mb-24'>
+            <style jsx global>{`
+               html {
+                    font-size: 62.5%; /* 1rem = 10px */
+                    scroll-behavior: smooth;
+                }
+                body {
+                    font-size: 1.8rem;
+                }
+            `}</style>
             <NextSeo
                 title={data?.post?.seo?.title}
                 description={data?.post?.seo?.opengraphDescription || data?.post?.seo?.metaDesc}
@@ -86,8 +96,8 @@ const index = () => {
             <PublicHead
                 title={data?.post?.title ?? `COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | Catalog | Gallery | COAD`}
                 description={data?.post?.blog?.metaDescription ?? `COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program`} />
-            <h2 className='text-4xl font-extrabold text-center uppercase mb-4'>{data?.post?.title}</h2>
-            {loading ? '' : <p className="text-lg text-center mb-16">{format(data?.post?.date, 'dd MMMM yyyy') ?? ''}</p>}
+            <h1 className='text-4xl md:text-[4.25rem] md:leading-tight font-extrabold text-center uppercase mb-8'>{data?.post?.title}</h1>
+            {loading ? '' : <p className="text-3xl text-center mb-16">{format(data?.post?.date, 'dd MMMM yyyy') ?? ''}</p>}
             <div className='wp-section'>
                 <div>
                     {loading ?
