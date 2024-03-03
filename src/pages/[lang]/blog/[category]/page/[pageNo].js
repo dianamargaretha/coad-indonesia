@@ -89,7 +89,7 @@ export default function BlogHome() {
                     </div>
                 }
                 <div className="pb-8">
-                    <Pagination pagesCount={pagesCount} postName="blog" />
+                    <Pagination pagesCount={pagesCount} postName={router?.query?.category} />
                 </div>
             </div>
         </>
