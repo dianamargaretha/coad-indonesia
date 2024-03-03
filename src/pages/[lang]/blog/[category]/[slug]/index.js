@@ -65,6 +65,10 @@ const index = () => {
                 body {
                     font-size: 1.8rem;
                 }
+                .btn-fb {
+                    bottom: 7.5rem;
+                    right: 2rem;
+                }
             `}</style>
             <NextSeo
                 title={data?.post?.seo?.title}
