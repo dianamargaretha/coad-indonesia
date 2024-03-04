@@ -5,23 +5,23 @@ import isCurrentLang from '@/utils/isCurrentLang'
 import { gql, useQuery } from "@apollo/client";
 const Footer = () => {
     const router = useRouter()
-    const { data: dataHomePage, loading: loadingHomePage, error: errorHomePage } = useQuery(gql`
-        query {
-            post(id: "homepage", idType: SLUG) {
-            homepage {
-                footer {
-                branch {
-                    country
-                    flag
-                    link
-                }
-                }
-            }
-            }
-        }
-  `);
-
-    const { footer } = dataHomePage?.post?.homepage ?? {}
+    // const { data: dataHomePage, loading: loadingHomePage, error: errorHomePage } = useQuery(gql`
+    //         query {
+    //             post(id: "homepage", idType: SLUG) {
+    //             homepage {
+    //                 footer {
+    //                 branch {
+    //                     country
+    //                     flag
+    //                     link
+    //                 }
+    //                 }
+    //             }
+    //             }
+    //         }
+    //   `);
+    // const { footer } = dataHomePage?.post?.homepage ?? {}
+    // console.log({ footer })
     return (
         <footer>
             <div className='py-6 section-sitemap overflow-hidden bg-[#e5e2e2]'>
@@ -104,27 +104,62 @@ const Footer = () => {
             <div className='footer-top'>
                 <div className='container'>
                     <div className='flex flex-col md:flex-row gap-8 md:gap-4 justify-start pt-10 pb-6'>
-                        <div className='w-12/12 md:w-3/12'>
+                        <div className='w-12/12 md:w-2/12'>
                             <h3 className='uppercase font-bold tracking-wider mb-6'>{isCurrentLang('COAD BRANCH', 'CABANG COAD')}</h3>
                             <div className='flex flex-col gap-2 tracking-wide'>
-                                {footer?.branch?.map((item, index) => (
+                                {/* {footer?.branch?.map((item, index) => (
                                     <a href={item?.link} target='_blank' key={index}>
                                         <div className='flex items-center gap-2' key={index}>
                                             <img className='mt-[6px]' src={`/assets/coad-images/${item.flag}`} alt={`Coad ${item?.country}`} />
                                             <p>{item?.country}</p>
                                         </div>
                                     </a>
-                                ))}
+                                ))} */}
+                                <a href='https://coaddoor.com/home/?lang=en' target='_blank'>
+                                    <div className='flex items-center gap-2'>
+                                        <img className='mt-[6px]' src={`/assets/coad-images/south-korea.svg`} alt={`Coad Korea`} />
+                                        <p>Korea</p>
+                                    </div>
+                                </a>
+                                <a href='https://sheetshutter.com/' target='_blank'>
+                                    <div className='flex items-center gap-2'>
+                                        <img className='mt-[6px]' src={`/assets/coad-images/japan.svg`} alt={`Coad Japan`} />
+                                        <p>Japan</p>
+                                    </div>
+                                </a>
+                                <a href='http://cuacuonnhanhcoad.vn/' target='_blank'>
+                                    <div className='flex items-center gap-2'>
+                                        <img className='mt-[6px]' src={`/assets/coad-images/vietnam.svg`} alt={`Coad Vietnam`} />
+                                        <p>Vietnam</p>
+                                    </div>
+                                </a>
+                                <a href='http://highspeeddoorindonesiacoad.com/id' target='_blank'>
+                                    <div className='flex items-center gap-2'>
+                                        <img className='mt-[6px]' src={`/assets/coad-images/indonesia.svg`} alt={`Coad Indonesia`} />
+                                        <p>Indonesia</p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        <div className='w-12/12 md:w-4/12'>
+                        <div className='w-12/12 md:w-5/12'>
                             <h3 className='uppercase font-bold tracking-wider mb-6'>{isCurrentLang('Contact Info', 'Kontak Kami')}</h3>
                             <div className='flex flex-col gap-4 tracking-wide'>
                                 <div className='flex items-start gap-2'>
                                     <img className='mt-[6px]' src='/assets/coad-images/location-pin.svg' alt='Address Coad Indonesia' />
-                                    <p><span className='block'>PT Bluesky Indonusa,</span>
-                                        The Belleza Shopping Arcade Lt. 1 Unit 106
-                                        Jl. Letjen Soepeno, Grogol Utara, Kebayoran Lama, Jakarta Selatan</p>
+                                    <div>
+                                        <p className='font-medium mb-2'>{isCurrentLang('Our Office', 'Kantor Kami')}</p>
+                                        <p className='font-light text-sm'><span className='block'>PT Bluesky Indonusa,</span>
+                                            The Belleza Shopping Arcade Lt. 1 Unit 106
+                                            Jl. Letjen Soepeno, Grogol Utara, Kebayoran Lama, Jakarta Selatan</p>
+                                    </div>
+                                </div>
+                                <div className='flex items-start gap-2'>
+                                    <img className='mt-[6px]' src='/assets/coad-images/location-pin.svg' alt='Address Coad Indonesia' />
+                                    <div>
+                                        <p className='font-medium mb-2'>{isCurrentLang('Our Warehouse', 'Gudang Kami')}</p>
+                                        <p className='font-light text-sm'>
+                                            Jl. Agus Salim 18-17, RT.012/RW.008, Bekasi Jaya, Kec. Bekasi Tim., Kota Bks, Jawa Barat 17112</p>
+                                    </div>
                                 </div>
                                 <div className='flex items-start gap-2'>
                                     <img className='mt-[6px]' src='/assets/coad-images/telephone-icon.svg' alt='Contact Us Coad Indonesia' />
@@ -136,7 +171,7 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='w-12/12 md:w-2/12'></div>
+                        <div className='w-12/12 md:w-1/12'></div>
                         <div className='w-12/12 md:w-3/12'>
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15865.29632552944!2d106.781861!3d-6.220927!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f12d82b5cad9%3A0xec3043c856077a11!2sThe%20Bellezza%20Shopping%20Arcade!5e0!3m2!1sen!2sid!4v1703346478174!5m2!1sen!2sid"
@@ -165,7 +200,7 @@ const Footer = () => {
                 </div>
             </div> */}
 
-        </footer >
+        </footer>
     )
 }
 
