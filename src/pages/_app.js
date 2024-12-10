@@ -27,8 +27,8 @@ const App = props => {
         <ButtonFacebook />
         <ButtonToTop />
         <Footer />
-        {/* <GoogleTagManager gtmId="G-W545Q1VWVX" />
-        <GoogleAnalytics gaId="G-W545Q1VWVX" /> */}
+        <GoogleTagManager gtmId="GTM-KDTKN533" />
+        <GoogleAnalytics gaId="GTM-KDTKN533" />
         <GoogleTagManager gtmId="AW-349252447" />
         <GoogleAnalytics gaId="AW-349252447" />
       </div>
