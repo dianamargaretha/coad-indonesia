@@ -96,7 +96,10 @@ const index = () => {
             />
             <PublicHead
                 title={data?.post?.title ?? `COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | Catalog | Gallery | COAD`}
-                description={data?.post?.blog?.metaDescription ?? `COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program`} />
+                description={data?.post?.blog?.metaDescription ?? `COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program`}
+                data={data}
+                asPath={router?.asPath}
+            />
             <h1 className='text-4xl md:text-[4.25rem] md:leading-tight font-extrabold text-center uppercase mb-8'>{data?.post?.title}</h1>
             {loading ? '' : <p className="text-3xl text-center mb-16">{format(data?.post?.date, 'dd MMMM yyyy') ?? ''}</p>}
             <div className='wp-section'>
