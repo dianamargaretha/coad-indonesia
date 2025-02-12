@@ -10,7 +10,7 @@ import { NextSeo } from 'next-seo';
 
 const index = () => {
     const router = useRouter();
-    const { slug } = router?.query;
+    const { slug, category } = router?.query;
     const MY_QUERY = gql`
     query MyQuery($id: ID!){
         post(id: $id, idType: SLUG) {
@@ -73,7 +73,13 @@ const index = () => {
             <NextSeo
                 title={data?.post?.seo?.title}
                 description={data?.post?.seo?.opengraphDescription || data?.post?.seo?.metaDesc}
-                canonical={`https://highspeeddoorindonesiacoad.com${router?.asPath}`}
+                canonical={`https://highspeeddoorindonesiacoad.com/id/blog/${category}/${slug}`}
+                languageAlternates={[
+                    {
+                        hrefLang: 'en',
+                        href: `https://highspeeddoorindonesiacoad.com/en/blog/${category}/${slug}`
+                    }
+                ]}
                 noindex={"noindex" === data?.post?.seo?.metaRobotsNoindex}
                 nofollow={"nofollow" === data?.post?.seo?.metaRobotsNofollow}
                 openGraph={{
@@ -93,10 +99,6 @@ const index = () => {
                     site_name: data?.post?.seo?.opengraphSiteName
                     /* eslint-enable */
                 }}
-            />
-            <PublicHead
-                title={data?.post?.title ?? `COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | Catalog | Gallery | COAD`}
-                description={data?.post?.blog?.metaDescription ?? `COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program`}
             />
             <h1 className='text-4xl md:text-[4.25rem] md:leading-tight font-extrabold text-center uppercase mb-8'>{data?.post?.title}</h1>
             {loading ? '' : <p className="text-3xl text-center mb-16">{format(data?.post?.date, 'dd MMMM yyyy') ?? ''}</p>}
