@@ -13,17 +13,17 @@ const SpecHighSpeedDoor = ({ type }) => {
                         <div className='flex-1'></div>
                         <div className='flex-1'>
                             <div className='header-title'>
-                                <span>Standard Model <br /> C-1</span>
+                                <span>Standard Type <br /> C-1</span>
                             </div>
                         </div>
                         <div className='flex-1'>
                             <div className='header-title'>
-                                <span>Standard Model <br /> C-2</span>
+                                <span>Deluxe Type <br /> C-2</span>
                             </div>
                         </div>
                         <div className='flex-1'>
                             <div className='header-title'>
-                                <span>Standard Model <br /> C-3</span>
+                                <span>Premium Type <br /> C-3</span>
                             </div>
                         </div>
                     </div>
@@ -167,18 +167,19 @@ const SpecHighSpeedDoor = ({ type }) => {
                             <div className='flex-1'>Outstanding Features</div>
                             <div className='flex-1'>
                                 <div>
-                                    <span className='text-[#37A76B]'> Suitable for many sectors</span>
+                                    <span className='text-[#37A76B]'> Energy efficiency, durability, quick operation</span>
                                 </div>
                             </div>
                             <div className='flex-1'>
                                 <div>
-                                    <span className='text-[#37A76B]'>Suitable for narrow spaces</span>
+                                    <span className='text-[#37A76B]'>Rust/corrosion resistance, air-tightness, compact
+                                        design</span>
                                 </div>
                             </div>
                             <div className='flex-1'>
                                 <div>
-                                    <span className='text-[#37A76B]'>Save on maintenance costs with auto-recovery.
-                                        Design doors with large sizes</span>
+                                    <span className='text-[#37A76B]'>High durability, high sealing power, wind-pressure
+                                        resistance, auto-recovery function, and high safety feature</span>
                                 </div>
                             </div>
                         </div>

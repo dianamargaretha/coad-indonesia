@@ -47,43 +47,41 @@ const index = () => {
 
     const { data, loading, error } = useQuery(gql`
     query {
-        post(id: "coad-30-overhead-door", idType: SLUG) {
-            detailProduct {
-                product {
-                  gallery {
-                    thumb {
-                      sourceUrl
-                    }
-                  }
-                  title
-                  spec {
-                    specList
-                    title
-                  }
-                  specdetail {
-                    specList
-                    title
-                    thumb {
-                        sourceUrl
-                      }
-                  }
-                  specdetailgroup {
-                    title
-                    listspec {
-                      desc
-                      title
-                      thumb {
-                        sourceUrl
-                      }
-                    }
-                  }
-                }
-              }
+        post(id: "coad-30-overhead-door-2025", idType: SLUG) {
+			products {
+				title
+				gallery {
+					thumb {
+					sourceUrl
+					}
+				}
+				spec {
+					title
+					speclist
+				}
+				specdetailgroup {
+					title
+					listspec {
+						desc
+						title
+						thumb {
+							sourceUrl
+						}
+					}
+				}
+				specdetail {
+					title
+					speclist
+					thumb {
+					sourceUrl
+					}
+				}
+			}
           }
     }
     `);
 
-    const { gallery, title, spec, specdetail, specdetailgroup } = data?.post?.detailProduct?.product ?? {}
+    const { gallery, title, spec, specdetailgroup, specdetail } = data?.post?.products ?? {}
     return (
         <div className='section-product'>
             <PublicHead
@@ -116,7 +114,7 @@ const index = () => {
                                             <div className="flex flex-col pb-3">
                                                 <dt className="mb-1 text-gray-500 text-lg font-semibold md:text-lg dark:text-gray-400">{list?.title}</dt>
                                                 <dd className='list-disc ml-3'>
-                                                    <div dangerouslySetInnerHTML={{ __html: list?.specList }} />
+                                                    <div dangerouslySetInnerHTML={{ __html: list?.speclist }} />
                                                 </dd>
                                             </div>
                                         </dl>
@@ -183,7 +181,7 @@ const index = () => {
                                     <div className='pb-4 md:pb-8'>
                                         <div className="flex flex-col gap-4 pb-3">
                                             {list?.thumb && <div className="flex-shrink-0 pt-4">
-                                                <img className='w-full md:w-auto md:max-w-[30vw] px-4 object-contain' src={list?.thumb?.sourceUrl} alt={list?.title} />
+                                                <img className='w-full md:w-auto md:max-w-full px-4 object-contain' src={list?.thumb?.sourceUrl} alt={list?.title} />
                                             </div>}
                                             <div className="detail flex-1 min-w-0 pt-8 ms-4">
                                                 <h4 className='text-xl mb-4 font-medium'>{list?.title}</h4>
@@ -204,10 +202,10 @@ const index = () => {
 
                                             <h3 className='title'>{list?.title}</h3>
                                             {list?.thumb && <div className="flex-shrink-0 pt-4">
-                                                <img className='w-full md:w-auto md:max-w-[30vw] px-4 object-contain' src={list?.thumb?.sourceUrl} alt={list?.title} />
+                                                <img className='w-full md:w-auto md:max-w-full px-4 object-contain' src={list?.thumb?.sourceUrl} alt={list?.title} />
                                             </div>}
                                             <div className="detail flex-1 min-w-0 pt-8 ms-4 text-justify">
-                                                <div dangerouslySetInnerHTML={{ __html: list?.specList }} />
+                                                <div dangerouslySetInnerHTML={{ __html: list?.speclist }} />
                                             </div>
                                         </div>
                                     </div>

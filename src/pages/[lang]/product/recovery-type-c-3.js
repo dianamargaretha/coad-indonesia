@@ -50,43 +50,40 @@ const highSpeedDoor = () => {
 
     const { data, loading, error } = useQuery(gql`
     query {
-        post(id: "c-3-recovery-type", idType: SLUG) {
-            detailProduct {
-                product {
-                  gallery {
-                    thumb {
-                      sourceUrl
-                    }
-                  }
-                  title
-                  spec {
-                    specList
-                    title
-                  }
-                  specdetail {
-                    specList
-                    title
-                    thumb {
-                        sourceUrl
-                      }
-                  }
-                  specdetailgroup {
-                    title
-                    listspec {
-                      desc
-                      title
-                      thumb {
-                        sourceUrl
-                      }
-                    }
-                  }
-                }
-              }
+        post(id: "c-3-recovery-type-2025", idType: SLUG) {
+			   products {
+				title
+				gallery {
+					thumb {
+					sourceUrl
+					}
+				}
+				spec {
+					title
+					speclist
+				}
+				specdetailgroup {
+					title
+					listspec {
+						desc
+						title
+						thumb {
+							sourceUrl
+						}
+					}
+				}
+				specdetail {
+					title
+					speclist
+					thumb {
+					sourceUrl
+					}
+				}
+			}
           }
     }
     `);
-
-    const { gallery, title, spec, specdetail, specdetailgroup } = data?.post?.detailProduct?.product ?? {}
+    const { gallery, title, spec, specdetailgroup, specdetail } = data?.post?.products ?? {}
     return (
         <div className='section-product'>
             <PublicHead
@@ -204,7 +201,7 @@ const highSpeedDoor = () => {
                                     <div className='pb-4 md:pb-8'>
                                         <div className="flex flex-col gap-4 pb-3">
                                             {list?.thumb && <div className="flex-shrink-0 pt-4">
-                                                <img className='w-full md:w-auto md:max-w-[30vw] px-4 object-contain' src={list?.thumb?.sourceUrl} alt={list?.title} />
+                                                <img className='w-full md:w-auto md:max-w-full px-4 object-contain' src={list?.thumb?.sourceUrl} alt={list?.title} />
                                             </div>}
                                             <div className="detail flex-1 min-w-0 pt-8 ms-4">
                                                 <h4 className='text-xl mb-4 font-medium'>{list?.title}</h4>
@@ -225,7 +222,7 @@ const highSpeedDoor = () => {
 
                                             <h3 className='title'>{list?.title}</h3>
                                             {list?.thumb && <div className="flex-shrink-0 pt-4">
-                                                <img className='w-full md:w-auto md:max-w-[30vw] px-4 object-contain' src={list?.thumb?.sourceUrl} alt={list?.title} />
+                                                <img className='w-full md:w-auto md:max-w-full px-4 object-contain' src={list?.thumb?.sourceUrl} alt={list?.title} />
                                             </div>}
                                             <div className="detail flex-1 min-w-0 pt-8 ms-4 text-justify">
                                                 <div dangerouslySetInnerHTML={{ __html: list?.specList }} />
@@ -245,8 +242,8 @@ const highSpeedDoor = () => {
                         <h2 className='title'>{isCurrentLang('Other Product', 'Product Lainnya')}</h2>
                     </div>
                     <div className='flex flex-wrap gap-4'>
-                        <Benefit link='standard-model-c-1' lang={lang} thumb={'/assets/coad-images/product/C-1-Standard-Type/1.png'} title='COAD C-1 Standard Type' />
-                        <Benefit link='slim-type-c-2' lang={lang} thumb={'/assets/coad-images/product/C-2-Slim-Type/1.png'} title='COAD C-2 Slim Type' />
+                        <Benefit link='standard-model-c-1' lang={lang} thumb={'/assets/coad-images/product/C-1-Standard-Type/1.png'} title='Standard Type C-1' />
+                        <Benefit link='slim-type-c-2' lang={lang} thumb={'/assets/coad-images/product/C-2-Slim-Type/1.png'} title='Deluxe Type C-2' />
                     </div>
                 </div>
             </div>

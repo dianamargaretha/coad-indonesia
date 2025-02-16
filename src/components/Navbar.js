@@ -240,6 +240,12 @@ const Navbar = () => {
                                                                     query: { lang: router?.query?.lang, category: 'blog-highspeed-door' }
                                                                 }}>{isCurrentLang('Highspeed Door', 'Highspeed Door')}</Link>
                                                             </li>
+                                                            <li>
+                                                                <Link href={{
+                                                                    pathname: '/[lang]/blog/[category]',
+                                                                    query: { lang: router?.query?.lang, category: 'blog-garage-door' }
+                                                                }}>{isCurrentLang('Garage Door', 'Garage Door')}</Link>
+                                                            </li>
                                                         </ul>
                                                     </li>
                                                     <li>

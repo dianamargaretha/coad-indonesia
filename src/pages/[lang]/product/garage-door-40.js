@@ -46,43 +46,41 @@ const index = () => {
 
     const { data, loading, error } = useQuery(gql`
     query {
-        post(id: "coad-40-garage-door", idType: SLUG) {
-            detailProduct {
-                product {
-                  gallery {
-                    thumb {
-                      sourceUrl
-                    }
-                  }
-                  title
-                  spec {
-                    specList
-                    title
-                  }
-                  specdetail {
-                    specList
-                    title
-                    thumb {
-                        sourceUrl
-                      }
-                  }
-                  specdetailgroup {
-                    title
-                    listspec {
-                      desc
-                      title
-                      thumb {
-                        sourceUrl
-                      }
-                    }
-                  }
-                }
-              }
+        post(id: "coad-40-garage-door-2025", idType: SLUG) {
+			products {
+				title
+				gallery {
+					thumb {
+					sourceUrl
+					}
+				}
+				spec {
+					title
+					speclist
+				}
+				specdetailgroup {
+					title
+					listspec {
+						desc
+						title
+						thumb {
+							sourceUrl
+						}
+					}
+				}
+				specdetail {
+					title
+					speclist
+					thumb {
+					sourceUrl
+					}
+				}
+			}
           }
     }
     `);
 
-    const { gallery, title, spec, specdetail, specdetailgroup } = data?.post?.detailProduct?.product ?? {}
+    const { gallery, title, spec, specdetailgroup, specdetail } = data?.post?.products ?? {}
     return (
         <div className='section-product'>
             <PublicHead
@@ -115,7 +113,7 @@ const index = () => {
                                             <div className="flex flex-col pb-3">
                                                 <dt className="mb-1 text-gray-500 text-lg font-semibold md:text-lg dark:text-gray-400">{list?.title}</dt>
                                                 <dd className='list-disc ml-3'>
-                                                    <div dangerouslySetInnerHTML={{ __html: list?.specList }} />
+                                                    <div dangerouslySetInnerHTML={{ __html: list?.speclist }} />
                                                 </dd>
                                             </div>
                                         </dl>
@@ -205,7 +203,7 @@ const index = () => {
                                                 <img className='w-full md:w-auto md:max-w-[30vw] px-4 object-contain' src={list?.thumb?.sourceUrl} alt={list?.title} />
                                             </div>}
                                             <div className="detail flex-1 min-w-0 pt-8 ms-4 text-justify">
-                                                <div dangerouslySetInnerHTML={{ __html: list?.specList }} />
+                                                <div dangerouslySetInnerHTML={{ __html: list?.speclist }} />
                                             </div>
                                         </div>
                                     </div>
