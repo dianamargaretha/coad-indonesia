@@ -116,7 +116,7 @@ const highSpeedDoor = () => {
                                             <div className="flex flex-col pb-3">
                                                 <dt className="mb-1 text-gray-500 text-lg font-semibold md:text-lg dark:text-gray-400">{list?.title}</dt>
                                                 <dd className='list-disc ml-3'>
-                                                    <div dangerouslySetInnerHTML={{ __html: list?.specList }} />
+                                                    <div dangerouslySetInnerHTML={{ __html: list?.speclist }} />
                                                 </dd>
                                             </div>
                                         </dl>
@@ -225,7 +225,7 @@ const highSpeedDoor = () => {
                                                 <img className='w-full md:w-auto md:max-w-full px-4 object-contain' src={list?.thumb?.sourceUrl} alt={list?.title} />
                                             </div>}
                                             <div className="detail flex-1 min-w-0 pt-8 ms-4 text-justify">
-                                                <div dangerouslySetInnerHTML={{ __html: list?.specList }} />
+                                                <div dangerouslySetInnerHTML={{ __html: list?.speclist }} />
                                             </div>
                                         </div>
                                     </div>
