@@ -149,7 +149,7 @@ const Footer = () => {
                                     <div>
                                         <p className='font-medium mb-2'>{isCurrentLang('Our Office', 'Kantor Kami')}</p>
                                         <p className='font-light text-sm'><span className='block'>PT Bluesky Indonusa,</span>
-                                            The Belleza Shopping Arcade Lt. 1 Unit 106
+                                            The Belleza Shopping Arcade Lt. 1 Unit SA-39
                                             Jl. Letjen Soepeno, Grogol Utara, Kebayoran Lama, Jakarta Selatan</p>
                                     </div>
                                 </div>
