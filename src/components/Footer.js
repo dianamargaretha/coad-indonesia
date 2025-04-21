@@ -163,7 +163,7 @@ const Footer = () => {
                                 </div>
                                 <div className='flex items-start gap-2'>
                                     <img className='mt-[6px]' src='/assets/coad-images/telephone-icon.svg' alt='Contact Us Coad Indonesia' />
-                                    <p>+62-21-299-16111</p>
+									<p>+62-21-5010-0908</p>
                                 </div>
                                 <div className='flex items-start gap-2'>
                                     <img className='mt-[6px]' src='/assets/coad-images/email-icon.svg' alt='Email Coad Indonesia' />
