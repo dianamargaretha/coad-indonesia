@@ -1,6 +1,7 @@
 User-Agent: *
 Allow: /
 Disallow: /wordpress/
+Disallow: /wordpress/*
 Disallow: /wp-json/
 Disallow: /wp-admin/
 
