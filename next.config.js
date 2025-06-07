@@ -7,11 +7,13 @@ const nextConfig = {
 		return [
 			{
 				source: '/wordpress/tag',
-				destination: '/'
+				destination: '/',
+				permanent: false
 			},
 			{
 				source: '/wordpress/tag/:slug',
-				destination: '/'
+				destination: '/',
+				permanent: false
 			},
 		]
 	},
