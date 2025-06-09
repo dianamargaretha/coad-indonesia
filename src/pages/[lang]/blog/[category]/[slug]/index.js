@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import { format } from 'date-fns'
 import PublicHead from '@/components/PublicHead';
 import { NextSeo } from 'next-seo';
+import Custom404 from '@/pages/404';
 
 
 // export async function getServerSideProps(context) {
@@ -68,7 +69,14 @@ const index = () => {
     };
 
     const { data, loading, error } = useQuery(MY_QUERY, { variables })
-
+	if (loading) {
+        return (
+            <div className="flex justify-center items-center h-screen">
+              <Loader />
+            </div>
+        )
+    }
+	if (data?.post === null) return <Custom404 />
     return (
         <div className='container mt-16 mb-24'>
             <style jsx global>{`
@@ -115,15 +123,9 @@ const index = () => {
                 }}
             />
             <h1 className='text-4xl md:text-[4.25rem] md:leading-tight font-extrabold text-center uppercase mb-8'>{data?.post?.title}</h1>
-            {loading ? '' : <p className="text-3xl text-center mb-16">{format(data?.post?.date, 'dd MMMM yyyy') ?? ''}</p>}
+            <p className="text-3xl text-center mb-16">{format(data?.post?.date, 'dd MMMM yyyy') ?? ''}</p>
             <div className='wp-section'>
-                <div>
-                    {loading ?
-                        <div className='flex justify-center'>
-                            <Loader />
-                        </div> : <div className='entry-content' dangerouslySetInnerHTML={{ __html: sanitize(data?.post?.content ?? '') }} />
-                    }
-                </div>
+				<div className='entry-content' dangerouslySetInnerHTML={{ __html: sanitize(data?.post?.content ?? '') }} />
             </div>
         </div>
     )
