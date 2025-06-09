@@ -8,18 +8,18 @@ import PublicHead from '@/components/PublicHead';
 import { NextSeo } from 'next-seo';
 
 
-export async function getServerSideProps(context) {
-	const { lang } = context?.query
-	if(lang !== "id" || lang !== "en"){
-		return {
-			redirect: {
-				permanent: false,
-				destination: '/'
-			  }
-		}
-	  }
-	return { props: {} }
-  }
+// export async function getServerSideProps(context) {
+// 	const { lang } = context?.query
+// 	if(lang !== "id" || lang !== "en"){
+// 		return {
+// 			redirect: {
+// 				permanent: false,
+// 				destination: '/'
+// 			  }
+// 		}
+// 	  }
+// 	return { props: {} }
+//   }
  
   
 const index = () => {
