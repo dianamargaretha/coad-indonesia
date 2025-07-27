@@ -1,10 +1,21 @@
 import { NextResponse } from 'next/server'
-
+ 
 export function middleware(request) {
-	if (request.nextUrl.pathname.startsWith('/wordpress/wp-admin')) {
-		return NextResponse.rewrite(new URL('/wordpress/wp-admin', request.url))
+	const { pathname } = request.nextUrl
+	const array = pathname.split('/')
+	  if ( array.includes('blog')) {
+		const newLang = array[1]
+		const newCategory = array[3]
+		const newSlug = array[4]
+			if (newLang !== 'id' ) {
+				 return NextResponse.redirect(new URL(`/id/blog/${newCategory}/${newSlug}`, request.url), {
+   					 status: 303
+				 })
+			}
+		}
 	}
-	if (request.nextUrl.pathname.startsWith('/wordpress/tag')) {
-		return NextResponse.rewrite(new URL('/'))
-	}
+export const config = {
+	matcher: [
+		  '/((?!dashboard|admin|_next/static|_next/image|favicon.ico|assets).*)'
+	]
 }
