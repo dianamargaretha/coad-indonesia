@@ -102,8 +102,6 @@ const index = () => {
                         href: `https://highspeeddoorindonesiacoad.com/en/blog/${category}/${slug}`
                     }
                 ]}
-                noindex={"noindex" === data?.post?.seo?.metaRobotsNoindex}
-                nofollow={"nofollow" === data?.post?.seo?.metaRobotsNofollow}
                 openGraph={{
                     type: 'website',
                     locale: 'en_US',
