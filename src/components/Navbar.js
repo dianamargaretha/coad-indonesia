@@ -156,10 +156,13 @@ const Navbar = () => {
                                                         }}>{isCurrentLang('About Us', 'Tentang Kami')}</Link>
                                                     </li>
                                                     <li className="drop-holder">
-                                                        <a href="#"
-                                                        >Product
-                                                            <i className="pe-7s-angle-down"></i>
-                                                        </a>
+														<Link href={{
+																pathname: '/[lang]/product/standard-model-c-1',
+																query: { lang: router?.query?.lang }
+														}}>
+															Product
+															<i className="pe-7s-angle-down"></i>
+														</Link>
                                                         <ul className="drop-menu">
                                                             <li>
                                                                 <Link href={{
@@ -183,10 +186,12 @@ const Navbar = () => {
                                                     </li>
 
                                                     <li className="drop-holder">
-                                                        <a href="#"
-                                                        >Gallery
+                                                       <Link href={{
+                                                                    pathname: '/[lang]/gallery/photo/[slug]',
+                                                                    query: { lang: router?.query?.lang, slug: 'gallery-photo-high-speed-door' }
+                                                                }}>Gallery
                                                             <i className="pe-7s-angle-down"></i>
-                                                        </a>
+                                                        </Link>
                                                         <ul className="drop-menu">
                                                             <li>
                                                                 <Link href={{
@@ -208,25 +213,14 @@ const Navbar = () => {
                                                             </li>
                                                         </ul>
                                                     </li>
-                                                    {/* <li className="drop-holder">
-                                                        <a href="#"
-                                                        >Blog
-                                                            <i className="pe-7s-angle-down"></i>
-                                                        </a>
-                                                        <ul className="drop-menu">
-                                                            <li>
-                                                                <a href="https://pintuhighspeeddoor.com/" target='_blank'>Blog High Speed Door</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="https://coadindonesiaoverheaddoorgaragedoor.wordpress.com/" target='_blank'>Blog Over Head Door</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li> */}
                                                     <li className="drop-holder">
-                                                        <a href="#"
-                                                        >Blog
+                                                        <Link href={{
+															pathname: '/[lang]/blog/[category]',
+															query: { lang: router?.query?.lang, category: 'blog-overhead-door' }
+														}}>
+																	Blog
                                                             <i className="pe-7s-angle-down"></i>
-                                                        </a>
+                                                        </Link>
                                                         <ul className="drop-menu">
                                                             <li>
                                                                 <Link href={{
