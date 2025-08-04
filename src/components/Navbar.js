@@ -216,7 +216,7 @@ const Navbar = () => {
                                                     <li className="drop-holder">
                                                         <Link href={{
 															pathname: '/[lang]/blog/[category]',
-															query: { lang: router?.query?.lang, category: 'blog-overhead-door' }
+															query: { lang: router?.query?.lang, category: 'blog-highspeed-door' }
 														}}>
 																	Blog
                                                             <i className="pe-7s-angle-down"></i>
