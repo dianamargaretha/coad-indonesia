@@ -165,7 +165,7 @@ const contactUs = () => {
                                 <p className='mb-4'>{isCurrentLang(contactUs?.descEn, contactUs?.desc)}</p>
                                 <ul>
                                     <li>Email : marketing@highspeeddoorindonesiacoad.com</li>
-                                    <li>Phone : +62-21-299-16111</li>
+                                    <li>Phone : +62-21-5010-0908</li>
                                 </ul>
 
 

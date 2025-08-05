@@ -15,6 +15,21 @@ const nextConfig = {
 				destination: '/',
 				permanent: false
 			},
+			{
+				source: '/:lang/product',
+				destination: '/:lang/product/standard-model-c-1',
+				permanent: false
+			},
+			{
+				source: '/:lang/gallery',
+				destination: '/:lang/gallery/photo/gallery-photo-high-speed-door',
+				permanent: false
+			},
+			{
+				source: '/:lang/blog',
+				destination: '/:lang/blog/blog-highspeed-door',
+				permanent: false
+			},
 		]
 	},
 }
