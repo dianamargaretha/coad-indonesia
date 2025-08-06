@@ -26,6 +26,11 @@ const nextConfig = {
 				permanent: false
 			},
 			{
+				source: '/:lang/gallery/photo',
+				destination: '/:lang/gallery/photo/gallery-photo-high-speed-door',
+				permanent: false
+			},
+			{
 				source: '/:lang/blog',
 				destination: '/:lang/blog/blog-highspeed-door',
 				permanent: false

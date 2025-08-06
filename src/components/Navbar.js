@@ -93,28 +93,18 @@ const Navbar = () => {
                                                     <img width={24} height={24} src='/assets/images/socmed/blogger-round-color-icon.svg' alt='Blog Coad Indonesia' />
                                                 </a>
                                             </div>
-                                            <div>
-                                                <a href='https://pintuhighspeeddoor.com/' target='_blank'>
-                                                    <img width={24} height={24} src='/assets/images/socmed/wordpress.png' alt='Wordpress Coad Indonesia' />
-                                                </a>
-                                            </div>
-                                            <div>
-                                                <a href='https://coadindonesiaoverheaddoorgaragedoor.wordpress.com/' target='_blank'>
-                                                    <img width={24} height={24} src='/assets/images/socmed/wordpress.png' alt='Wordpress Coad Indonesia' />
-                                                </a>
-                                            </div>
                                         </div>
                                         <div className='flex gap-4'>
                                             <a href='tel:02129916111'>
                                                 <div className='flex items-start gap-2'>
                                                     <img className='mt-[6px]' src='/assets/coad-images/telephone-icon-dark.svg' alt='Contact Us Coad Indonesia' />
-                                                    <p>+62-21-299-16111</p>
+                                                    <p>+62-21-5010-0908</p>
                                                 </div>
                                             </a>
                                             <a href='mailto:mkt@coad.co.id'>
                                                 <div className='flex items-start gap-2'>
                                                     <img className='mt-[6px]' src='/assets/coad-images/email-icon-dark.svg' alt='Email Coad Indonesia' />
-                                                    <p>mkt@coad.co.id</p>
+                                                    <p>marketing@highspeeddoorindonesiacoad.com</p>
                                                 </div>
                                             </a>
                                         </div>
