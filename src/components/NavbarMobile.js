@@ -58,7 +58,7 @@ const NavbarMobile = () => {
                                 <path className="top" d="M0 9h30v2H0z" />
                                 <path className="bottom" d="M0 19h30v2H0z" />
                             </svg>
-                            Menuu
+                            Menu
                         </div>
                         <span className='ml-5 text-sm font-semibold hidden lg:inline-flex'>MENU</span>
                     </div>

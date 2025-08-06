@@ -167,7 +167,7 @@ const Footer = () => {
                                 </div>
                                 <div className='flex items-start gap-2'>
                                     <img className='mt-[6px]' src='/assets/coad-images/email-icon.svg' alt='Email Coad Indonesia' />
-                                    <p>mkt@coad.co.id</p>
+                                    <p>coad.id@gmail.com</p>
                                 </div>
                             </div>
                         </div>
@@ -187,7 +187,7 @@ const Footer = () => {
                 <div className="w-full h-[1px] opacity-50 bg-white"></div>
                 <div className='container'>
                     <div className='flex justify-center items-center py-4'>
-                        <p>2023 Copyright &copy; COAD INDO</p>
+                        <p>2025 Copyright &copy; COAD INDO</p>
                     </div>
                 </div>
             </div>
