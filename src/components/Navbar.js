@@ -104,7 +104,7 @@ const Navbar = () => {
                                             <a href='mailto:mkt@coad.co.id'>
                                                 <div className='flex items-start gap-2'>
                                                     <img className='mt-[6px]' src='/assets/coad-images/email-icon-dark.svg' alt='Email Coad Indonesia' />
-                                                    <p>coad.id@gmail.com</p>
+                                                    <p>marketing@highspeeddoorindonesiacoad.com</p>
                                                 </div>
                                             </a>
                                         </div>
