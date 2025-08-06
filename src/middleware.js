@@ -7,7 +7,7 @@ export function middleware(request) {
 		const newLang = array[1]
 		const newCategory = array[3]
 		const newSlug = array[4]
-			if (newLang !== 'id' ) {
+			if (newLang !== 'id' && array.length === 5 ) {
 				 return NextResponse.redirect(new URL(`/id/blog/${newCategory}/${newSlug}`, request.url), {
    					 status: 303
 				 })
