@@ -50,7 +50,8 @@ const catalog = () => {
         <div className='gallery-wrapper'>
             <PublicHead
                 title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | Catalog | Drawings | COAD"
-                description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program" />
+                description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program"
+				canonical='/gellery/drawing' />
             <div className='container py-16'>
                 <div className='section-title'>
                     <h2 className='title uppercase'>{isCurrentLang('Drawings', 'Gambar')}</h2>

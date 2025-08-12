@@ -9,7 +9,14 @@ import Pagination from '@/components/blog/pagination';
 import PublicHead from "@/components/PublicHead";
 import isCurrentLang from "@/utils/isCurrentLang";
 
-export default function BlogHome() {
+export async function getServerSideProps(context) {
+	const {category} = await context?.query
+	return { props: {
+		metaCategory: category
+	} }
+}
+
+export default function BlogHome({metaCategory}) {
   const router = useRouter();
 
   const MY_QUERY = gql`
@@ -55,7 +62,8 @@ export default function BlogHome() {
     <>
       <PublicHead
         title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | Blog | COAD"
-        description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program" />
+        description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program"
+		canonical={`/blog/${metaCategory}`} />
       <div className="container my-8">
         <div className="flex justify-center">
           <div className='section-title'>

@@ -85,7 +85,8 @@ const index = () => {
         <div className='section-product'>
             <PublicHead
                 title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | garage door 40 | Product | COAD"
-                description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program" />
+                description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program"
+				canonical='/product/garage-door-40' />
             <div className='container mt-12 pb-28'>
                 <div className='block md:hidden mb-8'>
                     <h2 className='title mb-1'>{title}</h2>

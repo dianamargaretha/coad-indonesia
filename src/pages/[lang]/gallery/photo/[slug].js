@@ -34,8 +34,14 @@ const Benefit = ({ imgUrl, title }) => {
     )
 }
 
+export async function getServerSideProps(context) {
+	const {slug} = await context?.query;
+	return { props: {
+		metaSlug: slug
+	} }
+}
 
-const video = () => {
+const video = ({metaSlug}) => {
     const router = useRouter();
     const [showModal, isShowModal] = useState(false);
     const [slideDetail, setSlideDetail] = useState()
@@ -77,7 +83,8 @@ const video = () => {
         <div>
             <PublicHead
                 title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | Catalog | Gallery | COAD"
-                description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program" />
+                description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program"
+				canonical={`/gallery/photo/${metaSlug}`} />
             <div className='gallery-wrapper'>
                 <div className='container py-16'>
                     <div className='section-title'>

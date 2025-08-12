@@ -1,32 +1,14 @@
-import React from 'react'
-import { gql, useQuery } from "@apollo/client";
+import React, { useEffect, useState } from 'react'
+import { gql } from "@apollo/client";
 import { sanitize } from '@/utils/miscellaneous';
 import Loader from '@/components/Loader';
 import { useRouter } from 'next/router';
 import { format } from 'date-fns'
-import PublicHead from '@/components/PublicHead';
 import { NextSeo } from 'next-seo';
 import Custom404 from '@/pages/404';
+import clientApollo from '@/lib/apollo-config'
 
-
-// export async function getServerSideProps(context) {
-// 	const { lang } = context?.query
-// 	if(lang !== "id" || lang !== "en"){
-// 		return {
-// 			redirect: {
-// 				permanent: false,
-// 				destination: '/'
-// 			  }
-// 		}
-// 	  }
-// 	return { props: {} }
-//   }
- 
-  
-const index = () => {
-    const router = useRouter();
-    const { slug, category } = router?.query;
-    const MY_QUERY = gql`
+const MY_QUERY = gql`
     query MyQuery($id: ID!){
         post(id: $id, idType: SLUG) {
             excerpt
@@ -64,11 +46,32 @@ const index = () => {
           }
     }
     `
-    const variables = {
-        id: slug,
-    };
 
-    const { data, loading, error } = useQuery(MY_QUERY, { variables })
+  
+
+export async function getServerSideProps(context) {
+	const { data } = await clientApollo.query({
+	query: MY_QUERY,
+	variables: {
+		id: context?.query?.slug
+	}
+	 })
+
+	return { props: {
+		post: data?.post
+	} }
+  }
+ 
+
+const index = ({post}) => {
+	const [loading, setLoading] = useState(true)
+	const [data,setData] = useState()
+	useEffect(() => {
+		setLoading(false)
+		setData(post)
+	},[post])
+    const router = useRouter();
+    const { slug, category } = router?.query;
 	if (loading) {
         return (
             <div className="flex justify-center items-center h-screen">
@@ -76,7 +79,7 @@ const index = () => {
             </div>
         )
     }
-	if (data?.post === null) return <Custom404 />
+	if (data === null) return <Custom404 />
     return (
         <div className='container mt-16 mb-24'>
             <style jsx global>{`
@@ -93,8 +96,8 @@ const index = () => {
                 }
             `}</style>
             <NextSeo
-                title={data?.post?.seo?.title}
-                description={data?.post?.seo?.opengraphDescription || data?.post?.seo?.metaDesc}
+                title={data?.seo?.title}
+                description={data?.seo?.opengraphDescription || data?.seo?.metaDesc}
                 canonical={`https://highspeeddoorindonesiacoad.com/id/blog/${category}/${slug}`}
                 languageAlternates={[
                     {
@@ -105,25 +108,24 @@ const index = () => {
                 openGraph={{
                     type: 'website',
                     locale: 'en_US',
-                    url: data?.post?.seo?.opengraphUrl,
-                    title: data?.post?.seo?.opengraphTitle,
-                    description: data?.post?.seo?.opengraphDescription,
+                    url: data?.seo?.opengraphUrl,
+                    title: data?.seo?.opengraphTitle,
+                    description: data?.seo?.opengraphDescription,
                     images: [
                         {
-                            url: data?.post?.seo?.opengraphImage?.sourceUrl,
+                            url: data?.opengraphImage?.sourceUrl,
                             width: 1280,
                             height: 720
                         }
                     ],
-                    /* eslint-disable */
-                    site_name: data?.post?.seo?.opengraphSiteName
-                    /* eslint-enable */
+                    site_name: data?.opengraphSiteName
+                    
                 }}
             />
-            <h1 className='text-4xl md:text-[4.25rem] md:leading-tight font-extrabold text-center uppercase mb-8'>{data?.post?.title}</h1>
-            <p className="text-3xl text-center mb-16">{format(data?.post?.date, 'dd MMMM yyyy') ?? ''}</p>
+            <h1 className='text-4xl md:text-[4.25rem] md:leading-tight font-extrabold text-center uppercase mb-8'>{data?.title}</h1>
+            <p className="text-3xl text-center mb-16">{format(data?.date, 'dd MMMM yyyy') ?? ''}</p>
             <div className='wp-section'>
-				<div className='entry-content' dangerouslySetInnerHTML={{ __html: sanitize(data?.post?.content ?? '') }} />
+				<div className='entry-content' dangerouslySetInnerHTML={{ __html: sanitize(data?.content ?? '') }} />
             </div>
         </div>
     )

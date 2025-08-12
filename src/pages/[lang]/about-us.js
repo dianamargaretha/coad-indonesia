@@ -90,7 +90,8 @@ const aboutUs = () => {
         <div className='about-us'>
             <PublicHead
                 title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | About us  | Company | COAD"
-                description='COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program' />
+                description='COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program'
+				canonical='/about-us' />
             <div className='banner overflow-hidden'>
                 <Image src={bannerAbout}
                     // objectFit="cover"

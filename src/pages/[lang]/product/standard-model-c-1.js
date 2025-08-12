@@ -116,7 +116,8 @@ const highSpeedDoor = () => {
         <div className='section-product'>
             <PublicHead
                 title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | C-1(Standard Model) | Speed door | Product | COAD"
-                description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program" />
+                description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program"
+				canonical='/product/standard-model-c-1' />
             <div className='container mt-12 pb-28'>
                 <div className='block md:hidden mb-8'>
                     <h2 className='title mb-1'>{title}</h2>

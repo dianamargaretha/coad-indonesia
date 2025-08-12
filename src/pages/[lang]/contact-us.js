@@ -153,7 +153,8 @@ const contactUs = () => {
             <ModalApply isOpen={isModalOpen} status={status} position={state.email} close={() => setIsModalOpen(!isModalOpen)} />
             <PublicHead
                 title="COAD Indonesia | pintu-high-speed-door, overhead-door, garage-door | Cs center | COAD"
-                description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program | COAD Estimate inquiry" />
+                description="COAD is the largest company for automatic doors in Indonesia. Producing and repairing high speed door, overhead door, garage door. Guaranteed warranty program | COAD Estimate inquiry"
+				canonical='/contact-us' />
             <div className='container mt-10'>
                 <div className='section-title'>
                     <h2 className='title uppercase'>{isCurrentLang('Contact Us', 'Hubungi Kami')}</h2>
