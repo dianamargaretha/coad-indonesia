@@ -148,7 +148,7 @@ const Footer = () => {
                                     <img className='mt-[6px]' src='/assets/coad-images/location-pin.svg' alt='Address Coad Indonesia' />
                                     <div>
                                         <p className='font-medium mb-2'>{isCurrentLang('Our Office', 'Kantor Kami')}</p>
-                                        <p className='font-light text-sm'><span className='block'>PT COAD Global Niaga,</span>
+                                        <p className='font-light text-sm'><span className='block'>PT COAD Global,</span>
                                             The Belleza Shopping Arcade Lt. 1 Unit SA-39
                                             Jl. Letjen Soepeno, Grogol Utara, Kebayoran Lama, Jakarta Selatan</p>
                                     </div>
